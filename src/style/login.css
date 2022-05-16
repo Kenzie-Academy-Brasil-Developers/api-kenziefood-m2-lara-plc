@@ -1,0 +1,338 @@
+:root{
+    --primary-color: #FF2253;
+    --primay-color-50: #FFE9EE;
+    --secondary-color: #4ACA94;
+    --secondary-color-50: #E4F7EF;
+    --product-1: #EEF6FF;
+    --product-2: #FFF7F4;
+    --product-3: #FFE4EA;
+    --product-4: #F3EEF5;
+    --grey-4: #212529;
+    --grey-3: #868E96;
+    --grey-2: #E9ECEF;
+    --grey-1: #F8F9FA;
+}
+
+.title-1-white{
+    font-size: 16px;
+    font-style: bold;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    color: #FFFFFF;
+}
+
+.title-1-grey-3{
+    font-size: 16px;
+    font-style: bold;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    color: var(--grey-3);
+}
+
+.title-1-grey-4{
+    font-size: 16px;
+    font-style: bold;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    color: var(--grey-4);
+}
+
+.title-2-white{
+    font-size: 14px;
+    font-style: bold;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    color: #FFFFFF;
+}
+
+.title-2-grey-3{
+    font-size: 14px;
+    font-style: bold;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    color: var(--grey-3)
+}
+
+.title-2-grey-4{
+    font-size: 14px;
+    font-style: bold;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    color: var(--grey-4);
+}
+
+.title-3-white{
+    font-size: 12px;
+    font-style: bold;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    color: #FFFFFF;
+}
+
+.title-3-grey-3{
+    font-size: 12px;
+    font-style: bold;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    color: var(--grey-3);
+}
+
+.title-3-grey-4{
+    font-size: 12px;
+    font-style: bold;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    color: var(--grey-4);
+}
+
+.body-text-white{
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    color: #FFFFFF
+}
+
+.body-text-grey-3{
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    color: var(--grey-3)
+}
+
+.body-text-grey-4{
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    color: var(--grey-4);
+}
+
+.caption-text-white{
+    font-size: 12px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    color: #FFFFFF;
+}
+
+.caption-text-grey-3{
+    font-size: 12px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    color: var(--grey-3)
+}
+
+.caption-text-grey-4{
+    font-size: 12px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    color: var(--grey-4);
+}
+
+.detail-text-white{
+    font-size: 10px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    color: #FFFFFF;
+}
+
+.detail-text-grey-3{
+    font-size: 10px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    color: var(--grey-3);
+}
+
+.detail-text-grey-4{
+    font-size: 10px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    color: var(--grey-4);
+}
+
+/*---------------Modal Form Login & SingUp---------------*/
+
+@media screen and (max-width: 768px) {
+
+    .modal-login-singup {
+        margin: 35% auto;
+        background-color: var(--grey-1);
+        max-width: 300px;
+        max-height: 400px;
+        height: 100%;
+        border-radius: 10px;
+        border: var(--grey-3) solid 0.5px;
+    }
+
+    .modal-buttons {
+        display: grid;
+        grid-template-areas: 
+        '.button-login' '.button-singup';
+    }
+
+    .button-login, .button-singup {
+        color: var(--primay-color-50);
+        font-size: 17px;
+        font-weight: 600;
+        border: none;
+        background-color: var(--primary-color);
+        padding: 10px;
+    }
+
+    .button-login {
+        border-radius: 10px 0 0 0;
+    }
+
+    .button-singup {
+        border-radius: 0 10px 0 0;
+    }
+
+    .modal-forms {
+        padding: 10px;
+        text-align: center;
+    }
+
+    .form-singup {
+        display: grid;
+        gap: 5px;
+    }
+
+    .form-singup > input {
+        border-radius: 10px;
+        height: 2rem;
+        box-shadow: 0 0 0 0;
+        border: none;
+        border: var(--grey-3) solid 0.5px;
+    }
+
+    .form-singup > input:focus {
+        outline: none;
+    }
+
+    .form-login {
+        display: none;
+        gap: 5px;
+    }
+
+    .form-login > input {
+        border-radius: 10px;
+        height: 2rem;
+        box-shadow: 0 0 0 0;
+        border: none;
+        border: var(--grey-3) solid 0.5px;
+    }
+
+    .form-login > input:focus {
+        outline: none;
+    }
+
+}
+
+@media screen and (min-width: 769px) {
+    .modal-login-singup {
+        margin: 10% auto;
+        background-color: var(--grey-1);
+        max-width: 400px;
+        max-height: 500px;
+        height: 100%;
+        border-radius: 10px;
+        border: var(--grey-3) solid 0.5px;
+    }
+
+    .modal-buttons {
+        display: grid;
+        grid-template-areas: 
+        '.button-login' '.button-singup';
+    }
+
+    .button-login, .button-singup {
+        color: var(--primay-color-50);
+        font-size: 17px;
+        font-weight: 600;
+        border: none;
+        background-color: var(--primary-color);
+        max-height: 150px;
+        height: 100%;
+        padding: 10px;
+    }
+
+    .button-login {
+        border-radius: 10px 0 0 0;
+    }
+
+    .button-singup {
+        border-radius: 0 10px 0 0;
+    }
+
+    .modal-forms {
+        padding: 10px;
+        text-align: center;
+    }
+
+    .form-singup {
+        display: grid;
+        gap: 5px;
+    }
+
+    .form-singup > input {
+        border-radius: 10px;
+        height: 2.5rem;
+        box-shadow: 0 0 0 0;
+        border: none;
+        border: var(--grey-3) solid 0.5px;
+    }
+
+    .form-singup > input:focus {
+        outline: none;
+    }
+
+    .form-login {
+        display: none;
+        gap: 5px;
+    }
+
+    .form-login > input {
+        border-radius: 10px;
+        height: 2.5rem;
+        box-shadow: 0 0 0 0;
+        border: none;
+        border: var(--grey-3) solid 0.5px;
+    }
+
+    .form-login > input:focus {
+        outline: none;
+    }
+
+}
+
+/*---------------Modal Acesso sem Cadastro---------------*/
+
+@media screen and (max-width: 768px) {
+    .modal-acesso-sem-cadastro {
+        background-color: var(--primary-color);
+        color: var(--primay-color-50);
+        font-size: 20px;
+        font-weight: 600;
+        height: 2rem;
+        max-width: 13rem;
+        width: 100%;
+        text-align: center;
+        padding: 5px;
+        margin: 0 48%;
+        border-radius: 0 0 0 10px;
+    }
+}
+
+@media screen and (min-width: 769px) {
+    .modal-acesso-sem-cadastro {
+        background-color: var(--primary-color);
+        color: var(--primay-color-50);
+        font-size: 20px;
+        font-weight: 600;
+        height: 2rem;
+        max-width: 13rem;
+        width: 100%;
+        text-align: center;
+        padding: 5px;
+        margin: 0 83.5%;
+        border-radius: 0 0 0 10px;
+    }
+}
