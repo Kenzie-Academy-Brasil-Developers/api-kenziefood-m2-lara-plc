@@ -401,12 +401,8 @@
         transition: all 200ms;
         background-color: var(--grey-1);
     }
-
-    .input-box input:focus ~ label, label.fill {
-        top: -0.5rem;
-    }
-
 }
+
 
 
 
