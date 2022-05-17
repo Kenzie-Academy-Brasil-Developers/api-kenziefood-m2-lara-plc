@@ -377,7 +377,7 @@
 
 .input-box label {
     position: absolute;
-    left: 3.3rem;
+    left: 40%;
     top: 0.2rem;
     transition: all 200ms;
     background-color: var(--grey-1);
