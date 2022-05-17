@@ -21,22 +21,34 @@
 
         <div class="modal-forms">
             <form action="#" class="form-singup">
-                <label for="name">Nome</label>
-                <input type="text" id="user" name="name">
-                <label for="email">E-mail</label>
-                <input type="text" id="email" name="email">
-                <label for="password">Senha</label>
-                <input type="text" id="password" name="password">
-                <label for="">Confirme sua Senha</label>
-                <input type="text">
+                <div class="input-box">
+                    <input type="text" id="user" name="name">
+                    <label for="name">Nome</label>
+                </div>
+                <div class="input-box">
+                    <input type="text" id="email" name="email">
+                    <label for="email">E-mail</label>
+                </div>
+                <div class="input-box">
+                    <input type="text" name="password">
+                    <label for="password">Senha</label>
+                </div>
+                <div class="input-box">
+                    <input type="password" name="confirmPass">
+                    <label for="confirmPass">Confirme sua Senha</label>
+                </div>
                 <button class="button-login-singup">Cadastre-se</button>
             </form>
 
             <form action="#" class="form-login">
-                <label for="email">E-mail</label>
-                <input type="text" id="email" name="email">
-                <label for="password">Senha</label>
-                <input type="text" id="password" name="password">
+                <div class="input-box">
+                    <input type="text" id="email" name="email">
+                    <label for="email">E-mail</label>
+                </div>
+                <div class="input-box">
+                    <input type="text" id="password" name="password">
+                    <label for="password">Senha</label>
+                </div>
                 <button class="button-login-singup">Login</button>
                 <div class="form-login-adicional">
                     <p>Não tem uma conta? <a href="">Cadastre-se</a> ou</p>
@@ -46,6 +58,8 @@
         </div>
 
     </div>
+
+    <script src="/src/scripts/scriptSignLog.js" type="module"></script>
     
 </body>
 </html>
