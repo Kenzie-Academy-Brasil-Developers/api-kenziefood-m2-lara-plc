@@ -13,19 +13,25 @@ inputs.forEach((input) => {
     })
 })
 
-console.log(inputs)
-
 /*---------------Login de Usuário---------------*/ 
 
 const formLogin = document.getElementsByClassName('form-login');
+formLogin[0].addEventListener('submit', loginUserData);
 
-const loginData = {};
-loginData[inputs[4].name] = inputs[4].value;
-loginData[inputs[5].name] = inputs[5].value;
+function getUserData() {
+    const loginData = {};
 
-console.log(loginData);
+    loginData[inputs[4].name] = inputs[4].value;
+    loginData[inputs[5].name] = inputs[5].value;
 
-formLogin[0].addEventListener('submit', Api.loginUser(loginData));
+    return loginData;
+}
+
+function loginUserData(e) {
+    e.preventDefault();
+    Api.loginUser(getUserData());
+}
+
 
 /*---------------Registro de Usuário---------------*/ 
 
@@ -91,8 +97,6 @@ if (validatePassword(inputs[2].value, inputs[3].value) === false) {
 const buttonLogin = document.getElementsByClassName('button-login');
 
 const buttonSingUp = document.getElementsByClassName('button-singup');
-
-console.log(buttonLogin[0], buttonSingUp[0]);
 
 buttonLogin[0].addEventListener('click', (e)=> {
     e.preventDefault();

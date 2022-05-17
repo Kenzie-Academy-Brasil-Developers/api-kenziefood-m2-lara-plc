@@ -58,7 +58,7 @@ export class Api {
           .then((res) => res.json())
           .then((res) => res)
           .catch((error) => error)
-
+        
         localStorage.setItem('token',token)
       
         return token
