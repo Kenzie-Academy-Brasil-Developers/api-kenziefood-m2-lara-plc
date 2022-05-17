@@ -191,7 +191,7 @@
     }
 
     .form-singup {
-        display: none;
+        display: grid;
         gap: 5px;
     }
 
@@ -208,7 +208,7 @@
     }
 
     .form-login {
-        display: grid;
+        display: none;
         gap: 5px;
     }
 
@@ -241,6 +241,20 @@
     a {
         color: var(--primary-color);
         text-decoration: none;
+    }
+
+    .password-error {
+        background-color: var(--grey-2);
+        width: 100%;
+        height: 1.5rem;
+        border-radius: 10px 10px 0 0;
+    }
+
+    .password-error > .linha {
+        background-color: var(--primary-color);
+        width: 100%;
+        height: 30%;
+        border-radius:  0 0 10px 10px;
     }
 
 }
@@ -287,7 +301,7 @@
     }
 
     .form-singup {
-        display: none;
+        display: grid;
         gap: 5px;
     }
 
@@ -304,7 +318,7 @@
     }
 
     .form-login {
-        display: grid;
+        display: none;
         gap: 5px;
     }
 
@@ -339,6 +353,20 @@
         text-decoration: none;
     }
 
+    .password-error {
+        background-color: var(--grey-2);
+        width: 100%;
+        height: 1.5rem;
+        border-radius: 10px 10px 0 0;
+    }
+
+    .password-error > .linha {
+        background-color: var(--primary-color);
+        width: 100%;
+        height: 30%;
+        border-radius:  0 0 10px 10px;
+    }
+
 }
 
 /* animation input */
@@ -359,14 +387,3 @@
     top: -0.5rem;
 }
 
-/*---------------Modal Acesso sem Cadastro---------------*/
-
-@media screen and (max-width: 768px) {
-    .modal-acesso-sem-cadastro {
-    }
-}
-
-@media screen and (min-width: 769px) {
-    .modal-acesso-sem-cadastro {
-    }
-}
