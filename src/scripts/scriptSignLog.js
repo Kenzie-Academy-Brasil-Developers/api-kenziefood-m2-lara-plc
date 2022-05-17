@@ -85,3 +85,35 @@ if (validatePassword(inputs[2].value, inputs[3].value) === false) {
         
 }
 
+
+/*---------------Botoes Login e Singup---------------*/
+
+const buttonLogin = document.getElementsByClassName('button-login');
+
+const buttonSingUp = document.getElementsByClassName('button-singup');
+
+console.log(buttonLogin[0], buttonSingUp[0]);
+
+buttonLogin[0].addEventListener('click', (e)=> {
+    e.preventDefault();
+    const formLogin = document.getElementsByClassName('form-login');
+    const formSingUp = document.getElementsByClassName('form-singup');
+    buttonLogin[0].style.backgroundColor = 'var(--grey-1)';
+    buttonSingUp[0].style.backgroundColor = 'var(--primary-color)';
+    buttonLogin[0].style.color = 'var(--grey-4)';
+    buttonSingUp[0].style.color = 'var(--grey-1)';
+    formLogin[0].style.display = 'grid';
+    formSingUp[0].style.display = 'none';
+})
+
+buttonSingUp[0].addEventListener('click', (e)=> {
+    e.preventDefault();
+    const formLogin = document.getElementsByClassName('form-login');
+    const formSingUp = document.getElementsByClassName('form-singup');
+    buttonLogin[0].style.backgroundColor = 'var(--primary-color)';
+    buttonSingUp[0].style.backgroundColor = 'var(--grey-1)';
+    buttonSingUp[0].style.color = 'var(--grey-4)';
+    buttonLogin[0].style.color = 'var(--grey-1)';
+    formLogin[0].style.display = 'none';
+    formSingUp[0].style.display = 'grid';
+})
