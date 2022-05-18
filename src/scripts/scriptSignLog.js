@@ -86,7 +86,7 @@ if (validatePassword(inputs[2].value, inputs[3].value) === false) {
     inputs[3].value = '';
 } else {
     modalSuccess('Registro Efetuado com sucesso!');
-    // Api.registerUser(registrationData);
+    Api.registerUser(registrationData);
 }
         
 }
