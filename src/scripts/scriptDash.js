@@ -6,6 +6,8 @@ window.location.href = "/index.html"
 
 TemplateDashProducts.getMyProductsFilter('Todos')
 
+localStorage.setItem('user', 'Equipe 1')
+
 if(localStorage.getItem('user')) {
     document.querySelector('#nameUser').innerText = localStorage.getItem('user')
 }
@@ -44,7 +46,7 @@ search.addEventListener('input', () =>  TemplateDashProducts.getMyProductsSearch
 const logout = document.querySelector('#logout')
 logout.addEventListener('click', () => {
     localStorage.removeItem('token')
-    window.location.href = "/index.html"
+    window.location.href = "/pages/login.html"
 
 })
 
