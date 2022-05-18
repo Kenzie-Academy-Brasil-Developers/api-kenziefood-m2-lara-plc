@@ -1,12 +1,24 @@
-export class TemplateProductHome {
+export class ProductHome {
 
     static createCards(listProducts) {
         listProducts.forEach(product => {
 
             const card = this.createCard(product)
-            //document.body.append(card) //dar o append na vitrine
+            const display = document.getElementsByClassName('products-display')[0]
+            display.appendChild(card)
                
         })
+    }
+
+    static filterCards(event){
+    
+        const filteredProducts = event.listProducts.filter(
+            function(product){
+                product.categoria.includes(event.filter)
+
+        })
+            this.createCards(filteredProducts)
+
     }
 
     static createCard(product) {
@@ -15,39 +27,33 @@ export class TemplateProductHome {
         const {imagem, nome, descricao, categoria, preco, id} = product
         
         const productCard = document.createElement('div')
-        productCard.classList.add('card__div')
+        productCard.classList.add('product-wrapper')
         productCard.id = id
-        
-        const divCardImage = document.createElement('div')
-        divCardImage.classList.add('card__div-image')
+    
 
         const imgCard = document.createElement('img')
         imgCard.src = imagem
 
-        divCardImage.append(imgCard)
 
-        const divInfoCard = document.createElement('div')
-        divInfoCard.classList.add('card__div-info')
-
-        const infoNome = document.createElement('h3')
-        infoNome.classList.add('card__h3-name')
+        const infoNome = document.createElement('p')
+        infoNome.classList.add('product-title', 'title-1-grey-4')
         infoNome.innerText = nome
 
-        const descriptionInfo = document.createElement('div')
-        descriptionInfo.classList.add('card__div-description')
+        const descriptionInfo = document.createElement('p')
+        descriptionInfo.classList.add('body-text-grey-3', 'description')
         descriptionInfo.innerText = descricao
 
-       
 
         const categories = document.createElement('div')
-        categories.classList.add('card__div-category')
+        categories.classList.add('filter-options')
         
         
-        //array de categorias????
+        //array de categorias???? não achei nenhum produto com mais de uma... 
 
         if(typeof descricao !== 'string') {
             categoria.forEach((el) => { 
             const p = document.createElement('p')
+            p.classList.add('caption-text-grey-3')
             p.innerText = el
 
             categories.append(p)
@@ -55,6 +61,7 @@ export class TemplateProductHome {
             })
         } else {
             const p = document.createElement('p')
+            p.classList.add('caption-text-grey-3')
             p.innerText = categoria
 
             categories.append(p)
@@ -62,22 +69,23 @@ export class TemplateProductHome {
         }
 
         const divPriceAndBuy = document.createElement('div')
-        divPriceAndBuy.classList.add('card__div-priceAndBuy')
+        divPriceAndBuy.classList.add('price-cart')
 
         const price = document.createElement('p')
-        price.classList.add('card__p-price')
+        price.classList.add('title-2-grey-4')
         price.innerText = preco
 
         const buttonBuy = document.createElement('button')
-        buttonBuy.innerText = 'Buy'
-        buttonBuy.classList.add('card__button-buy')
+            const cartImg = document.createElement('img')
+            cartImg.src = "./src/imgs/cart_green.png"
+            buttonBuy.appendChild(cartImg)
         buttonBuy.addEventListener('click',() => this.addCart(product)) //ao clicar, chama a funcao addCart e passa o objeto produto
 
         divPriceAndBuy.append(price,buttonBuy)
 
-        divInfoCard.append(infoNome,descriptionInfo,categories,divPriceAndBuy)
+        
 
-        productCard.append(divCardImage,divInfoCard)
+        productCard.append(imgCard,infoNome,descriptionInfo,categories,divPriceAndBuy)
 
 
         return productCard
