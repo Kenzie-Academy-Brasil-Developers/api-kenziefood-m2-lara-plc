@@ -1,9 +1,6 @@
 import { Api } from './Api.js'
 export class TemplateDashProducts {
 
-    //efeito fundo ao aparecer o modal
-    //disabilitar buttons
-    //funcionalidade edit
     //funcionalidade delete
 
 
@@ -12,6 +9,7 @@ export class TemplateDashProducts {
     static async getMyProducts() {
         const myProducts = await Api.getPrivateProducts()
         const container = document.querySelector('#container-productsEdit')
+        container.innerHTML = ''
 
 
         myProducts.forEach(product => {
@@ -74,6 +72,7 @@ export class TemplateDashProducts {
         edit.addEventListener('click', () => this.showModal(product))
         const delet = document.createElement('div')
         delet.classList.add('delete')
+        delet.addEventListener('click', () => this.modalDelete(product.id))
 
         edit.innerHTML = `<span class="material-icons">
             edit_note
@@ -101,6 +100,9 @@ export class TemplateDashProducts {
 
     static modalEditCancel(title, product) {
 
+        const divFundo = document.createElement('div')
+        divFundo.classList.add('fundo-modal')
+
         const divModal = document.createElement('div')
         divModal.classList.add('modal-add')
         divModal.innerHTML = `
@@ -126,6 +128,11 @@ export class TemplateDashProducts {
     
                 </div>
             </div>
+
+            <div class="box-label">
+                <label for="preco">Valor do produto</label>
+                <input type="text" name="preco" id="" placeholder="Digite o valor aqui">
+            </div>
     
             <div class="box-label">
                 <label for="imagem">Link da imagem</label>
@@ -135,56 +142,101 @@ export class TemplateDashProducts {
         </form>
         
         `  
+
+        divFundo.append(divModal)
         
-        document.body.append(divModal)
-        this.takeBackgroundModal('off')
+        document.body.append(divFundo)
         
         const form = document.querySelector('#form')
         if(product) {
-            this.putInfoProdut(product) 
-
+            
             
             const buttonsEdit = document.createElement('div')
             buttonsEdit.id = 'buttons-edit'
-            buttonsEdit.innerHTML = '<button id="cancelEdits">Excluir</button><button button id="saveEdits">Salvar alterações</button>'
-
+            buttonsEdit.innerHTML = '<button id="cancelEdits">Excluir</button><button id="saveEdits">Salvar alterações</button>'
+            
             form.append(buttonsEdit)
+            
+            this.putInfoProdut(product) 
+
+            const cancelEdits = document.querySelector('#cancelEdits')
+            cancelEdits.addEventListener('click', (e) => {
+                e.preventDefault()
+            
+                this.putInfoProdut(product)
+
+            })
+
+            const saveEdits = document.querySelector('#saveEdits')
+
+            saveEdits.addEventListener('click', async (e) => {
+                e.preventDefault()
+                const changes = TemplateDashProducts.changes
+                if(Object.keys(changes).length>0) {
+                    const result = await Api.editProduct(changes,product.id)
+                    document.body.removeChild(divFundo)
+                    this.getMyProducts()
+                    
+                }
+            })
             
             
         } else {
 
             form.innerHTML += '<button id="add">Cadastrar Produto</button>'
 
+            const div = document.querySelector('.categories-edit div')
+            const categories = document.querySelectorAll('.categories-edit div p')
+            div.addEventListener('click', (e) => {
+                if(e.target.id) {
+                    categories.forEach((category) => {
+                        category.classList.remove('choose')
+                    })
+                    e.target.classList.add('choose')
+                }
+            })
+
+            const addProduct = document.querySelector('#add')
+            addProduct.addEventListener('click', (e) => {
+                e.preventDefault()
+                this.getNewProduct(divFundo)
+            })
+
         }
 
         const close = document.querySelector('.close')
         close.addEventListener('click', () => {
-            document.body.removeChild(divModal)
-            this.takeBackgroundModal('on')
+            document.body.removeChild(divFundo)
 
         })
-
-        const cancelEdits = document.querySelector('#cancelEdits')
-        cancelEdits.addEventListener('click', (e) => {
-            e.preventDefault()
-            
-            this.putInfoProdut(product)
-
-        })
+        
 
     }
 
-    static takeBackgroundModal(onOrOff) {
+    static async getNewProduct(divModal) {
+        const data = {}
+        const inputs = document.querySelectorAll('.modal-add input')
 
-        const main = document.querySelector('main')
-        if(onOrOff ==='off') {
-            main.style.opacity = '0.5'
-            main.style.backgroundColor = 'rgb(29, 27, 27)'
-            //disable button
-        } else {
-            main.style.opacity = '1'
-            main.style.backgroundColor = 'transparent'
+        inputs.forEach((input) => {
+            data[input.name] = input.value
+        })
+
+        const category = document.querySelector('.choose')
+        data.categoria = category.innerText
+
+        data.preco = Number(data.preco)
+
+        if(data.preco>=0) {
+            
+            const result = await Api.createProduct(data)
+
+            document.body.removeChild(divModal)
+
+            this.getMyProducts()
+
+
         }
+
     }
 
     static getChangesEdit(inputs, categories, div) {
@@ -228,6 +280,42 @@ export class TemplateDashProducts {
             input.value = product[input.name]
         })
 
+    }
+
+    static modalDelete(id) {
+
+        const modalBackgroundDelete = document.createElement('div')
+        modalBackgroundDelete.classList.add('modal-deleteBack')
+
+        const divModal = document.createElement('div')
+        divModal.classList.add('modal-delete')
+        divModal.innerHTML = `
+        <div class="header"><p class="tittle">Exclusão do produto</p><div class="closeDelete">x</div></div>
+        <div>Tem certeza que deseja excluir esse produto?</div>
+        <div id="buttons-delete"><button id="confirmDelete">Sim</button><button id="cancelDelete">Não</button></div>
+        `  
+
+        modalBackgroundDelete.append(divModal)
+        
+        document.body.append(modalBackgroundDelete)
+
+        const confirm = document.querySelector('#confirmDelete')
+        const cancel = document.querySelector('#cancelDelete')
+        const close = document.querySelector('.closeDelete')
+
+        close.addEventListener('click', () => {
+            document.body.removeChild(modalBackgroundDelete)
+        })
+
+        cancel.addEventListener('click', () => {
+            document.body.removeChild(modalBackgroundDelete)
+        })
+
+        confirm.addEventListener('click', async () => {
+            const result = await Api.deleteProduct(id)
+            document.body.removeChild(modalBackgroundDelete)
+            this.getMyProducts()
+        })
 
     }
 }
