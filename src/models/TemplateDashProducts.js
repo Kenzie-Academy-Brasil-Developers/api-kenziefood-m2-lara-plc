@@ -2,9 +2,6 @@ import { Api } from './Api.js'
 export class TemplateDashProducts {
 
 
-    //funcionalidade delete
-
-
     static changes = {}
 
     static async getMyProducts() {
@@ -377,6 +374,7 @@ export class TemplateDashProducts {
 
     static async getMyProductsFilter(filter) {
         const myProducts = await Api.getPrivateProducts()
+        console.log(myProducts)
 
         if(filter==='Todos') {
             this.getMyProducts(myProducts)
