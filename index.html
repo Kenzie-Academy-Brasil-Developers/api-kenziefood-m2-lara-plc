@@ -52,10 +52,6 @@
             </div>
         </div>
 
-
-
-
-
     </div>
         
     <div class="cart">
@@ -67,19 +63,44 @@
             <img src="./src/imgs/shopping_bag.png" alt="">
             <p class="body-text-grey-3">Por enquanto não temos produtos no carrinho</p>
         </div>
+
+
+        <div class="cart-total">
+            <p>Quantidade</p><p id="amount">0</p>
+            <p>Total</p><p id="total-price">0</p>
+        </div>
+
     </div>
-
-
-
 
     <div class="cart-btn">
         <img src="./src/imgs/cart_white.png" alt="">
         <p>Carrinho</p>
     </div>
 
-
-
 </div>
+
+
+<div class="modal-cart">
+    <div class="modal-cart-btn">
+        <img src="./src/imgs/cart_white.png" alt="">
+        <p>Carrinho</p><button class="close-cart-modal">x</button>
+    </div>
+
+    <div class="modal-products-div">
+
+        <div class="cart-product-wrapper">
+            <img src="./src/imgs/shopping_bag.png" alt="">
+            <p class="body-text-grey-3">Por enquanto não temos produtos no carrinho</p>
+        </div>
+
+    </div>
+
+    <div class="modal-total">
+        <p>Quantidade</p><p id="amount">0</p>
+        <p>Total</p><p id="total-price">0</p>
+    </div>
+</div>
+
 
 <script type="module" src="./src/models/Api.js"></script>
 <script type="module" src="./src/models/ProductHome.js"></script>

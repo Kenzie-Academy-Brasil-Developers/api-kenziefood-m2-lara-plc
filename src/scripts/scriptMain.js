@@ -36,3 +36,30 @@ bebidasFilter.listProducts = listProducts
 bebidasFilter.filter = bebidasFilter.innerText
 bebidasFilter.addEventListener("click", ProductHome.filterCards)
 
+
+
+/*---------------------Carrinho Mobile---------------------*/
+
+const cartButton = document.getElementsByClassName('cart-btn');
+const closeCartButton = document.querySelector('button.close-cart-modal');
+
+cartButton[0].addEventListener('click', openModal);
+closeCartButton.addEventListener('click', closeModal)
+
+function openModal() {
+    const modalCartMobile = document.querySelector('div.modal-cart');
+    const main = document. querySelector('div.grid');
+    main.style.opacity = '0.5';
+    modalCartMobile.style.opacity = '1';
+    modalCartMobile.style.display = 'grid';
+}
+
+function closeModal() {
+    const modalCartMobile = document.querySelector('div.modal-cart');
+    const main = document. querySelector('div.grid');
+    main.style.opacity = '1';
+    modalCartMobile.style.display = 'none';
+}
+
+console.log(await Api.getProductsCart());
+
