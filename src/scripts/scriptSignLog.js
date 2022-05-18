@@ -27,9 +27,23 @@ function getUserData() {
     return loginData;
 }
 
+<<<<<<< HEAD
 function loginUserData(e) {
     e.preventDefault();
     Api.loginUser(getUserData());
+=======
+async function loginUserData(e) {
+    e.preventDefault();
+    console.log(await Api.loginUser(getUserData()));
+    if (await Api.loginUser(getUserData()) != '') {
+        await Api.loginUser(getUserData());
+        location.replace('/pages/dashboard.html');
+    } else {
+        modalError('Dados Incorretos')
+    }
+    ;
+    
+>>>>>>> a0496724f3aa16c643247dd42997843227a85204
 }
 
 
@@ -69,7 +83,11 @@ function modalSuccess(message) {
     error.firstChild.textContent = `${message}`;
 }
     
+<<<<<<< HEAD
 function sendData(e) {
+=======
+async function sendData(e) {
+>>>>>>> a0496724f3aa16c643247dd42997843227a85204
     e.preventDefault();
 
 if (validatePassword(inputs[2].value, inputs[3].value) === false) {
@@ -86,11 +104,27 @@ if (validatePassword(inputs[2].value, inputs[3].value) === false) {
     inputs[3].value = '';
 } else {
     modalSuccess('Registro Efetuado com sucesso!');
+<<<<<<< HEAD
     // Api.registerUser(registrationData);
 }
         
 }
 
+=======
+    await Api.registerUser(registrationData);
+}
+
+}
+
+const acessoSemCadastro = document.querySelector('a.form-acesso-sem-cadastro');
+console.log(acessoSemCadastro);
+acessoSemCadastro.addEventListener('click', logInSemCadastro);
+
+function logInSemCadastro(e) {
+    e.preventDefault();
+    location.replace('/index.html');
+}
+>>>>>>> a0496724f3aa16c643247dd42997843227a85204
 
 /*---------------Botoes Login e Singup---------------*/
 

@@ -75,6 +75,7 @@ export class ProductHome {
         price.classList.add('title-2-grey-4')
         price.innerText = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(parseInt(preco))
 
+
         const buttonBuy = document.createElement('button')
             const cartImg = document.createElement('img')
             cartImg.src = "./src/imgs/cart_green.png"
