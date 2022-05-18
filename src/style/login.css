@@ -257,6 +257,25 @@
         border-radius:  0 0 10px 10px;
     }
 
+    /* animation input */
+
+    .input-box {
+        position: relative;
+    }
+
+    .input-box label {
+        font-size: 12px;
+        position: absolute;
+        left: 4.5rem;
+        top: 0.2rem;
+        transition: all 200ms;
+        background-color: var(--grey-1);
+    }
+
+    .input-box input:focus ~ label, label.fill {
+        top: -0.5rem;
+    }
+
 }
 
 @media screen and (min-width: 769px) {
@@ -367,23 +386,23 @@
         border-radius:  0 0 10px 10px;
     }
 
+    /* animation input */
+
+    .input-box {
+        position: relative;
+        height: 1.5rem;
+    }
+
+    .input-box label {
+        font-size: 13px;
+        position: absolute;
+        left: 7.6rem;
+        top: 0.2rem;
+        transition: all 200ms;
+        background-color: var(--grey-1);
+    }
 }
 
-/* animation input */
 
-.input-box {
-    position: relative;
-}
 
-.input-box label {
-    position: absolute;
-    left: 40%;
-    top: 0.2rem;
-    transition: all 200ms;
-    background-color: var(--grey-1);
-}
-
-.input-box input:focus ~ label, label.fill {
-    top: -0.5rem;
-}
 
