@@ -232,7 +232,7 @@
         font-weight: 600;
         color: var(--primay-color-50);
         border: var(--primay-color-50) solid 1px;
-        border-radius: 5px;
+        border-radius: 20px;
         margin: 15px auto;
         max-width: 150px;
         width: 100%;
@@ -361,7 +361,7 @@
         font-weight: 600;
         color: var(--primay-color-50);
         border: var(--primay-color-50) solid 1px;
-        border-radius: 5px;
+        border-radius: 20px;
         margin: 15px auto;
         max-width: 150px;
         width: 100%;
@@ -401,6 +401,11 @@
         transition: all 200ms;
         background-color: var(--grey-1);
     }
+
+    .input-box input:focus ~ label, label.fill {
+        top: -0.5rem;
+    }
+
 }
 
 

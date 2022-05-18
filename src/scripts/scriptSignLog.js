@@ -27,9 +27,17 @@ function getUserData() {
     return loginData;
 }
 
-function loginUserData(e) {
+async function loginUserData(e) {
     e.preventDefault();
-    Api.loginUser(getUserData());
+    console.log(await Api.loginUser(getUserData()));
+    if (await Api.loginUser(getUserData()) != '') {
+        await Api.loginUser(getUserData());
+        location.replace('/pages/dashboard.html');
+    } else {
+        modalError('Dados Incorretos')
+    }
+    ;
+    
 }
 
 
@@ -69,7 +77,7 @@ function modalSuccess(message) {
     error.firstChild.textContent = `${message}`;
 }
     
-function sendData(e) {
+async function sendData(e) {
     e.preventDefault();
 
 if (validatePassword(inputs[2].value, inputs[3].value) === false) {
@@ -86,11 +94,19 @@ if (validatePassword(inputs[2].value, inputs[3].value) === false) {
     inputs[3].value = '';
 } else {
     modalSuccess('Registro Efetuado com sucesso!');
-    Api.registerUser(registrationData);
-}
-        
+    await Api.registerUser(registrationData);
 }
 
+}
+
+const acessoSemCadastro = document.querySelector('a.form-acesso-sem-cadastro');
+console.log(acessoSemCadastro);
+acessoSemCadastro.addEventListener('click', logInSemCadastro);
+
+function logInSemCadastro(e) {
+    e.preventDefault();
+    location.replace('/index.html');
+}
 
 /*---------------Botoes Login e Singup---------------*/
 
