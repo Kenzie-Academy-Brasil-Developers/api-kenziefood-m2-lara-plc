@@ -11,3 +11,5 @@ document.querySelector('.addProduct').addEventListener('click', function() {
     TemplateDashProducts.showModal()
     
 })
+
+
