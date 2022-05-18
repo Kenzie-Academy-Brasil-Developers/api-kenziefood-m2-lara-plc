@@ -288,11 +288,25 @@
         padding-right: 7%;
         justify-content: center;
     }
+<<<<<<< HEAD
+    .filter-option>p:hover{
+        cursor: none;
+    }
+    #todos-filter:hover{
+        cursor: pointer;
 
+    }
+=======
+
+>>>>>>> a0496724f3aa16c643247dd42997843227a85204
     .filter-option>img{
         margin-right: 10%;
     }
 
+<<<<<<< HEAD
+
+=======
+>>>>>>> a0496724f3aa16c643247dd42997843227a85204
     .active-filter{
         background-color: var(--primary-color);
     }
@@ -703,6 +717,8 @@
     }
 }
 
+<<<<<<< HEAD
+=======
 
 /*---------------------Carrinho Mobile---------------------*/
 
@@ -823,3 +839,4 @@
         justify-content: space-evenly;
     }
 }
+>>>>>>> a0496724f3aa16c643247dd42997843227a85204

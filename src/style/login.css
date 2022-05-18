@@ -377,6 +377,32 @@
         width: 100%;
         height: 1.5rem;
         border-radius: 10px 10px 0 0;
+<<<<<<< HEAD
+    }
+
+    .password-error > .linha {
+        background-color: var(--primary-color);
+        width: 100%;
+        height: 30%;
+        border-radius:  0 0 10px 10px;
+    }
+
+    /* animation input */
+
+    .input-box {
+        position: relative;
+        height: 1.5rem;
+    }
+
+    .input-box label {
+        font-size: 13px;
+        position: absolute;
+        left: 7.6rem;
+        top: 0.2rem;
+        transition: all 200ms;
+        background-color: var(--grey-1);
+=======
+>>>>>>> a0496724f3aa16c643247dd42997843227a85204
     }
 
     .password-error > .linha {

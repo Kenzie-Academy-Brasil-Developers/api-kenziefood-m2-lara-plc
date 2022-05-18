@@ -1,10 +1,15 @@
 import { Api } from './Api.js'
 export class TemplateDashProducts {
 
+
+    //funcionalidade delete
+
+
     static changes = {}
 
-    static getMyProducts(myProducts) {
-        
+    static async getMyProducts() {
+        const myProducts = await Api.getPrivateProducts()
+
         const container = document.querySelector('#container-productsEdit')
         container.innerHTML = ''
 

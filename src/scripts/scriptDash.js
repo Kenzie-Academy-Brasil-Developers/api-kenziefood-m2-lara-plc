@@ -4,17 +4,18 @@ localStorage.getItem('token') ?
 null :
 window.location.href = "/index.html"
 
-
 TemplateDashProducts.getMyProductsFilter('Todos')
 
 if(localStorage.getItem('user')) {
     document.querySelector('#nameUser').innerText = localStorage.getItem('user')
 }
 
+
 document.querySelector('.addProduct').addEventListener('click', function() {
     TemplateDashProducts.showModal()
     
 })
+
 
 const drop = document.querySelector('.dropdown img') 
 drop.addEventListener('click', () => {
@@ -46,3 +47,5 @@ logout.addEventListener('click', () => {
     window.location.href = "/index.html"
 
 })
+
+
