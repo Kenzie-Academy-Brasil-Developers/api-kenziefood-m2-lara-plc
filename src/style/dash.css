@@ -316,143 +316,6 @@ input:focus {
     background-color: red;
 }
 
-@media screen and (max-width: 750px) {
-
-    main {
-        font-size: 1rem;
-    }
-
-    section div, #title-editProducts p {
-        width: 18%;
-    }
-
-    section div:nth-child(4), #title-editProducts p:nth-child(4) {
-        width: 16%;
-    }
-
-    .modal-success {
-        width: 18rem;
-        font-size: 0.9rem;
-    }
-    #message {
-        padding: 18px;
-    }
-
-}
-
-@media screen and (max-width: 510px) {
-
-    main {
-        font-size: 0.8rem;
-    }
-
-    .product-name, #title-editProducts p:nth-child(1) {
-        width: 33%;
-    }
-
-    .categories , #title-editProducts p:nth-child(2) {
-        display: none;
-    }
-
-    .actions {
-        gap: 2px;
-        width: 10%;
-    }
-
-    .actions div span {
-        font-size: 1.3rem;
-    }
-
-    .modal-add { 
-        width: 250px;
-    }
-    
-    .modal-add form {
-        font-size: 0.8rem; 
-        gap: .7rem;  
-    }
-
-    .modal-add form input {
-        padding: 8px;
-    }
-    
-    .categories-edit div {
-        width: 100%;
-    }
-    
-    .categories-edit div p {
-        padding: 5px;   
-    }
-    
-    .modal-add form .descricao-box input {
-        padding: 8px 8px 20px 8px;  
-    }
-    
-    #form #buttons-edit button {
-        width: 50%;
-        padding: 5px;
-    }
-    
-    .modal-delete {
-        width: 250px;
-        gap: 10px;
-        padding-bottom: 20px;
-    }
-
-    .modal-delete div:nth-child(2) {
-        font-size: 0.9rem;
-        text-align: center;
-    }
-    
-    .modal-delete .header {
-        padding: 20px;
-    }
-    
-    #buttons-delete button {
-        padding: 8px 12px;
-    }
-
-    .modal-success {
-        width: 15rem;
-        font-size: smaller;
-    }
-    #message {
-        display: flex;
-        padding: 15px;
-    }
-    
-    #green {
-        height: .3rem;
-    }
-    
-    #red {
-        height: .3rem;
-    }
-
-}
-
-@media screen and (max-width: 420px) {
-
-    section div, #title-editProducts p {
-        width: 16%;
-    }
-
-    section div:nth-child(4), #title-editProducts p:nth-child(4) {
-        width: 21%;
-    }
-
-    .actions div span {
-        font-size: 1rem;
-    }
-
-    .modal-delete {
-        width: 250px;
-        gap: 10px;
-        padding-bottom: 20px;
-        font-size: 0.95rem;
-    }
-}
-
 header {
     display: flex;
     width: 100%;
@@ -619,6 +482,546 @@ header {
     color: var(--grey-1);
 
 }
+
+@media screen and (max-width: 750px) {
+
+    main {
+        font-size: 1rem;
+    }
+
+    section div, #title-editProducts p {
+        width: 18%;
+    }
+
+    section div:nth-child(4), #title-editProducts p:nth-child(4) {
+        width: 16%;
+    }
+
+    .modal-success {
+        width: 18rem;
+        font-size: 0.9rem;
+    }
+    #message {
+        padding: 18px;
+    }
+
+}
+
+@media screen and (max-width:700px) {
+    header {
+        height: 10vh;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 5rem;
+    }
+    
+    #aside-header {
+        gap: 1rem;
+    }
+    
+    .down-header {
+        height: fit-content;
+        width: 100%;
+        padding: 15vh 1rem 0 1rem;
+        justify-content: space-between;
+    }
+    
+    .filter {
+        width: 27rem;
+        justify-content: space-between;
+        align-items: center; 
+    }
+    
+    .filter div {
+
+        align-items: flex-end;
+    }
+    
+    #logo {
+        gap: 0.4rem;
+        font-weight: 700;
+    }
+    
+    .kenzie-title{
+        font-size: 21px;
+        font-style: bold;
+    }
+    
+    .food-title{
+        font-size: 16px;
+    }
+    
+    .dropdown {
+        cursor: pointer;
+    }
+    
+    .dropdown-content {
+        top: 10vh;
+        right: 1rem;
+        min-width: 100px;
+    }
+    #logout {
+        align-items: flex-end;
+    }
+      
+      .dropdown-content a {
+        padding: 12px 16px;
+        display: block;
+    }
+    
+    .search{
+        position: relative;
+    }
+    
+    .search-icon{
+        position: absolute;
+        height: 40%;
+        top: 25%;
+        left: 5px;
+    }
+    
+    .search-input{
+        padding-left: 30px;
+        border: 10px;
+    }
+    
+    .filter-option{
+        border-radius:90px;
+        gap: 0.3rem;
+        padding: 0.3rem;
+    }
+    
+}
+@media screen and (max-width:610px) {
+
+    header {
+        height: 10vh;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 2.8rem;
+    }
+    
+    #aside-header {
+        gap: 1rem;
+    }
+    
+    .down-header {
+        height: fit-content;
+        width: 100%;
+        padding: 15vh 2rem 0 2rem;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .down-header button {
+        margin-top: .5rem;
+        width: 10rem;
+    }
+    
+    .filter {
+        width: 100%;
+        justify-content: space-between;
+        align-items: center; 
+        
+    }
+    
+    .filter div {
+
+        align-items: flex-end;
+    }
+    
+    #logo {
+        gap: 0.4rem;
+        font-weight: 700;
+    }
+    
+    .kenzie-title{
+        font-size: 21px;
+        font-style: bold;
+    }
+    
+    .food-title{
+        font-size: 16px;
+    }
+    
+    .dropdown {
+        cursor: pointer;
+    }
+    
+    .dropdown-content {
+        top: 10vh;
+        right: 1rem;
+        min-width: 100px;
+    }
+    #logout {
+        align-items: flex-end;
+    }
+      
+      .dropdown-content a {
+        padding: 12px 16px;
+        display: block;
+    }
+    
+    .search{
+        position: relative;
+    }
+    
+    .search-icon{
+        position: absolute;
+        height: 40%;
+        top: 25%;
+        left: 5px;
+    }
+    
+    .search-input{
+        padding-left: 30px;
+        height: 1rem;
+        width: 13rem;
+        font-size: 1rem;
+    }
+    
+    .filter-option{
+        border-radius:90px;
+        gap: 0.3rem;
+        padding: 0.3rem;
+    }
+}
+@media screen and (max-width: 510px) {
+
+    main {
+        font-size: 0.8rem;
+    }
+
+    .product-name, #title-editProducts p:nth-child(1) {
+        width: 33%;
+    }
+
+    .categories , #title-editProducts p:nth-child(2) {
+        display: none;
+    }
+
+    .actions {
+        gap: 2px;
+        width: 10%;
+    }
+
+    .actions div span {
+        font-size: 1.3rem;
+    }
+
+    .modal-add { 
+        width: 250px;
+    }
+    
+    .modal-add form {
+        font-size: 0.8rem; 
+        gap: .7rem;  
+    }
+
+    .modal-add form input {
+        padding: 8px;
+    }
+    
+    .categories-edit div {
+        width: 100%;
+    }
+    
+    .categories-edit div p {
+        padding: 5px;   
+    }
+    
+    .modal-add form .descricao-box input {
+        padding: 8px 8px 20px 8px;  
+    }
+    
+    #form #buttons-edit button {
+        width: 50%;
+        padding: 5px;
+    }
+    
+    .modal-delete {
+        width: 250px;
+        gap: 10px;
+        padding-bottom: 20px;
+    }
+
+    .modal-delete div:nth-child(2) {
+        font-size: 0.9rem;
+        text-align: center;
+    }
+    
+    .modal-delete .header {
+        padding: 20px;
+    }
+    
+    #buttons-delete button {
+        padding: 8px 12px;
+    }
+
+    .modal-success {
+        width: 15rem;
+        font-size: smaller;
+    }
+    #message {
+        display: flex;
+        padding: 15px;
+    }
+    
+    #green {
+        height: .3rem;
+    }
+    
+    #red {
+        height: .3rem;
+    }
+
+    header {
+        height: 10vh;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 1.5rem;
+    }
+    
+    #aside-header {
+        gap: 1rem;
+    }
+    
+    .down-header {
+        height: fit-content;
+        width: 100%;
+        padding: 15vh 2rem 0 2rem;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .down-header button {
+        margin-top: .5rem;
+        width: 10rem;
+    }
+    
+    .filter {
+        width: 100%;
+        overflow-x: scroll;
+        padding-bottom: 5px;
+    }
+
+    ::-webkit-scrollbar {
+        height: 3px;
+      }
+      
+      /* Track */
+      ::-webkit-scrollbar-track {
+        background: transparent;
+
+      }
+      
+      /* Handle */
+      ::-webkit-scrollbar-thumb {
+        background: var(--grey-2);
+      }
+      
+      /* Handle on hover */
+      ::-webkit-scrollbar-thumb:hover {
+        background: var(--grey-3);
+      }
+    
+    .filter div {
+
+        align-items: flex-end;
+    }
+    
+    #logo {
+        gap: 0.4rem;
+        font-weight: 700;
+    }
+    
+    .kenzie-title{
+        font-size: 21px;
+        font-style: bold;
+    }
+    
+    .food-title{
+        font-size: 16px;
+    }
+    
+    .dropdown {
+        cursor: pointer;
+    }
+    
+    .dropdown-content {
+        top: 10vh;
+        right: 1rem;
+        min-width: 100px;
+    }
+    #logout {
+        align-items: flex-end;
+    }
+      
+      .dropdown-content a {
+        padding: 12px 16px;
+        display: block;
+    }
+    
+    .search{
+        position: relative;
+    }
+    
+    .search-icon{
+        position: absolute;
+        height: 40%;
+        top: 25%;
+        left: 5px;
+    }
+    
+    .search-input{
+        padding-left: 30px;
+        height: 1rem;
+        width: 11rem;
+        font-size: 0.8rem;
+    }
+    
+    .filter-option{
+        border-radius:90px;
+        gap: 0.3rem;
+        padding: 0.3rem;
+    }
+
+    .filter-option{
+        margin-left: 0.5rem; 
+    }
+
+}
+
+@media screen and (max-width: 420px) {
+
+    section div, #title-editProducts p {
+        width: 16%;
+    }
+
+    section div:nth-child(4), #title-editProducts p:nth-child(4) {
+        width: 21%;
+    }
+
+    .actions div span {
+        font-size: 1rem;
+    }
+
+    .modal-delete {
+        width: 250px;
+        gap: 10px;
+        padding-bottom: 20px;
+        font-size: 0.95rem;
+    }
+
+    header {
+        padding: 0 .8rem;
+    }
+    
+    #aside-header {
+        gap: 0.3rem;
+    }
+    
+    .down-header {
+        height: fit-content;
+        width: 100%;
+        padding: 15vh 2rem 0 2rem;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .down-header button {
+        margin-top: .5rem;
+        width: 10rem;
+    }
+    
+    .filter {
+        width: 100%;
+        overflow-x: scroll;
+    }
+    
+    .filter div {
+
+        align-items: flex-end;
+    }
+    
+    #logo {
+        gap: 0.2rem;
+        display: flex;
+        align-items: center;
+        font-weight: 700;
+    }
+    
+    .kenzie-title{
+        font-size: 18px;
+        font-style: bold;
+    }
+    
+    .food-title{
+        font-size: 13px;
+    }
+    
+    .dropdown {
+        cursor: pointer;
+    }
+
+    .dropdown img {
+        width: 1.6rem;
+    }
+    
+    .dropdown-content {
+        top: 10vh;
+        right: 1rem;
+        min-width: 90px;
+    }
+    #logout {
+        align-items: flex-end;
+        font-size: .8rem;
+        justify-content: center;
+    }
+      
+      .dropdown-content a {
+        padding: 5px;
+    }
+    
+    .search{
+        position: relative;
+    }
+    
+    .search-icon{
+        position: absolute;
+        height: 40%;
+        top: 25%;
+        left: 5px;
+    }
+    
+    .search-input{
+        padding-left: 20px;
+        height: 1rem;
+        width: 9rem;
+        font-size: 0.7rem;
+    }
+
+    .filter-option img {
+        width: 1rem;
+    }
+
+    .filter-option img:nth-child(5) {
+        width: .8rem;
+    }
+    
+    .filter-option{
+        margin-left: 0.4rem;
+        border-radius:90px;
+        gap: 0.3rem;
+        padding: 0.2rem 0.3rem;
+        font-size: .9rem;
+    }
+}
+
+
 
 
 
