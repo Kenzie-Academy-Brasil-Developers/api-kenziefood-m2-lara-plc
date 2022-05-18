@@ -1,0 +1,213 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    min-height: 100vh;
+    position: relative;
+    
+
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    padding: 2rem;
+    height: fit-content;
+}
+
+button {
+    color: var(--grey-1);
+    background-color: var(--primary-color);
+    padding: 8px;
+    border-radius: 15px;
+    border: none;
+}
+
+section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid var(--grey-2);
+    border-radius: 15px;
+    padding: 5px 1%;
+    margin-bottom: 1rem;
+}
+
+#title-editProducts {
+    border: none;
+}
+
+section p {
+    color: var(--grey-3);
+}
+
+section div, section:nth-child(1) p {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 8px;
+    width: 20%;
+}
+
+section div h3 {
+    font-weight: 600;
+}
+
+.product-name img {
+    width: 2rem;
+    object-fit: cover;
+    height: 2rem;
+    border-radius: 50%;
+}
+
+.categories p {
+    background-color: var(--grey-1);
+    height: fit-content;
+    padding: 4px;
+    border-radius: 7px;
+}
+
+.description p {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+
+
+section .actions, section:nth-child(1) p:nth-child(4) {
+    width: 10%; 
+}
+
+.actions div {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--grey-1);
+    color: var(--grey-3);
+    width: fit-content;
+    height: fit-content;
+    border-radius: 50%;
+    padding: 4px;
+}
+
+.modal-add {
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 20%;
+    left: calc(50% - 200px);
+    width: 400px;
+    background-color: white;
+    
+    
+}
+
+.modal-add form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 1rem;
+    padding: 20px;
+    
+}
+
+.header {
+    position: relative;
+    width: 100%; 
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    display: flex;
+    justify-content: flex-start;
+    padding: 5px 20px;
+    background-color: var(--grey-1);   
+}
+
+.close {
+    position: absolute;
+    top: 4px;
+    right: 10px;
+    background-color: var(--grey-2);
+    color: var(--grey-3);
+    padding: 1px 4px;
+
+}
+
+.box-label {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.categories-edit div {
+    display: flex;
+    justify-content: space-between;
+}
+
+input {
+    border: 1px solid;
+    border-radius: 4px;
+    padding: 15px;
+}
+
+input:focus {
+    color: black;
+    background-color: transparent;
+}
+
+.categories-edit div {
+    margin-top: 5px;
+
+}
+
+.categories-edit div p, input {
+    background-color: var(--grey-1);
+    color: var(--grey-3);
+}
+
+.categories-edit div p {
+    padding: 5px 15px;
+    border-radius: 10px;
+}
+
+.modal-add form .descricao-box input {
+    padding: 15px 15px 30px 15px;  
+}
+
+.categories-edit div .choose {
+    background-color: var(--primary-color);
+    color: var(--grey-1);
+}
+
+#form button {
+    width: 60%;
+    margin-left: 20%;
+}
+
+#buttons-edit {
+    display: flex;
+    gap: 1rem;
+    justify-content: space-around;
+
+
+}
+
+#form #buttons-edit button {
+    width: 40%;
+    margin: 0;
+}
+
+#buttons-edit #cancelEdits {
+    color: var(--grey-3);
+    background-color: var(--grey-2);
+}
+
+.tittle {
+    font-weight: 600;
+}
