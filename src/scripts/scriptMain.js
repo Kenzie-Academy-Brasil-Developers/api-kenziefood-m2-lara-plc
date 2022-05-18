@@ -38,6 +38,36 @@ bebidasFilter.addEventListener("click", ProductHome.filterCards)
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*---------------------Carrinho Mobile/Desktop---------------------*/
 
 const cartButton = document.getElementsByClassName('cart-btn');
