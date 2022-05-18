@@ -172,12 +172,21 @@ export class TemplateDashProducts {
             saveEdits.addEventListener('click', async (e) => {
                 e.preventDefault()
                 const changes = TemplateDashProducts.changes
-                if(Object.keys(changes).length>0) {
+                
                     const result = await Api.editProduct(changes,product.id)
                     document.body.removeChild(divFundo)
+
+                    if(!result.ok) {
+
+                        this.modalSuccessOrError(false, 'Ocorreu algum erro, o produto não foi alterado')
+
+                    } else {
+
+                        this.modalSuccessOrError(true, 'Produto alterado com sucesso')
+
+                    }
                     this.getMyProducts()
                     
-                }
             })
             
             
@@ -231,6 +240,15 @@ export class TemplateDashProducts {
             const result = await Api.createProduct(data)
 
             document.body.removeChild(divModal)
+
+            if(result.error) {
+
+                this.modalSuccessOrError(false, 'Ocorreu algum erro, o produto não foi adicionado')
+
+            } else {
+
+                this.modalSuccessOrError(true, 'Produto adicionado com sucesso')
+            }
 
             this.getMyProducts()
 
@@ -314,8 +332,45 @@ export class TemplateDashProducts {
         confirm.addEventListener('click', async () => {
             const result = await Api.deleteProduct(id)
             document.body.removeChild(modalBackgroundDelete)
+
+            if(!result.ok) {
+
+                this.modalSuccessOrError(false, 'Ocorreu algum erro, o produto não foi deletado')
+
+            } else {
+
+                this.modalSuccessOrError(true, 'Produto deletado com sucesso')
+
+            }
+            
             this.getMyProducts()
         })
+
+    }
+
+    static modalSuccessOrError(success,message) {
+
+        const divModal = document.createElement('div')
+        divModal.classList.add('modal-success')
+        divModal.innerHTML = `
+        <div class="header"><p class="tittle">Status</p><div class="closeSuccess">x</div></div>
+        <div id="message">${message}</div>
+        <div class="bottom" id="${success ? 'green' : 'red'}"></div>
+        `  
+        
+        document.body.append(divModal)
+
+        const close = document.querySelector('.closeSuccess')
+
+        close.addEventListener('click', () => {
+            document.body.removeChild(divModal)
+        })
+
+        setTimeout(() => {
+            document.body.removeChild(divModal)
+            
+        }, 3000);
+
 
     }
 }

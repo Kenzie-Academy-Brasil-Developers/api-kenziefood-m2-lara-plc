@@ -279,6 +279,46 @@ input:focus {
     padding: 10px 15px;
 }
 
+.modal-success {
+    width: 20rem;
+    overflow: hidden;
+    position:fixed;
+    top: 0;
+    right: 0;
+    margin-right: 0.5rem;
+    margin-top: 0.5rem;
+    border-radius: 5px;
+    background-color: white;
+}
+#message {
+    display: flex;
+    padding: 20px;
+
+}
+
+.closeSuccess {
+    position: absolute;
+    top: 4px;
+    right: 10px;
+    background-color: var(--grey-2);
+    color: var(--grey-3);
+    padding: 1px 4px;
+    cursor: pointer;
+
+}
+
+#green {
+    height: .4rem;
+    width: 100%;
+    background-color: green;
+}
+
+#red {
+    height: .4rem;
+    width: 100%;
+    background-color: red;
+}
+
 
 
 
@@ -333,6 +373,14 @@ header {
 
     section div:nth-child(4), #title-editProducts p:nth-child(4) {
         width: 16%;
+    }
+
+    .modal-success {
+        width: 18rem;
+        font-size: 0.9rem;
+    }
+    #message {
+        padding: 18px;
     }
 
 }
@@ -407,6 +455,23 @@ header {
     
     #buttons-delete button {
         padding: 8px 12px;
+    }
+
+    .modal-success {
+        width: 15rem;
+        font-size: smaller;
+    }
+    #message {
+        display: flex;
+        padding: 15px;
+    }
+    
+    #green {
+        height: .3rem;
+    }
+    
+    #red {
+        height: .3rem;
     }
 
 }
