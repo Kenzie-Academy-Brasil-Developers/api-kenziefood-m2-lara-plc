@@ -1,13 +1,10 @@
 import { Api } from './Api.js'
 export class TemplateDashProducts {
 
-    //funcionalidade delete
-
-
     static changes = {}
 
-    static async getMyProducts() {
-        const myProducts = await Api.getPrivateProducts()
+    static getMyProducts(myProducts) {
+        
         const container = document.querySelector('#container-productsEdit')
         container.innerHTML = ''
 
@@ -370,6 +367,28 @@ export class TemplateDashProducts {
             document.body.removeChild(divModal)
             
         }, 3000);
+
+    }
+
+    static async getMyProductsFilter(filter) {
+        const myProducts = await Api.getPrivateProducts()
+
+        if(filter==='Todos') {
+            this.getMyProducts(myProducts)
+        } else {
+            const productsFiltered = myProducts.filter((product) => product.categoria == filter)
+            this.getMyProducts(productsFiltered)
+        }
+    }
+
+    static async getMyProductsSearch(search) {
+        const myProducts = await Api.getPrivateProducts()
+
+        search = search.toLowerCase()
+
+        const productsFiltered = myProducts.filter((product) => product.nome.toLowerCase().includes(search))
+        this.getMyProducts(productsFiltered)
+
 
 
     }

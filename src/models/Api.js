@@ -30,6 +30,8 @@ export class Api {
             .then((res) => res.json())
             .then((res) => res)
             .catch((error) => {error})
+
+            localStorage.setItem('user', response.name)
             return response
 
             /*{
