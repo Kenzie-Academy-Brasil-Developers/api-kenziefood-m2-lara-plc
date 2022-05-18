@@ -10,23 +10,20 @@ ProductHome.createCards(listProducts)
 
 
 const todosFilter = document.getElementById('todos-filter')
+console.log(todosFilter)
 todosFilter.listProducts = listProducts
-todosFilter.filter = todosFilter.innerText
 todosFilter.addEventListener("click", ProductHome.filterCards)
 
 const panificadoraFilter = document.getElementById('panificadora-filter')
 panificadoraFilter.listProducts = listProducts
-panificadoraFilter.filter = panificadoraFilter.innerText
 panificadoraFilter.addEventListener("click", ProductHome.filterCards)
 
 const frutasFilter = document.getElementById('frutas-filter')
 frutasFilter.listProducts = listProducts
-frutasFilter.filter = frutasFilter.innerText
 frutasFilter.addEventListener("click", ProductHome.filterCards)
 
 const bebidasFilter = document.getElementById('bebidas-filter')
 bebidasFilter.listProducts = listProducts
-bebidasFilter.filter = bebidasFilter.innerText
 bebidasFilter.addEventListener("click", ProductHome.filterCards)
 
 

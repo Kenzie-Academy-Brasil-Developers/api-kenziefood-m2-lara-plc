@@ -4,7 +4,6 @@ localStorage.getItem('token') ?
 null :
 window.location.href = "/index.html"
 
-
 TemplateDashProducts.getMyProductsFilter('Todos')
 
 if(localStorage.getItem('user')) {
@@ -39,3 +38,12 @@ filters.forEach((filter) => {
 
 const search = document.querySelector('#search-input')
 search.addEventListener('input', () =>  TemplateDashProducts.getMyProductsSearch(search.value))
+
+const logout = document.querySelector('#logout')
+logout.addEventListener('click', () => {
+    localStorage.removeItem('token')
+    window.location.href = "/index.html"
+
+})
+
+

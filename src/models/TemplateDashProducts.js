@@ -187,7 +187,7 @@ export class TemplateDashProducts {
                         this.modalSuccessOrError(true, 'Produto alterado com sucesso')
 
                     }
-                    this.getMyProducts()
+                    this.getMyProductsFilter('Todos')
                     
             })
             
@@ -252,7 +252,7 @@ export class TemplateDashProducts {
                 this.modalSuccessOrError(true, 'Produto adicionado com sucesso')
             }
 
-            this.getMyProducts()
+            this.getMyProductsFilter('Todos')
 
 
         }
@@ -345,7 +345,7 @@ export class TemplateDashProducts {
 
             }
             
-            this.getMyProducts()
+            this.getMyProductsFilter('Todos')
         })
 
     }
@@ -389,9 +389,12 @@ export class TemplateDashProducts {
     static async getMyProductsSearch(search) {
         const myProducts = await Api.getPrivateProducts()
 
-        search = search.toLowerCase()
+        function normalizeStr(string) {
+            const nStr = string.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+            return nStr.toLowerCase();
+        }
 
-        const productsFiltered = myProducts.filter((product) => product.nome.toLowerCase().includes(search))
+        const productsFiltered = myProducts.filter((product) => normalizeStr(product.nome).includes(normalizeStr(search)))
         this.getMyProducts(productsFiltered)
 
 

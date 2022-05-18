@@ -11,14 +11,23 @@ export class ProductHome {
     }
 
     static filterCards(event){
-    
-        const filteredProducts = event.listProducts.filter(
+        const filteredProducts = event.target.listProducts.filter(
             function(product){
-                product.categoria.includes(event.filter)
-
+                if(product.categoria != "Todos"){
+                return product.categoria.includes(event.target.innerText)
+                }else{
+                    return product
+                }
         })
-            this.createCards(filteredProducts)
+        const displayContent = document.getElementById('products-display')
+        displayContent.innerHTML = ''
+        filteredProducts.forEach(product => {
 
+            const card = this.createCard(product)
+            const display = document.getElementsByClassName('products-display')[0]
+            display.appendChild(card)
+               
+        })
     }
 
     static createCard(product) {
