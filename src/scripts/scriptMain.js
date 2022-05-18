@@ -38,7 +38,7 @@ bebidasFilter.addEventListener("click", ProductHome.filterCards)
 
 
 
-/*---------------------Carrinho Mobile---------------------*/
+/*---------------------Carrinho Mobile/Desktop---------------------*/
 
 const cartButton = document.getElementsByClassName('cart-btn');
 const closeCartButton = document.querySelector('button.close-cart-modal');
@@ -61,5 +61,90 @@ function closeModal() {
     modalCartMobile.style.display = 'none';
 }
 
-console.log(await Api.getProductsCart());
+async function getProducts() {
+    const produtos = await Api.getProductsCart();
 
+    const cards = [];
+    produtos.forEach(produto => {
+        const img = document.createElement('img');
+        img.src = `${produto.products.imagem}`;
+        img.style.width = '35px';
+        img.style.height = '35px';
+        img.style.borderRadius = '10px';
+
+        const name = document.createElement('p');
+        name.innerText = `${produto.products.nome}`;
+        name.style.fontWeight = '400';
+        name.style.color = 'var(--grey-4)';
+
+        const category = document.createElement('p');
+        category.innerText = `${produto.products.categoria}`;
+        category.style.color = 'var(--grey-3)';
+
+        const price = document.createElement('p')
+        price.innerText = `${new Intl.NumberFormat('pt-BR', {style: 'currency', currency: 'BRL'}).format(produto.products.preco)}`;
+        price.style.color = 'var(--grey-4)';
+
+        const qntdController = document.createElement('div');
+        qntdController.classList.add('qntd-controller');
+
+        const qntd = document.createElement('span');
+        qntd.innerText = `${produto.quantity}`;
+
+        const add = document.createElement('button');
+        add.innerText = '+';
+        add.style.width = '10px';
+        add.style.height = '10px';
+        minus.style.borderTopRightRadius = '50%';
+        minus.style.borderBottomRightRadius = '50%';
+        add.addEventListener('click', (e) => {
+            e.preventDefault();
+            qntd.innerText += 1;
+        });
+
+        const minus = document.createElement('button');
+        minus.innerText = '-';
+        minus.style.width = '10px';
+        minus.style.height = '10px';
+        minus.style.borderTopLeftRadius = '50%';
+        minus.style.borderBottomLeftRadius = '50%';
+        minus.addEventListener('click', (e) => {
+            e.preventDefault();
+            qntd.innerText -= 1;
+        });
+
+        qntdController.append(minus, qntd, add);
+
+        const trashBtn = document.createElement('button');
+        const trashIcon = document.createElement('img');
+        trashIcon.style.width = '100%';
+        trashIcon.style.height = '100%';
+        trashIcon.src = '';
+        trashBtn.appendChild(trashIcon);
+        trashBtn.style.width = '10px';
+        trashBtn.style.height = '10px';
+        trashBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+        })
+
+        const cartCard = document.createElement('div');
+        cartCard.classList.add('product-div-cart');
+        cartCard.append(img, name, category, price, qntdController, trashBtn);
+        cards.push(cartCard);
+    });
+    return cards;
+} 
+
+function buildCart() {
+    const cart = document.querySelector('div.cart-product-wrapper');
+    const cartList = document.querySelectorAll('div.cart-product-wrapper');
+    const mobileCart = cartList[1];
+    
+    cart.innerHTML = '';
+    const cards = getProducts();
+    cards.forEach(card => { cart.innerHTML = `${card}`});
+    cards.forEach(card => { mobileCart.innerHTML = `${card}`});
+
+}
+
+buildCart() //chamada para testes

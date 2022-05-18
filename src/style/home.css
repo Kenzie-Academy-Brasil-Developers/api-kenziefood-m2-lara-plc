@@ -801,17 +801,16 @@
 @media screen and (min-width: 769px) {
 
     .cart-total {
-        padding: 10px;
+        padding: 19px;
         color: var(--grey-3);
-        width: 106%;
+        width: 100%;
         border-bottom-left-radius: 10px;
         border-bottom-right-radius: 10px;
         display: grid;
-        column-gap: 160px;
-        row-gap: 30px;
         grid-template-areas: 'p p' 'p p';
         background-color: var(--grey-2);
-        justify-content: center;
+        justify-content: space-around;
+        gap: 15px;
     }
 
     .modal-cart {
