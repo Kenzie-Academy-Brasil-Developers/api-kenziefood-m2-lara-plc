@@ -1,0 +1,1043 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    min-height: 100vh;
+<<<<<<< HEAD
+=======
+    max-height: fit-content;
+>>>>>>> a0496724f3aa16c643247dd42997843227a85204
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    padding: 2rem;
+    height: fit-content;
+}
+
+button {
+    color: var(--grey-1);
+    background-color: var(--primary-color);
+    padding: 8px;
+    border-radius: 15px;
+    border: none;
+    cursor: pointer;
+}
+
+section {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid var(--grey-2);
+    border-radius: 15px;
+    padding: 5px 1%;
+    margin-bottom: 1rem;
+    max-width: 98%;
+}
+
+#title-editProducts {
+    border: none;
+}
+
+section p {
+    color: var(--grey-3);
+}
+
+section div, .title-editProducts p {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 8px;
+    width: 20%;
+}
+
+section div h3 {
+    font-weight: 600;
+}
+
+.product-name img {
+    width: 2rem;
+    object-fit: cover;
+    height: 2rem;
+    border-radius: 50%;
+}
+
+.categories p {
+    background-color: var(--grey-1);
+    height: fit-content;
+    padding: 4px;
+    border-radius: 7px;
+}
+
+.description p {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+
+
+section .actions, section:nth-child(1) p:nth-child(4) {
+    width: 10%; 
+}
+
+.actions div {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--grey-1);
+    color: var(--grey-3);
+    width: fit-content;
+    height: fit-content;
+    border-radius: 50%;
+    padding: 4px;
+    cursor: pointer;
+    
+}
+
+.modal-add {
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 400px;
+    background-color: white; 
+    
+}
+
+.modal-add form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 1rem;
+    padding: 20px;
+    
+}
+
+.header {
+    position: relative;
+    width: 100%; 
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    display: flex;
+    justify-content: flex-start;
+    padding: 5px 20px;
+    background-color: var(--grey-1);   
+}
+
+.close {
+    position: absolute;
+    top: 4px;
+    right: 10px;
+    background-color: var(--grey-2);
+    color: var(--grey-3);
+    padding: 1px 4px;
+    cursor: pointer;
+
+}
+
+.closeDelete {
+    position: absolute;
+    top: 30%;
+    right: 10px;
+    background-color: var(--grey-2);
+    color: var(--grey-3);
+    padding: 4px 8px;
+    cursor: pointer;
+    
+}
+
+.box-label {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.categories-edit div {
+    display: flex;
+    justify-content: space-between;
+}
+
+input {
+    border: 1px solid;
+    border-radius: 4px;
+    padding: 15px;
+}
+
+input:focus {
+    color: black;
+    background-color: transparent;
+}
+
+.categories-edit div {
+    margin-top: 5px;
+
+}
+
+.categories-edit div p, input {
+    background-color: var(--grey-1);
+    color: var(--grey-3);
+}
+
+.categories-edit div p {
+    padding: 5px 15px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.modal-add form .descricao-box input {
+    padding: 15px 15px 30px 15px;  
+}
+
+.categories-edit div .choose {
+    background-color: var(--primary-color);
+    color: var(--grey-1);
+}
+
+#form button {
+    width: 60%;
+    margin-left: 20%;
+}
+
+#buttons-edit {
+    display: flex;
+    gap: 1rem;
+    justify-content: space-around;
+
+
+}
+
+#form #buttons-edit button {
+    width: 40%;
+    margin: 0;
+}
+
+#buttons-edit #cancelEdits {
+    color: var(--grey-3);
+    background-color: var(--grey-2);
+}
+
+.tittle {
+    font-weight: 600;
+}
+
+<<<<<<< HEAD
+.addProduct {
+    position: absolute;
+    top: 10px;
+    right: 0;
+}
+=======
+
+>>>>>>> a0496724f3aa16c643247dd42997843227a85204
+.fundo-modal {
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0,0.4);
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-deleteBack {
+    padding: 10vh;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0,0.4);
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.modal-delete {
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    width: 325px;
+    gap: 30px;
+    padding-bottom: 30px;
+}
+
+.modal-delete .header {
+    padding: 20px;
+}
+
+#buttons-delete {
+    display: flex;
+    width: 80%;
+    justify-content: space-around;
+    
+}
+
+#buttons-delete button {
+    color: var(--grey-3);
+    background-color: var(--grey-1);
+    padding: 10px 15px;
+}
+
+<<<<<<< HEAD
+
+
+
+
+
+
+
+
+
+header {
+    display: flex;
+    padding: 1rem;
+    width: 100%;
+    position: fixed;
+    align-items: center;
+    background-color:#FAFAFA;
+}
+
+.filter {
+    display: flex;
+}
+
+#logo {
+    display: flex;
+    align-items: flex-end;
+    gap: 0.4rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+}
+
+.kenzie-title{
+    font-size: 21px;
+    font-style: bold;
+    color: var(--grey-4);
+}
+
+.food-title{
+    font-size: 16px;
+    color: var(--primary-color);
+    
+=======
+.modal-success {
+    width: 20rem;
+    overflow: hidden;
+    position:fixed;
+    top: 0;
+    right: 0;
+    margin-right: 0.5rem;
+    margin-top: 0.5rem;
+    border-radius: 5px;
+    background-color: white;
+}
+#message {
+    display: flex;
+    padding: 20px;
+
+}
+
+.closeSuccess {
+    position: absolute;
+    top: 4px;
+    right: 10px;
+    background-color: var(--grey-2);
+    color: var(--grey-3);
+    padding: 1px 4px;
+    cursor: pointer;
+
+}
+
+#green {
+    height: .4rem;
+    width: 100%;
+    background-color: green;
+}
+
+#red {
+    height: .4rem;
+    width: 100%;
+    background-color: red;
+>>>>>>> a0496724f3aa16c643247dd42997843227a85204
+}
+
+@media screen and (max-width: 750px) {
+
+    main {
+        font-size: 1rem;
+    }
+
+    section div, #title-editProducts p {
+        width: 18%;
+    }
+
+    section div:nth-child(4), #title-editProducts p:nth-child(4) {
+        width: 16%;
+    }
+
+<<<<<<< HEAD
+=======
+    .modal-success {
+        width: 18rem;
+        font-size: 0.9rem;
+    }
+    #message {
+        padding: 18px;
+    }
+
+>>>>>>> a0496724f3aa16c643247dd42997843227a85204
+}
+
+@media screen and (max-width: 510px) {
+
+    main {
+        font-size: 0.8rem;
+    }
+
+    .product-name, #title-editProducts p:nth-child(1) {
+        width: 33%;
+    }
+
+    .categories , #title-editProducts p:nth-child(2) {
+        display: none;
+    }
+
+    .actions {
+        gap: 2px;
+        width: 10%;
+    }
+
+    .actions div span {
+        font-size: 1.3rem;
+    }
+
+    .modal-add { 
+        width: 250px;
+    }
+    
+    .modal-add form {
+        font-size: 0.8rem; 
+        gap: .7rem;  
+    }
+
+    .modal-add form input {
+        padding: 8px;
+    }
+    
+    .categories-edit div {
+        width: 100%;
+    }
+    
+    .categories-edit div p {
+        padding: 5px;   
+    }
+    
+    .modal-add form .descricao-box input {
+        padding: 8px 8px 20px 8px;  
+    }
+    
+    #form #buttons-edit button {
+        width: 50%;
+        padding: 5px;
+    }
+    
+    .modal-delete {
+        width: 250px;
+        gap: 10px;
+        padding-bottom: 20px;
+    }
+
+    .modal-delete div:nth-child(2) {
+        font-size: 0.9rem;
+        text-align: center;
+    }
+    
+    .modal-delete .header {
+        padding: 20px;
+    }
+    
+    #buttons-delete button {
+        padding: 8px 12px;
+    }
+
+<<<<<<< HEAD
+=======
+    .modal-success {
+        width: 15rem;
+        font-size: smaller;
+    }
+    #message {
+        display: flex;
+        padding: 15px;
+    }
+    
+    #green {
+        height: .3rem;
+    }
+    
+    #red {
+        height: .3rem;
+    }
+
+>>>>>>> a0496724f3aa16c643247dd42997843227a85204
+}
+
+@media screen and (max-width: 420px) {
+
+    section div, #title-editProducts p {
+        width: 16%;
+    }
+
+    section div:nth-child(4), #title-editProducts p:nth-child(4) {
+        width: 21%;
+    }
+
+    .actions div span {
+        font-size: 1rem;
+    }
+
+    .modal-delete {
+        width: 250px;
+        gap: 10px;
+        padding-bottom: 20px;
+        font-size: 0.95rem;
+    }
+<<<<<<< HEAD
+=======
+}
+
+header {
+    display: flex;
+    width: 100%;
+    height: 10vh;
+    position: fixed;
+    align-items: center;
+    justify-content: space-between;
+    background-color:#FAFAFA;
+    padding: 0 5rem;
+    box-shadow: 0px 0px 0.5em 0.1em var(--grey-2);
+}
+
+#aside-header {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.down-header {
+    height: fit-content;
+    width: 100%;
+    padding: 15vh 2rem 0 2rem;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.filter {
+    display: flex;
+    width: 30rem;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.filter div {
+    display: flex;
+    align-items: flex-end;
+}
+
+#logo {
+    display: flex;
+    align-items: flex-end;
+    gap: 0.4rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+}
+
+.kenzie-title{
+    font-size: 21px;
+    font-style: bold;
+    color: var(--grey-4);
+}
+
+.food-title{
+    font-size: 16px;
+    color: var(--primary-color);
+    
+}
+
+.dropdown {
+    cursor: pointer;
+}
+
+.dropdown-content {
+    z-index: 100;
+    position: relative;
+    display: none;
+    position: absolute;
+    top: 10vh;
+    right: 1rem;
+    background-color: #f9f9f9;
+    min-width: 100px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+#logout {
+    display: flex;
+    align-items: flex-end;
+}
+  
+  .dropdown-content a {
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown-content a:hover {
+      background-color: #f1f1f1
+    }
+  
+  .show-drop ~ .dropdown-content {
+    display: block;
+  }
+  
+  .dropdown:hover .dropbtn {
+    background-color: #3e8e41;
+  }
+
+
+.search{
+    position: relative;
+}
+
+.search-icon{
+    position: absolute;
+    height: 40%;
+    top: 25%;
+    left: 5px;
+}
+
+.search-input{
+    padding-left: 30px;
+    border: 10px;
+    background-color: var(--grey-2);
+}
+
+.search-input:focus{
+    outline: none;
+    border: 1px solid;
+    
+}
+
+.filter-option{
+    border-radius:90px;
+    text-align: center;
+    gap: 0.3rem;
+    font-family: 'Poppins', sans-serif;
+    padding: 0.3rem;
+}
+
+.filter-option:nth-child(1) {
+    background-color: var(--product-1);
+    color: black;
+
+}
+
+.filter-option:nth-child(2) {
+    background-color: var(--product-2);
+}
+
+.filter-option:nth-child(3) {
+    background-color: var(--product-3);
+}
+
+.filter-option:nth-child(4) {
+    background-color: var(--product-4);
+}
+
+.filter-option:nth-child(5) {
+    background-color: var(--product-4);
+}
+
+.filter-option:nth-child(5) img {
+    height: 1.5rem;
+}
+
+
+.filter-option:hover{
+    filter: brightness(90%);
+    cursor: pointer;
+}
+.down-header .filter .active-filter {
+    background-color: var(--primary-color);
+    color: var(--grey-1);
+>>>>>>> a0496724f3aa16c643247dd42997843227a85204
+
+}
+
+
+
+/*
+<<<<<<< HEAD
+
+
+=======
+>>>>>>> a0496724f3aa16c643247dd42997843227a85204
+@media screen and (max-width: 768px) {
+
+
+    body{
+        background-color: #FAFAFA;
+        display: flex;
+        flex-direction: column;
+        height: fit-content;
+    }
+
+    header{
+        width: 100%;
+        position: fixed;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-end;
+        background-color:#FAFAFA;
+        padding-top: 7%;
+        padding-bottom: 2%;
+    }
+
+    .kenzie-title{
+        font-size: 21px;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 700;
+        font-style: bold;
+        color: var(--grey-4);
+        text-align: end;
+    }
+
+    .food-title{
+        font-size: 16px;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 700;
+        color: var(--primary-color);
+        margin-left: 1.2%;
+        margin-bottom: 0.5%;
+        text-align: end;
+        margin-right: 48%;
+    }
+    header>div{
+        align-self: flex-end;
+        margin-top: 2%;
+    }
+
+    .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    right: 12%;
+  }
+  
+  .dropdown-content a {
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown-content a:active {
+      background-color: #f1f1f1
+    }
+  
+  .dropdown:active .dropdown-content {
+    display: block;
+  }
+  
+  .dropdown:active .dropbtn {
+    background-color: #3e8e41;
+  }
+
+
+    .search{
+        display: flex;
+        flex-direction: row;
+        margin-top: 34%;
+        width: 100%;
+        height: 35%;
+        background-color: var(--grey-2);
+        border-radius:8px;
+    }
+
+    .search-icon{
+        height: 50%;
+        margin-top:4%;
+        margin-left: 5%;
+        margin-right: 4%;
+    }
+
+    .search-input{
+        height: 50%;
+        width: 40%;
+        margin-top:3.5%;
+        border: 0px;
+        background-color: var(--grey-2);
+        font-size: larger;
+        padding: 0px;
+    }
+
+    .filter{
+        scrollbar-width: none;
+        overflow-x: scroll;
+        margin-top: 15%;
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+    }
+
+    .filter-option{
+        display: flex;
+        flex-direction: row;
+        border-radius:90px;
+        width: fit-content;
+        background-color: var(--product-2);
+        align-items: center;
+        margin-right: 6%;
+        text-align: center;
+        padding: 4%;
+        padding-left: 7%;
+        padding-right: 7%;
+        justify-content: center;
+    }
+
+    .filter-option>img{
+        margin-right: 10%;
+    }
+
+    .active-filter{
+        background-color: var(--primary-color);
+    }
+
+    .active-filter>p{
+        font-size: 16px;
+        font-style: bold;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 500;
+        color: #FFFFFF;
+    }
+
+    .filter-options{
+        margin-top: 8%;
+        display: flex;
+        flex-direction: row;
+    }
+
+    .filter-options>p{
+    margin-right: 5%;
+    }
+
+    .filter-options>p:active{
+        text-decoration: underline;
+        color: var(--grey-4);
+    }
+
+
+}
+
+<<<<<<< HEAD
+
+
+/*---------------------Home Desktop---------------------*/
+
+/*
+=======
+>>>>>>> a0496724f3aa16c643247dd42997843227a85204
+@media screen and (min-width: 769px) {
+
+
+    body{
+        background-color: #FAFAFA;
+        display: flex;
+        flex-direction: column;
+        height: fit-content;
+    }
+
+    header{
+        z-index: 100;
+        width: 100%;
+        position: fixed;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-end;
+        background-color:#FAFAFA;
+        padding-bottom: 1%;
+        margin-left: -7.5%;
+        padding-left: 8%;
+        box-shadow: 0px 0px 0.5em 0.1em var(--grey-2);
+    }
+
+    .kenzie-title{
+        font-size: 21px;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 700;
+        font-style: bold;
+        color: var(--grey-4);
+        text-align: end;
+    }
+
+    .food-title{
+        font-size: 16px;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 700;
+        color: var(--primary-color);
+        margin-left: 0.5%;
+        margin-bottom: 0.15%;
+        text-align: end;
+        margin-right: 73.5%;
+    }
+    header>div{
+        align-self: flex-end;
+        margin-top: 1%;
+    }
+
+<<<<<<< HEAD
+    .dropdown-content {
+    z-index: 100;
+    position: relative;
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    right: 14%;
+  }
+  
+  .dropdown-content a {
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown-content a:hover {
+      background-color: #f1f1f1
+    }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+  .dropdown:hover .dropbtn {
+    background-color: #3e8e41;
+  }
+=======
+    
+>>>>>>> a0496724f3aa16c643247dd42997843227a85204
+
+
+    .search{
+        position: fixed;
+        display: flex;
+        flex-direction: row;
+        margin-top: 1.5%;
+        left: 65%;
+        width: 20%;
+        height: 5%;
+        background-color: var(--grey-2);
+        border-radius:10px;
+        align-items: center;
+        justify-content: left;
+    }
+
+    .search-icon{
+        height: 50%;
+        margin-left: 5%;
+        margin-right: 4%;
+    }
+
+    .search-input{
+        height: 50%;
+        width: 80%;
+        border: 0px;
+        background-color: var(--grey-2);
+    }
+
+    .search-input:focus{
+        outline: none;
+    }
+
+
+  
+
+    .filter{
+        margin-top:8%;
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+    }
+
+    .filter-option{
+        display: flex;
+        flex-direction: row;
+        border-radius:90px;
+        width: fit-content;
+        background-color: var(--product-2);
+        align-items: center;
+        margin-right: 2%;
+        text-align: center;
+        padding: 0.7%;
+        padding-left: 1.5%;
+        padding-right: 1.5%;
+        justify-content: center;
+    }
+
+    .filter-option>img{
+        margin-right: 10%;
+    }
+
+    .active-filter{
+        background-color: var(--primary-color);
+    }
+
+    .active-filter>p{
+        font-size: 16px;
+        font-style: bold;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 500;
+        color: #FFFFFF;
+    }
+
+
+    .filter-options{
+        margin-top: 5%;
+        display: flex;
+        flex-direction: row;
+    }
+
+    .filter-options>p{
+    margin-right: 5%;
+    }
+
+    .filter-options>p:hover{
+        text-decoration: underline;
+        color: var(--grey-4);
+        cursor: pointer;
+<<<<<<< HEAD
+    }
+
+
+    
+}
+
+*/
+=======
+    }  
+}*/
+
+>>>>>>> a0496724f3aa16c643247dd42997843227a85204
