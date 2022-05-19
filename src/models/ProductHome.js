@@ -2,7 +2,7 @@ import { Api } from "./Api.js";
 
 export class ProductHome {
     
-    static arrayProducts = [];
+    static arrayProducts = JSON.parse(localStorage.getItem('product'));
     
     static createCards(listProducts) {
         listProducts.forEach(product => {
@@ -93,7 +93,13 @@ export class ProductHome {
     }
 
     static sendProductToLocalStorage(product) {
-        this.arrayProducts.push(product)
+        const index = this.arrayProducts.findIndex((el) => el.id==product.id)
+        if(index>=0) {
+            this.arrayProducts[index].quantity = Number(this.arrayProducts[index].quantity) + 1
+        } else {
+            product.quantity = 1
+            this.arrayProducts.push(product)
+        }
         this.setLocalStorage()
     }
 
@@ -105,7 +111,7 @@ export class ProductHome {
     static getProducts() {
         const cards = [];
         
-        this.arrayProducts.forEach(produto => {
+        this.arrayProducts.forEach((produto, index) => {
             const img = document.createElement('img');
             img.classList.add('product-image');
             img.src = `${produto.imagem}`;
@@ -134,7 +140,7 @@ export class ProductHome {
             qntdController.classList.add('qntd-controller');
     
             const qntd = document.createElement('span');
-            qntd.innerText = 1;
+            qntd.innerText = produto.quantity;
     
             const add = document.createElement('button');
             add.innerText = '+';
@@ -144,8 +150,11 @@ export class ProductHome {
             add.style.borderBottomRightRadius = '50%';
             add.addEventListener('click', (e) => {
                 e.preventDefault();
-                if (Number(qntd.innerText) >= 0) {
+                if (Number(qntd.innerText) > 0) {
                     qntd.innerText = Number(qntd.innerText) + 1;
+                    this.arrayProducts[index].quantity = Number(qntd.innerText)
+                    //localStorage.setItem('product', JSON.stringify(this.arrayProducts));
+                    this.setLocalStorage()
                 }
             });
     
@@ -157,12 +166,14 @@ export class ProductHome {
             minus.style.borderBottomLeftRadius = '50%';
             minus.addEventListener('click', (e) => {
                 e.preventDefault();
-                if (Number(qntd.innerText) > 0) {
+                if (Number(qntd.innerText) > 1) {
                     qntd.innerText = Number(qntd.innerText) - 1;
+                    this.arrayProducts[index].quantity = Number(qntd.innerText)
+                    //localStorage.setItem('product', JSON.stringify(this.arrayProducts));
+                    this.setLocalStorage()
                 }
             });
             
-            console.log(qntd.innerText)
             qntdController.append(minus, qntd, add);
             const trashBtn = document.createElement('img');
             trashBtn.src = '/src/imgs/trash.png';
@@ -201,15 +212,21 @@ export class ProductHome {
     }
 
     static setAmount() {
+        let qtotal = 0
+
+        this.arrayProducts.forEach((produto) => {
+            qtotal += Number(produto.quantity)
+        })
+
         const amount = document.getElementById('amount');
-        amount.innerText = this.arrayProducts.length;
+        amount.innerText = qtotal
     }
 
     static setPrice() {
         const price = document.getElementById('total-price');
         let total = 0;
         this.arrayProducts.forEach((obj)=>{
-            total = total + obj.preco;
+            total = total + obj.preco*Number(obj.quantity);
         });
         price.innerText = `${new Intl.NumberFormat('pt-BR', {style: 'currency', currency: 'BRL'}).format(total)}`;
     }
