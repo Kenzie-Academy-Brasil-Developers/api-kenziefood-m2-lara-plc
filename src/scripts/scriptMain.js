@@ -2,7 +2,7 @@ import { Api } from "../models/Api.js";
 import { ProductHome } from "../models/ProductHome.js";
 
 const listProducts = await Api.getPublicProducts()
-
+ProductHome.buildCart()
 
 //teste para ver a estrutura do card prassando uma lista com um produto apenas:
 ProductHome.createCards(listProducts)
