@@ -875,28 +875,6 @@ header {
 
 /*---------------------Carrinho---------------------*/
 
-     /*-----Configurações para Template Grid-----*/
-
-     .product-name {
-        grid-area: name;
-        }
-    
-        .product-image {
-        grid-area: image;
-        }
-    
-        .product-category {
-        grid-area: category;
-        }
-    
-        .product-price {
-        grid-area: price;
-        }
-    
-        .trash-icon {
-        grid-area: trash;
-        }
-
 @media screen and (max-width: 768px) {
 
 
@@ -931,43 +909,48 @@ header {
         right: 4rem;
     }
 
+    .modal-cart {
+        display: none;
+    }
 
     .cart {
         color: var(--grey-3);
         visibility: hidden;
+
         position: absolute;
         width: 90%;
-        background-color: var(--grey-2);
-        left: 4.5%;
+        background-color: var(--grey-1);
+        left: 5%;
         top: 9%;
         border-bottom-left-radius: 10px;
         border-bottom-right-radius: 10px;
-        border: var(--grey-3) solid 1.5px ;
+        background-color: var(--grey-2);
         border-radius: 10px;
-        padding: 1px;
     }
 
     .cart-content-wrapper {
         background-color: var(--primary-color);
         color: var(--grey-1);
-        height: 4rem;
+        height: 5rem;
         border-top-left-radius: 10px;
         border-top-right-radius: 10px;
-        display: inline-flex;
+        display: flex;
         justify-content: space-evenly;
         align-items: center;
     }
 
+    .cart-content-wrapper > img {
+        width: 15px;
+        height: 15px;
+        margin-right: 50px;
+    }
+
+    .cart-content-wrapper > p {
+        font-size: 23px;
+        margin-right: 100px;
+    }
+
     .cart-total {
-        padding: 10px;
-        color: var(--grey-3);
-        width: 94%;
-        display: grid;
-        column-gap: 160px;
-        row-gap: 30px;
-        grid-template-areas: 'p p' 'p p';
-        background-color: var(--grey-2);
-        justify-content: center;
         visibility: hidden;
         padding: 10px;
         color: var(--grey-3);
@@ -980,81 +963,50 @@ header {
 
     }
 
-    .cart-product-wrapper{
-        height: 400px;
-        overflow-y: scroll;
+    .cart-product-wrapper {
+        display: flex;
+        justify-items: center;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    .cart-product-wrapper > div {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin: 5px;
     }
 
     .trash-icon {
-        width: 12px;
-        height: 12px;
+        width: 10px;
+        height: 10px;
     }
 
     .cart-product-wrapper > div > p {
         font-size: 12px;
-        color: var(--grey-4);
-        font-weight: 600;
     } 
 
     .cart-product-wrapper > div > .qntd-controller {
         display: flex;
         align-items: center;
         justify-content: center;
-        height: 30px;
-        font-size: 17px;
-    }
-
-    .cart-product-wrapper > div > .qntd-controller > button {
-        box-shadow: none;
-        border: solid var(--grey-4) 1px;
-    }
-
-    .qntd-controller {
-    }
-
-    .product-div-cart{
-        width: 100%;
-        margin-top: 3px;
-        margin-bottom: 5px;
-        display: grid;
-        grid-template-areas: 
-        'image name name trash'
-        'image category div div'
-        'image price div div';
-        align-items: center;
-        text-align: left;
-    }
-
-    .product-name {
-        min-width: 182.567px;
-    }
-
-    .product-category {
-        max-width: 150px;
-    }
-
-    .product-price {
         font-size: 15px;
     }
 
-    .cart-product-wrapper > div > .qntd-controller > span {
-        font-size: 11px;
-        border-top: var(--grey-4) 1px solid;
-        border-bottom: var(--grey-4) 1px solid;
-        color: var(--grey-4);
-        font-weight: 600;
-        padding: 1px;
-    }
-
-    .product-image {
-        width: 70px;
-        height: 70px;
-    }
-
-    .info-wrapper {
+    .cart-product-wrapper > div > .qntd-controller > button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: none;
+        border: solid var(--grey-4) 1px;
         text-align: center;
-        margin: 0 auto;
-        width: 99%;
+    }
+
+    .cart-product-wrapper > div > button {
+        width: 25px;
+        height: 25px;
+        border-radius: none;
     }
 
 
@@ -1065,37 +1017,6 @@ header {
 }
 
 @media screen and (min-width: 769px) {
-
-     /*-----Configurações para Template Grid-----*/
-
-    .product-name {
-    grid-area: name;
-    }
-
-    .product-image {
-    grid-area: image;
-    }
-
-    .product-category {
-    grid-area: category;
-    }
-
-    .product-price {
-    grid-area: price;
-    }
-
-    .trash-icon {
-    grid-area: trash;
-    }
-
-    .cart {
-        color: var(--grey-3);
-        background-color: var(--grey-1);
-        border-bottom-left-radius: 10px;
-        border-bottom-right-radius: 10px;
-        border: var(--grey-3) solid 1.5px ;
-        border-radius: 10px;
-    }
 
     .filter {
         margin-top: 5rem;
@@ -1113,15 +1034,15 @@ header {
         border-radius: 20px;
     }
 
-
-    .cart-product-wrapper{
-        height: 300px;
-        overflow-y: scroll;
+    .cart-content-wrapper {
+        display: flex;
+        justify-content: space-evenly;
     }
 
-    .trash-icon {
-        width: 12px;
-        height: 12px;
+    .cart-product-wrapper > div {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
     }
 
     .cart-product-wrapper > div > p {
@@ -1132,8 +1053,7 @@ header {
         display: flex;
         align-items: center;
         justify-content: center;
-        height: 60px;
-        font-size: 17px;
+        font-size: 15px;
     }
 
     .cart-product-wrapper > div > .qntd-controller > button {
@@ -1142,47 +1062,13 @@ header {
         justify-content: center;
         box-shadow: none;
         border: solid var(--grey-4) 1px;
+        text-align: center;
+    }
+
+    .cart-product-wrapper > div > button {
         width: 25px;
         height: 25px;
-    }
-
-    .product-div-cart{
-        width: 100%;
-        margin-top: 3px;
-        margin-bottom: 5px;
-        display: grid;
-        grid-template-areas: 
-        'image name name trash'
-        'image category div div'
-        'image price div div';
-        align-items: center;
-    }
-
-    .product-name {
-        min-width: 182.567px;
-    }
-
-    .product-price {
-        font-size: 25px;
-    }
-
-    .cart-product-wrapper > div > .qntd-controller > span {
-        font-size: 13px;
-        border-top: var(--grey-4) 1px solid;
-        border-bottom: var(--grey-4) 1px solid;
-    }
-
-    .product-image {
-        width: 70px;
-        height: 70px;
-    }
-
-    .product-wrapper > img {
-        border: #ff97ae 1px solid;
-    }
-
-    .product-wrapper > img:hover {
-        border: var(--primary-color) 1px solid;
+        border-radius: none;
     }
 }
 
