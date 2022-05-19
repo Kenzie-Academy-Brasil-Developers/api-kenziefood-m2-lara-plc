@@ -109,8 +109,6 @@ export class ProductHome {
             const img = document.createElement('img');
             img.classList.add('product-image');
             img.src = `${produto.imagem}`;
-            img.style.width = '35px';
-            img.style.height = '35px';
             img.style.borderRadius = '10px';
     
             const name = document.createElement('p');
