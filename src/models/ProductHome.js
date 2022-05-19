@@ -10,16 +10,7 @@ export class ProductHome {
         })
     }
 
-    static filterCards(event){
     
-        const filteredProducts = event.listProducts.filter(
-            function(product){
-                product.categoria.includes(event.filter)
-
-        })
-            this.createCards(filteredProducts)
-
-    }
 
     static createCard(product) {
 
@@ -73,7 +64,8 @@ export class ProductHome {
 
         const price = document.createElement('p')
         price.classList.add('title-2-grey-4')
-        price.innerText = preco
+        price.innerText = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(parseInt(preco))
+
 
         const buttonBuy = document.createElement('button')
             const cartImg = document.createElement('img')

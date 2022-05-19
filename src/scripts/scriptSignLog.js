@@ -27,20 +27,30 @@ function getUserData() {
     return loginData;
 }
 
-function loginUserData(e) {
+async function loginUserData(e) {
     e.preventDefault();
-    Api.loginUser(getUserData());
+    const result = await Api.loginUser(getUserData())
+    if (result != '') {
+        location.replace('/index.html');
+    } else {
+        modalError('Dados Incorretos')
+    }  
 }
+
 
 
 /*---------------Registro de Usuário---------------*/ 
 
 const formSingUp = document.getElementsByClassName('form-singup');
 
-const registrationData  = {};
-registrationData[inputs[0].name] = inputs[0].value;
-registrationData[inputs[1].name] = inputs[1].value;
-registrationData[inputs[2].name] = inputs[2].value;
+function getData() {
+    const registrationData  = {};
+    registrationData[inputs[0].name] = inputs[0].value;
+    registrationData[inputs[1].name] = inputs[1].value;
+    registrationData[inputs[2].name] = inputs[2].value;
+
+    return registrationData
+}
 formSingUp[0].addEventListener('submit', sendData);
 
 function validateEmail(email) {
@@ -69,10 +79,12 @@ function modalSuccess(message) {
     error.firstChild.textContent = `${message}`;
 }
     
-function sendData(e) {
+
+async function sendData(e) {
+
     e.preventDefault();
 
-if (validatePassword(inputs[2].value, inputs[3].value) === false) {
+    if (validatePassword(inputs[2].value, inputs[3].value) === false) {
 
     modalError('As senhas digitadas não conferem!');
     inputs[3].value = '';
@@ -85,39 +97,72 @@ if (validatePassword(inputs[2].value, inputs[3].value) === false) {
     inputs[2].value = '';
     inputs[3].value = '';
 } else {
-    modalSuccess('Registro Efetuado com sucesso!');
-    Api.registerUser(registrationData);
+
+    const registrationData = getData()
+    
+    const result = await Api.registerUser(registrationData);
+    if(result) {
+        modalSuccess('Registro Efetuado com sucesso!');
+
+    }
 }
         
 }
 
 
+const cadastro = document.querySelector('#singup');
+cadastro.addEventListener('click', irParacadastro);
+
+function irParacadastro(e) {
+    e.preventDefault();
+
+    const forms = document.querySelectorAll('form');
+    forms.forEach((form) => form.style.display = 'none' )
+
+    const formSing = document.querySelector('.form-singup');
+    formSing.style.display = 'grid'
+
+    const formsButtons = document.querySelectorAll('.modal-buttons button')
+        
+    formsButtons.forEach((button) => {
+        button.classList.remove('active')
+    })
+    document.querySelector('#form-singup').classList.add('active')
+
+}
+
+
+
 /*---------------Botoes Login e Singup---------------*/
 
-const buttonLogin = document.getElementsByClassName('button-login');
+const formsButtons = document.querySelectorAll('.modal-buttons button')
 
-const buttonSingUp = document.getElementsByClassName('button-singup');
+formsButtons.forEach((button) => {
+    button.addEventListener('click',()=> {
+        formsButtons.forEach((button) => {
+            button.classList.remove('active')
+        })
+        button.classList.add('active')
 
-buttonLogin[0].addEventListener('click', (e)=> {
-    e.preventDefault();
-    const formLogin = document.getElementsByClassName('form-login');
-    const formSingUp = document.getElementsByClassName('form-singup');
-    buttonLogin[0].style.backgroundColor = 'var(--grey-1)';
-    buttonSingUp[0].style.backgroundColor = 'var(--primary-color)';
-    buttonLogin[0].style.color = 'var(--grey-4)';
-    buttonSingUp[0].style.color = 'var(--grey-1)';
-    formLogin[0].style.display = 'grid';
-    formSingUp[0].style.display = 'none';
+        const forms = document.querySelectorAll('form');
+        forms.forEach((form) => form.style.display = 'none' )
+
+        const formActual = document.querySelector(`.${button.id}`);
+        formActual.style.display = 'grid'   
+        
+    })
 })
 
-buttonSingUp[0].addEventListener('click', (e)=> {
-    e.preventDefault();
-    const formLogin = document.getElementsByClassName('form-login');
-    const formSingUp = document.getElementsByClassName('form-singup');
-    buttonLogin[0].style.backgroundColor = 'var(--primary-color)';
-    buttonSingUp[0].style.backgroundColor = 'var(--grey-1)';
-    buttonSingUp[0].style.color = 'var(--grey-4)';
-    buttonLogin[0].style.color = 'var(--grey-1)';
-    formLogin[0].style.display = 'none';
-    formSingUp[0].style.display = 'grid';
-})
+
+
+
+
+
+const labels = document.querySelectorAll('label') 
+labels.forEach((label) =>
+    label.addEventListener('click', function(e) {
+        e.target.previousElementSibling.focus()
+
+    })
+)
+

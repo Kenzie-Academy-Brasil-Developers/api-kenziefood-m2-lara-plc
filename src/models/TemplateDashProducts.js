@@ -1,13 +1,12 @@
 import { Api } from './Api.js'
 export class TemplateDashProducts {
 
-    //funcionalidade delete
-
 
     static changes = {}
 
     static async getMyProducts() {
         const myProducts = await Api.getPrivateProducts()
+
         const container = document.querySelector('#container-productsEdit')
         container.innerHTML = ''
 
@@ -185,7 +184,7 @@ export class TemplateDashProducts {
                         this.modalSuccessOrError(true, 'Produto alterado com sucesso')
 
                     }
-                    this.getMyProducts()
+                    this.getMyProductsFilter('Todos')
                     
             })
             
@@ -250,7 +249,7 @@ export class TemplateDashProducts {
                 this.modalSuccessOrError(true, 'Produto adicionado com sucesso')
             }
 
-            this.getMyProducts()
+            this.getMyProductsFilter('Todos')
 
 
         }
@@ -343,7 +342,7 @@ export class TemplateDashProducts {
 
             }
             
-            this.getMyProducts()
+            this.getMyProductsFilter('Todos')
         })
 
     }
@@ -370,6 +369,32 @@ export class TemplateDashProducts {
             document.body.removeChild(divModal)
             
         }, 3000);
+
+    }
+
+    static async getMyProductsFilter(filter) {
+        const myProducts = await Api.getPrivateProducts()
+        console.log(myProducts)
+
+        if(filter==='Todos') {
+            this.getMyProducts(myProducts)
+        } else {
+            const productsFiltered = myProducts.filter((product) => product.categoria == filter)
+            this.getMyProducts(productsFiltered)
+        }
+    }
+
+    static async getMyProductsSearch(search) {
+        const myProducts = await Api.getPrivateProducts()
+
+        function normalizeStr(string) {
+            const nStr = string.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+            return nStr.toLowerCase();
+        }
+
+        const productsFiltered = myProducts.filter((product) => normalizeStr(product.nome).includes(normalizeStr(search)))
+        this.getMyProducts(productsFiltered)
+
 
 
     }
