@@ -11,6 +11,15 @@
     --grey-3: #868E96;
     --grey-2: #E9ECEF;
     --grey-1: #F8F9FA;
+    --bg-color: white;
+    --header-color: white;
+}
+
+.dark:root{
+    --header-color: #424447; 
+    --bg-color:#1b1c1d;
+    --grey-4: #868E96;
+    --grey-3: #cacfd3;
 }
 
 .title-1-white{

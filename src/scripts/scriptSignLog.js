@@ -3,7 +3,6 @@ import { Api } from "../models/Api.js"
 const inputs = document.querySelectorAll('input')
 inputs.forEach((input) => {
     input.addEventListener('input', function() {
-        console.log(input.value !== '')
         input.value !== '' ?
 
         input.nextElementSibling.classList.add('fill') :
@@ -17,12 +16,14 @@ inputs.forEach((input) => {
 
 const formLogin = document.getElementsByClassName('form-login');
 formLogin[0].addEventListener('submit', loginUserData);
+const inputsLogin = document.querySelectorAll('.form-login input')
+
 
 function getUserData() {
     const loginData = {};
 
-    loginData[inputs[4].name] = inputs[4].value;
-    loginData[inputs[5].name] = inputs[5].value;
+    loginData[inputsLogin[0].name] = inputsLogin[0].value;
+    loginData[inputsLogin[1].name] = inputsLogin[1].value;
 
     return loginData;
 }
@@ -30,12 +31,17 @@ function getUserData() {
 
 async function loginUserData(e) {
     e.preventDefault();
-    const result = await Api.loginUser(getUserData())
+    const userData = getUserData()
+
+    const result = await Api.loginUser(userData)
+
     if (result != '') {
         location.replace('/index.html');
     } else {
         modalError('Dados Incorretos')
-    }  
+    }
+     
+     
 }
 
 
@@ -43,12 +49,13 @@ async function loginUserData(e) {
 /*---------------Registro de Usuário---------------*/ 
 
 const formSingUp = document.getElementsByClassName('form-singup');
+const inputsSing = document.querySelectorAll('.form-singup input')
 
 function getData() {
     const registrationData  = {};
-    registrationData[inputs[0].name] = inputs[0].value;
-    registrationData[inputs[1].name] = inputs[1].value;
-    registrationData[inputs[2].name] = inputs[2].value;
+    registrationData[inputsSing[0].name] = inputsSing[0].value;
+    registrationData[inputsSing[1].name] = inputsSing[1].value;
+    registrationData[inputsSing[2].name] = inputsSing[2].value;
 
     return registrationData
 }
@@ -85,18 +92,18 @@ async function sendData(e) {
 
     e.preventDefault();
 
-    if (validatePassword(inputs[2].value, inputs[3].value) === false) {
+    if (validatePassword(inputsSing[2].value, inputsSing[3].value) === false) {
 
     modalError('As senhas digitadas não conferem!');
-    inputs[3].value = '';
+    inputsSing[3].value = '';
 
-} else if (validateEmail(inputs[1].value) === false) {
+} else if (validateEmail(inputsSing[1].value) === false) {
     modalError('Use um email válido!');
-    inputs[1].value = '';
-} else if (inputs[2].value.length < 8) {
+    inputsSing[1].value = '';
+} else if (inputsSing[2].value.length < 8) {
     modalError('A senha deve ter no mínimo 8 caracteres!');
-    inputs[2].value = '';
-    inputs[3].value = '';
+    inputsSing[2].value = '';
+    inputsSing[3].value = '';
 } else {
 
     const registrationData = getData()
@@ -159,11 +166,45 @@ formsButtons.forEach((button) => {
 
 
 
-const labels = document.querySelectorAll('label') 
+const labels = document.querySelectorAll('.modal-forms label') 
 labels.forEach((label) =>
     label.addEventListener('click', function(e) {
         e.target.previousElementSibling.focus()
 
     })
 )
+
+const seePasswords = document.querySelectorAll('#eye')
+
+seePasswords.forEach((seePassword) => 
+    seePassword.addEventListener('click', () => {
+    if(seePassword.innerText === 'visibility_off') {
+        seePassword.innerText = 'visibility'
+        seePassword.nextElementSibling.type = 'text'
+    } else {
+        seePassword.innerText = 'visibility_off'
+        seePassword.nextElementSibling.type = 'password'
+    }
+}))
+
+const darkLight = document.getElementById('input-checkbox')
+
+darkLight.addEventListener('change', () => {
+    document.querySelector('html').classList.toggle('dark')
+    if(darkLight.checked == true) {
+        localStorage.setItem('dark', true)
+    } else {
+        localStorage.setItem('dark', false)   
+    }
+})
+
+const dark = localStorage.getItem('dark')
+
+if(dark == 'true') {
+    darkLight.checked = true
+    document.querySelector('html').classList.add('dark')
+} else {
+    document.querySelector('html').classList.remove('dark')
+}
+
 
