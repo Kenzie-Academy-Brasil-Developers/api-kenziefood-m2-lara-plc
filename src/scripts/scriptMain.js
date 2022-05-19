@@ -88,18 +88,60 @@ console.log(dropdown)
 
 if(localStorage.getItem('token')) {
 
-    dropdown.innerHTML = `<a href="./pages/login.html" class="title-1-grey-4" id="logout">Logout</a>
-    <a href="./pages/dashboard.html" class="title-1-grey-4" id="drop-2">Dashboard</a>`
+    dropdown.innerHTML = `<a href="./pages/login.html" class="title-1-grey-4" id="logout"><span class="material-icons">
+    logout
+</span>Logout</a>
+    <a href="./pages/dashboard.html" class="title-1-grey-4" id="drop-2"><span class="material-icons">
+    dashboard
+    </span>Dashboard</a>`
 
 } else {
 
-    dropdown.innerHTML = `<a href="./pages/login.html" class="title-1-grey-4" id="drop-1">Cadastro/Login</a>`
+    dropdown.innerHTML = `<a href="./pages/login.html" class="title-1-grey-4" id="drop-1"><span class="material-icons">
+    how_to_reg
+    </span>Cadastro/Login</a>`
 
 }
 
 const logout = document.querySelector('#logout')
-logout.addEventListener('click', () => {
-    localStorage.removeItem('token')
-    window.location.href = "/pages/login.html"
+
+if(logout) {
+    logout.addEventListener('click', () => {
+        localStorage.removeItem('token')
+        window.location.href = "/pages/login.html"
+    })
+
+}
+
+const darkLight = document.getElementById('input-checkbox')
+
+darkLight.addEventListener('change', () => {
+    document.querySelector('html').classList.toggle('dark')
+    if(darkLight.checked == true) {
+        localStorage.setItem('dark', true)
+    } else {
+        localStorage.setItem('dark', false)   
+    }
 })
+
+const dark = localStorage.getItem('dark')
+
+if(dark == 'true') {
+    darkLight.checked = true
+    document.querySelector('html').classList.add('dark')
+} else {
+    document.querySelector('html').classList.remove('dark')
+}
+
+
+const dropdow = document.querySelector('.dropdown')
+dropdow.addEventListener('click', () => {
+    const content = document.querySelector('.dropdown-content')
+    if(content.style.display === 'block') {
+        content.style.display = 'none'
+    } else {
+        content.style.display = 'block'
+    }
+})
+
 
