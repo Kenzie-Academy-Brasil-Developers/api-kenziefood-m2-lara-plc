@@ -10,16 +10,7 @@ export class ProductHome {
         })
     }
 
-    static filterCards(event){
     
-        const filteredProducts = event.listProducts.filter(
-            function(product){
-                product.categoria.includes(event.filter)
-
-        })
-            this.createCards(filteredProducts)
-
-    }
 
     static createCard(product) {
 
