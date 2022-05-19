@@ -17,7 +17,7 @@
     --modal-bg: white;
     
     --shadow: rgb(236, 231, 231);
-    --text-color:rgb(68, 68, 68);
+    --text-color:rgb(10, 10, 10);
 }
 
 .dark:root{
@@ -25,7 +25,7 @@
     --bg-color:#1b1c1d;
     --modal-bg: #a2a6a8;
     --shadow: black;
-    --text-color:rgb(173, 166, 166);
+    --text-color:rgb(231, 211, 211)
     
 }
 body {
@@ -608,7 +608,7 @@ input:focus::placeholder {
 .kenzie-title{
     font-size: 21px;
     font-style: bold;
-    color: var(--grey-4);
+    color: var(--text-color);
 }
 
 .food-title{

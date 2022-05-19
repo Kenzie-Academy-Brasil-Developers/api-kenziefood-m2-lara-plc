@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,15 +9,26 @@
     <link rel="stylesheet" href="./src/style/reset.css">
     <link rel="stylesheet" href="./src/style/modelo.css">
     <link rel="stylesheet" href="./src/style/home.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
     <title>Kenzie Food</title>
 </head>
 <body>
+    
 <div class="grid">
 
 
     <header>
-        <p class="kenzie-title">Kenzie</p>
-        <p class="food-title">Food</p>
+            <p class="kenzie-title">Kenzie</p>
+            <p class="food-title">Food</p>
+            <div id="div-checkbox">
+                <label id="label-checkbox" for="">
+                    <input type="checkbox" id="input-checkbox">
+                    <span id="span-checkbox"></span>
+                    <p class="p-checkbox">LIGHT</p>
+                    <p class="p-checkbox">DARK</p>
+                </label>
+            </div>
         <div class="dropdown">
             <img src="./src/imgs/default_profile.png" alt="" class="">
             <div class="dropdown-content">
@@ -70,24 +81,6 @@
 
 </div>
 
-
-<div class="modal-cart">
-    <div class="modal-cart-btn">
-        <img src="./src/imgs/cart_white.png" alt="">
-        <p>Carrinho</p><button class="close-cart-modal">x</button>
-    </div>
-
-    <div class="modal-products-div">
-
-        <div class="cart-product-wrapper">
-            <img src="./src/imgs/shopping_bag.png" alt="">
-            <p class="body-text-grey-3">Por enquanto não temos produtos no carrinho</p>
-        </div>
-
-    </div>
-
-
-</div>
 
 
 
