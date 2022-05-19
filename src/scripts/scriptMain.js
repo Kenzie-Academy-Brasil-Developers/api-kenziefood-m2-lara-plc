@@ -2,7 +2,6 @@ import { Api } from "../models/Api.js";
 import { ProductHome } from "../models/ProductHome.js";
 
 const listProducts = await Api.getPublicProducts()
-console.log(listProducts)
 
 
 //teste para ver a estrutura do card prassando uma lista com um produto apenas:
@@ -58,28 +57,37 @@ bebidasFilter.addEventListener("click", filterCards)
 
 
 
-/*---------------------Carrinho Mobile---------------------*/
+/*---------------------Carrinho Mobile/Desktop---------------------*/
 
 const cartButton = document.getElementsByClassName('cart-btn');
-const closeCartButton = document.querySelector('button.close-cart-modal');
 
 cartButton[0].addEventListener('click', openModal);
-closeCartButton.addEventListener('click', closeModal)
 
 function openModal() {
-    const modalCartMobile = document.querySelector('div.modal-cart');
-    const main = document. querySelector('div.grid');
-    main.style.opacity = '0.5';
-    modalCartMobile.style.opacity = '1';
-    modalCartMobile.style.display = 'grid';
+    const cartDiv = document.querySelector('div.cart');
+    const cartTotal = document.querySelector('div.cart-total');
+
+    cartTotal.style.visibility = 'visible'
+    cartDiv.style.display = 'grid';
+    cartDiv.style.visibility = 'visible';
+
+    const closeBtn = document.createElement('p');
+    const cartHeader = document.querySelector('div.cart-content-wrapper');
+
+    closeBtn.classList.add('close-modal-btn')
+    closeBtn.innerText = 'x';
+    closeBtn.style.position = 'absolute';
+    closeBtn.style.left = '330px';
+    closeBtn.style.fontSize = '35px';
+    closeBtn.style.fontWeight = '400';
+    closeBtn.addEventListener('click', closeModal);
+    cartHeader.appendChild(closeBtn);
 }
 
-function closeModal() {
-    const modalCartMobile = document.querySelector('div.modal-cart');
-    const main = document. querySelector('div.grid');
-    main.style.opacity = '1';
-    modalCartMobile.style.display = 'none';
+function closeModal () {
+    const cartDiv = document.querySelector('div.cart');
+    const cartTotal = document.querySelector('div.cart-total');
+    cartDiv.style.visibility = 'hidden';
+    cartTotal.style.visibility = 'hidden';
 }
-
-console.log(await Api.getProductsCart());
 
