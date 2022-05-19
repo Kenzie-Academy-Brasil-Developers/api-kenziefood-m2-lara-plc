@@ -27,7 +27,6 @@ function getUserData() {
     return loginData;
 }
 
-
 async function loginUserData(e) {
     e.preventDefault();
     const result = await Api.loginUser(getUserData())

@@ -12,12 +12,10 @@ if(localStorage.getItem('user')) {
     document.querySelector('#nameUser').innerText = localStorage.getItem('user')
 }
 
-
 document.querySelector('.addProduct').addEventListener('click', function() {
     TemplateDashProducts.showModal()
     
 })
-
 
 const drop = document.querySelector('.dropdown img') 
 drop.addEventListener('click', () => {
