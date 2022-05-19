@@ -33,39 +33,12 @@ frutasFilter.addEventListener("click", ProductHome.filterCards)
 
 const bebidasFilter = document.getElementById('bebidas-filter')
 bebidasFilter.listProducts = listProducts
-bebidasFilter.filter = bebidasFilter.innerText
+
+bebidasFilter.filter = bebidasFilter.children[1].innerText
 bebidasFilter.addEventListener("click", ProductHome.filterCards)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+bebidasFilter.filter = bebidasFilter.innerText
+bebidasFilter.addEventListener("click", ProductHome.filterCards)
 
 
 /*---------------------Carrinho Mobile/Desktop---------------------*/
@@ -93,6 +66,7 @@ function closeModal() {
 
 async function getProducts() {
     const produtos = await Api.getProductsCart();
+console.log(await Api.getProductsCart());
 
     const cards = [];
     produtos.forEach(produto => {

@@ -288,11 +288,17 @@
         padding-right: 7%;
         justify-content: center;
     }
+    .filter-option>p:hover{
+        cursor: none;
+    }
+    #todos-filter:hover{
+        cursor: pointer;
+
+    }
 
     .filter-option>img{
         margin-right: 10%;
     }
-
     .active-filter{
         background-color: var(--primary-color);
     }
@@ -702,7 +708,6 @@
         text-align: center;
     }
 }
-
 
 /*---------------------Carrinho Mobile---------------------*/
 

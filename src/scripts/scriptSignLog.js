@@ -36,10 +36,7 @@ async function loginUserData(e) {
     } else {
         modalError('Dados Incorretos')
     }
-    ;
-    
 }
-
 
 /*---------------Registro de Usuário---------------*/ 
 
