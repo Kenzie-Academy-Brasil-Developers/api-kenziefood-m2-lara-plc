@@ -59,6 +59,10 @@ const bebidasFilter = document.getElementById('bebidas-filter')
 bebidasFilter.listProducts = listProducts
 bebidasFilter.addEventListener("click", filterCards)
 
+const doceFilter = document.getElementById('doce-filter')
+doceFilter.listProducts = listProducts
+doceFilter.addEventListener("click", filterCards)
+
 
 
 /*---------------------Carrinho Mobile/Desktop---------------------*/

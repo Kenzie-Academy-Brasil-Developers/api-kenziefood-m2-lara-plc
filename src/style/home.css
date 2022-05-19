@@ -299,6 +299,10 @@
     .filter-option>img{
         margin-right: 10%;
     }
+    .filter-option img {
+        width: 1rem;
+    }
+
 
     .active-filter{
         background-color: var(--primary-color);
@@ -751,7 +755,7 @@
     }
 
     .buy-button{
-
+        display: none;
         background-color: var(--primary-color);
         border-radius: 10px 10px 10px 10px;
         flex-direction: row;
