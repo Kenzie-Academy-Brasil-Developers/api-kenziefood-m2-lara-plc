@@ -4,7 +4,8 @@ export class TemplateDashProducts {
 
     static changes = {}
 
-    static async getMyProducts(myProducts) {
+    static async getMyProducts() {
+        const myProducts = await Api.getPrivateProducts()
 
         const container = document.querySelector('#container-productsEdit')
         container.innerHTML = ''
@@ -383,9 +384,7 @@ export class TemplateDashProducts {
     }
 
     static async getMyProductsSearch(search) {
-        
         const myProducts = await Api.getPrivateProducts()
-        
 
         function normalizeStr(string) {
             const nStr = string.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
