@@ -188,12 +188,12 @@ export class Api {
           method: "GET", 
           headers: {
             "Content-Type": "application/json",
-            "Authorization": `Bearer ${localStorage.getItem('token')}` 
+            "Authorization": `Bearer ${localStorage.getItem('token')} ` 
           }
           })
           .then(res => res.json())
           .then(data => data)
-    
+          console.log(localStorage.getItem('token'))
         return cartProducts
 
         /*Essa rota retorna todos os produtos que foram adicionados ao carrinho entre duas chaves:
