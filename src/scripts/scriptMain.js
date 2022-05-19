@@ -138,15 +138,6 @@ darkLight.addEventListener('change', () => {
     }
 })
 
-
-function showCheckout(){
-    const checkoutModal = document.getElementsByClassName('modal-checkout')[0]
-    checkoutModal.style.display = 'block'
-}
-
-const buyBtn = document.getElementsByClassName('buy-button')[0]
-console.log(buyBtn)
-buyBtn.addEventListener('click', showCheckout)
 const dark = localStorage.getItem('dark')
 
 if(dark == 'true') {
