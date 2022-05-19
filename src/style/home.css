@@ -845,6 +845,10 @@
         grid-template-areas: 'p p' 'p p';
         background-color: var(--grey-2);
         justify-content: center;
+        font-size: 16px;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 700;
+        color: var(--grey-3);
     }
 
     .modal-cart {

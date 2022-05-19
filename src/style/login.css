@@ -190,6 +190,13 @@
         text-align: center;
     }
 
+    label {
+        font-size: 14px;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 400;
+        color: var(--grey-4);
+    }
+
     .form-singup {
         display: grid;
         gap: 5px;
@@ -271,6 +278,13 @@
         transition: all 200ms;
         background-color: var(--grey-1);
     }
+    
+    label {
+        font-size: 14px;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 400;
+        color: var(--grey-4);
+    }
 
     .input-box input:focus ~ label, label.fill {
         top: -0.5rem;
@@ -312,6 +326,13 @@
 
     .button-singup {
         border-radius: 0 10px 0 0;
+    }
+
+    label {
+        font-size: 14px;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 400;
+        color: var(--grey-4);
     }
 
     .modal-forms {
@@ -391,6 +412,7 @@
     .input-box {
         position: relative;
         height: 1.5rem;
+        margin-top: 0.5rem;
     }
 
     .input-box label {
