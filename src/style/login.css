@@ -11,6 +11,36 @@
     --grey-3: #868E96;
     --grey-2: #E9ECEF;
     --grey-1: #F8F9FA;
+    
+    --bg-color: white;
+    --header-color: white;
+    --modal-bg: white;
+    
+    --shadow: rgb(236, 231, 231);
+    --text-color:rgb(68, 68, 68);
+}
+
+.dark:root{
+    --header-color: #424447; 
+    --bg-color:#1b1c1d;
+    --modal-bg: #a2a6a8;
+    --shadow: black;
+    --text-color:rgb(173, 166, 166);
+    
+}
+body {
+    background-color: var(--bg-color);
+    transition: background-color 500ms;
+}
+
+#eye {
+    position: absolute;
+    color: var(--grey-3);
+    right: 6.3rem;
+    top: 0.1rem;
+    font-size: 1.2rem;
+    cursor: pointer;
+    z-index: 100;
 }
 
 .title-1-white{
@@ -151,6 +181,15 @@
 /*---------------Modal Form Login & SingUp---------------*/
 
 @media screen and (max-width: 768px) {
+    #eye {
+        position: absolute;
+        color: var(--grey-3);
+        right: 3.2rem;
+        top: 0.1rem;
+        font-size: 1.2rem;
+        cursor: pointer;
+        z-index: 100;
+    }
 
     .modal-login-singup {
         margin: 35% auto;
@@ -198,7 +237,7 @@
     }
 
     .form-singup {
-        display: grid;
+        display: none;
         gap: 5px;
     }
 
@@ -215,7 +254,7 @@
     }
 
     .form-login {
-        display: none;
+        display: grid;
         gap: 5px;
     }
 
@@ -341,7 +380,7 @@
     }
 
     .form-singup {
-        display: grid;
+        display: none;
         gap: 5px;
     }
 
@@ -358,7 +397,7 @@
     }
 
     .form-login {
-        display: none;
+        display: grid;
         gap: 5px;
     }
 
@@ -458,5 +497,131 @@ label {
     font-size: 1rem;
 }
 
+input::placeholder {
+    opacity: 0;
+}
+
+input:focus::placeholder {
+    opacity: 1;
+}
+
+
+#div-checkbox {
+    position: absolute;
+    top: 13vh;
+    left: 3rem;
+
+}
+
+#label-checkbox {
+    position: relative;
+    width: 50px;
+    height: 25px;
+    background-color: transparent;
+    box-shadow: 0 0 0 4px var(--text-color);
+    border-radius: 37px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.7rem;
+    color: var(--text-color);  
+}
+
+#label-checkbox input {
+    width: 100%;
+    height: 100%;
+    appearance: none;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+}
+
+#label-checkbox span {
+    position: absolute;
+    left: -5px;
+    width: 30px;
+    height: 30px;
+    background-image: url(/src/imgs/pizza-icon.png);
+    background-size: 30px 30px;
+    background-repeat: no-repeat;
+    transition: 1.5s;
+    transform: rotate(0deg);
+    transform-origin: 15px;
+}
+
+#label-checkbox input:checked ~ span {
+    left: 25px;
+    background-image: url(/src/imgs/pizza-icon2.png);
+    transform: rotate(360deg);
+}
+
+
+#label-checkbox p:last-child {
+    left: 60px;
+    filter: none;
+}
+
+#label-checkbox p{
+    position: absolute;
+    left: -40px;
+    filter: drop-shadow(0 0 30px var(--shadow)) drop-shadow(0 0 30px var(--shadow));
+    transition: 1.5s;
+}
+
+
+#label-checkbox input:checked ~ p:last-child{
+    
+    filter: drop-shadow(0 0 30px var(--shadow)) drop-shadow(0 0 30px var(--shadow));
+}
+
+#label-checkbox p{
+    position: absolute;
+    left: -40px;
+    filter: drop-shadow(0 0 30px var(--shadow)) drop-shadow(0 0 30px var(--shadow));
+    transition: 1.5s;
+}
+
+#label-checkbox p:last-child {
+    left: 60px;
+    color: #8f8f8f;
+    filter: none;
+}
+
+#label-checkbox input:checked ~ p:last-child{
+    color: beige;
+    filter: drop-shadow(0 0 10px #fff) drop-shadow(0 0 20px #fff);
+}
+
+
+#logo {
+    display: flex;
+    align-items: flex-end;
+    gap: 0.4rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    position: fixed;
+    top: 0.5rem;
+    right: 0.5rem;
+
+}
+
+.kenzie-title{
+    font-size: 21px;
+    font-style: bold;
+    color: var(--grey-4);
+}
+
+.food-title{
+    font-size: 16px;
+    color: var(--primary-color);
+}
+
+@media (max-width: 500px) {
+    .acesso-sem-cadastro {
+        position: fixed;
+        bottom: 1rem;
+        left: 1rem;
+    }
+}
 
 

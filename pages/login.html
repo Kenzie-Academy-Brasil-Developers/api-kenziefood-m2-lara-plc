@@ -1,42 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" >
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
-    <link rel="stylesheet" href="./../src/style/reset.css">
+     <link rel="stylesheet" href="./../src/style/reset.css">
     <link rel="stylesheet" href="./../src/style/login.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
     <title>Kenzie Food</title>
 </head>
 <body>
 
     <button class="acesso-sem-cadastro"><a href="./../index.html" class="">Acessar sem cadastro</a></button>
 
+    <div id="div-checkbox">
+        <label id="label-checkbox" for="">
+            <input type="checkbox" id="input-checkbox">
+            <span id="span-checkbox"></span>
+            <p class="p-checkbox">LIGHT</p>
+            <p class="p-checkbox">DARK</p>
+        </label>
+    </div>
+
     <div class="modal-login-singup">
 
         <div class="modal-buttons">
-            <button class="button-login" id="form-login">Login</button>
-            <button class="button-singup active" id="form-singup">Cadastre-se</button>
+            <button class="button-login active" id="form-login">Login</button>
+            <button class="button-singup" id="form-singup">Cadastre-se</button>
+        </div>
+
+        <div id="logo">
+            <p class="kenzie-title">Kenzie</p>
+            <p class="food-title">Food</p>
         </div>
 
         <div class="modal-forms">
             <form action="#" class="form-singup">
                 <div class="input-box">
-                    <input type="text" id="user" name="name">
+                    <input type="text" id="user" name="name" placeholder="Digite seu nome de usuário">
                     <label for="name">Nome</label>
                 </div>
                 <div class="input-box">
-                    <input type="text"  name="email">
+                    <input type="text"  name="email" placeholder="Digite seu e-mail">
                     <label for="email">E-mail</label>
                 </div>
                 <div class="input-box">
-                    <input type="text" name="password">
+                    <span id="eye" class="material-icons">
+                        visibility_off
+                    </span>
+                    <input type="password" name="password" placeholder="Digite sua senha">
                     <label for="password">Senha</label>
                 </div>
                 <div class="input-box">
-                    <input type="password" name="confirmPass">
+                    <span id="eye" class="material-icons">
+                        visibility_off
+                    </span>
+                    <input type="password" name="confirmPass" placeholder="Digite a senha novamente">
                     <label for="confirmPass">Confirme sua Senha</label>
                 </div>
 
@@ -47,11 +68,15 @@
 
             <form action="#" class="form-login">
                 <div class="input-box">
-                    <input type="email" name="email">
+                    
+                    <input type="email" name="email" placeholder="Digite seu email">
                     <label for="email">E-mail</label>
                 </div>
                 <div class="input-box">
-                    <input type="text" id="password" name="password">
+                    <span id="eye" class="material-icons">
+                        visibility_off
+                    </span>
+                    <input type="password" id="password" name="password" placeholder="Digite sua senha">
                     <label for="password">Senha</label>
                 </div>
                 <button class="button-login-singup">Login</button>
