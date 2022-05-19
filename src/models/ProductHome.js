@@ -10,25 +10,7 @@ export class ProductHome {
         })
     }
 
-    static filterCards(event){
-        const filteredProducts = event.target.listProducts.filter(
-            function(product){
-                if(product.categoria != "Todos"){
-                return product.categoria.includes(event.target.innerText)
-                }else{
-                    return product
-                }
-        })
-        const displayContent = document.getElementById('products-display')
-        displayContent.innerHTML = ''
-        filteredProducts.forEach(product => {
-
-            const card = this.createCard(product)
-            const display = document.getElementsByClassName('products-display')[0]
-            display.appendChild(card)
-               
-        })
-    }
+    
 
     static createCard(product) {
 

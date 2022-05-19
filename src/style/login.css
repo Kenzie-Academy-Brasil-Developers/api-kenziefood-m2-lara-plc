@@ -408,6 +408,33 @@
 
 }
 
+button {
+    cursor: pointer;
+}
+label {
+    cursor: auto;
+}
+
+.active {
+    background-color: var(--grey-1);
+    color: var(--grey-4);
+}
+
+
+.acesso-sem-cadastro {
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 5px; 
+}
+
+.acesso-sem-cadastro a {
+    color: var(--grey-2);
+    height: 100%;
+    width: 100%;
+    font-size: 1rem;
+}
 
 
 

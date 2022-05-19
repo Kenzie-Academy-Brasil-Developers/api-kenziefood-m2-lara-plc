@@ -12,11 +12,13 @@
 </head>
 <body>
 
+    <button class="acesso-sem-cadastro"><a href="/index.html" class="">Acessar sem cadastro</a></button>
+
     <div class="modal-login-singup">
 
         <div class="modal-buttons">
-            <button class="button-login">Login</button>
-            <button class="button-singup">Cadastre-se</button>
+            <button class="button-login" id="form-login">Login</button>
+            <button class="button-singup active" id="form-singup">Cadastre-se</button>
         </div>
 
         <div class="modal-forms">
@@ -26,7 +28,7 @@
                     <label for="name">Nome</label>
                 </div>
                 <div class="input-box">
-                    <input type="text" id="email" name="email">
+                    <input type="text"  name="email">
                     <label for="email">E-mail</label>
                 </div>
                 <div class="input-box">
@@ -37,13 +39,15 @@
                     <input type="password" name="confirmPass">
                     <label for="confirmPass">Confirme sua Senha</label>
                 </div>
+
                 <button class="button-login-singup singuUp">Cadastre-se</button>
+
                 <div id="div-error" class=""><p></p><div class="linha"></div></div>
             </form>
 
             <form action="#" class="form-login">
                 <div class="input-box">
-                    <input type="email" id="email" name="email">
+                    <input type="email" name="email">
                     <label for="email">E-mail</label>
                 </div>
                 <div class="input-box">
@@ -52,13 +56,14 @@
                 </div>
                 <button class="button-login-singup">Login</button>
                 <div class="form-login-adicional">
-                    <p>Não tem uma conta? <a href="">Cadastre-se</a> ou</p>
-                    <a href="" class="form-acesso-sem-cadastro">acesse sem cadastro</a>
+                    <p>Não tem uma conta? <a href="" id="singup">Cadastre-se</a> ou</p>
+                    <a href="/index.html" class="form-acesso-sem-cadastro">acesse sem cadastro</a>
                 </div>
             </form>
         </div>
 
     </div>
+
 
     <script src="/src/scripts/scriptSignLog.js" type="module"></script>
     

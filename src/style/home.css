@@ -295,7 +295,7 @@
         background-color: var(--primary-color);
     }
 
-    .active-filter>p{
+    .active-filter{
         font-size: 16px;
         font-style: bold;
         font-family: 'Poppins', sans-serif;
@@ -515,7 +515,7 @@
         margin-top: 1.5%;
         left: 65%;
         width: 20%;
-        height: 5%;
+        height: 35px;
         background-color: var(--grey-2);
         border-radius:10px;
         align-items: center;
@@ -581,7 +581,7 @@
         background-color: var(--primary-color);
     }
 
-    .active-filter>p{
+    .active-filter{
         font-size: 16px;
         font-style: bold;
         font-family: 'Poppins', sans-serif;
@@ -678,7 +678,7 @@
         z-index: 1;
         position: fixed;
         left: 73%;
-        top:18%;
+        top:90px;
         width: 20%;
         height: fit-content;
         display: flex;
@@ -728,7 +728,6 @@
         text-align: center;
     }
 }
-
 
 /*---------------------Carrinho Mobile---------------------*/
 
