@@ -107,21 +107,25 @@ export class ProductHome {
         
         this.arrayProducts.forEach(produto => {
             const img = document.createElement('img');
+            img.classList.add('product-image');
             img.src = `${produto.imagem}`;
             img.style.width = '35px';
             img.style.height = '35px';
             img.style.borderRadius = '10px';
     
             const name = document.createElement('p');
+            name.classList.add('product-name');
             name.innerText = `${produto.nome}`;
             name.style.fontWeight = '600';
             name.style.color = 'var(--grey-4)';
     
             const category = document.createElement('p');
+            category.classList.add('product-category');
             category.innerText = `${produto.categoria}`;
             category.style.color = 'var(--grey-3)';
     
-            const price = document.createElement('p')
+            const price = document.createElement('p');
+            price.classList.add('product-price')
             let value = produto.preco;
             price.innerText = `${new Intl.NumberFormat('pt-BR', {style: 'currency', currency: 'BRL'}).format(value)}`;
             price.style.color = 'var(--grey-4)';
