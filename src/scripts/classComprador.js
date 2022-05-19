@@ -1,7 +1,7 @@
-import { Api } from "../models/Api";
+import { Api } from "../models/Api.js";
 
 class Modal{
-    static criarModal(children){
+    static criarModal(){
         const containerModal = document.createElement('div');
         containerModal.classList.add('modal');
 
@@ -16,10 +16,11 @@ class Modal{
         removeModal.addEventListener('click', Modal.removerModal);
 
         modal.appendChild(removeModal);
-        modal.appendChild(children);
         containerModal.appendChild(modal);
-        modal.appendChild(wishlist)
+        modal.appendChild(wishlist);
         document.body.appendChild(containerModal);
+
+        return containerModal
     }
 
     static removerModal(){
@@ -27,17 +28,24 @@ class Modal{
         document.body.removeChild(modalSelector);
     }
 
-    static productsList(arrayProdutos = Api.getProductsCart) {
+    static async productsList() {
+        const arrayProdutos = await Api.getPublicProducts()
         let ul = document.querySelector('ul')
         console.log(arrayProdutos)
         arrayProdutos.forEach((item) => {
-            let li = this.criarModal(item)
+            let li = document.createElement('li')
+            let p = document.createElement('p')
+            p.innerText = item.nome
+            li.appendChild(p)
             ul.appendChild(li)
         })
     }
+    static events(){
+        const button = document.querySelector('.wishlist')
+        console.log(button)
+        button.addEventListener('click', this.productsList)
+    }
 }
-const button = querySelector('.wishlist')
-button.addEventListener('click', productsList())
 
-Modal.criarModal()
-Modal.productsList()
+
+export default Modal

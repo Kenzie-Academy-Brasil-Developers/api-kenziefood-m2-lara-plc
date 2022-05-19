@@ -102,7 +102,7 @@ export class Api {
           })
           .then(res => res.json())
           .then(data => data)
-    
+
         return productsPrivate
     }
 
