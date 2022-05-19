@@ -13,7 +13,8 @@ function search(e){
     const search_term = e.target.value
     const filteredProducts = listProducts.filter(
         function(product){
-        return product.nome.toLowerCase().includes(search_term.toLowerCase())
+        return product.nome.toLowerCase().includes(search_term.toLowerCase()) ||
+                    product.categoria.toLowerCase().includes(search_term.toLowerCase())
     });
     const displayContent = document.getElementById('products-display')
     displayContent.innerHTML = ''
