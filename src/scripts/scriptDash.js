@@ -6,7 +6,7 @@ window.location.href = "/index.html"
 
 TemplateDashProducts.getMyProductsFilter('Todos')
 
-localStorage.setItem('user', 'Equipe 1')
+
 
 if(localStorage.getItem('user')) {
     document.querySelector('#nameUser').innerText = localStorage.getItem('user')
@@ -45,7 +45,35 @@ const logout = document.querySelector('#logout')
 logout.addEventListener('click', () => {
     localStorage.removeItem('token')
     window.location.href = "/pages/login.html"
-
 })
+
+const darkLight = document.getElementById('input-checkbox')
+
+darkLight.addEventListener('change', () => {
+    document.querySelector('html').classList.toggle('dark')
+    if(darkLight.checked == true) {
+        localStorage.setItem('dark', true)
+    } else {
+        localStorage.setItem('dark', false)   
+    }
+})
+
+const dark = localStorage.getItem('dark')
+
+if(dark == 'true') {
+    darkLight.checked = true
+    document.querySelector('html').classList.add('dark')
+} else {
+    document.querySelector('html').classList.remove('dark')
+}
+
+
+
+
+
+
+
+
+
 
 

@@ -91,3 +91,25 @@ function closeModal () {
     cartTotal.style.visibility = 'hidden';
 }
 
+console.log(await Api.getProductsCart());
+
+const dropdown = document.querySelector('.dropdown-content')
+console.log(dropdown)
+
+if(localStorage.getItem('token')) {
+
+    dropdown.innerHTML = `<a href="./pages/login.html" class="title-1-grey-4" id="logout">Logout</a>
+    <a href="./pages/dashboard.html" class="title-1-grey-4" id="drop-2">Dashboard</a>`
+
+} else {
+
+    dropdown.innerHTML = `<a href="./pages/login.html" class="title-1-grey-4" id="drop-1">Cadastro/Login</a>`
+
+}
+
+const logout = document.querySelector('#logout')
+logout.addEventListener('click', () => {
+    localStorage.removeItem('token')
+    window.location.href = "/pages/login.html"
+})
+

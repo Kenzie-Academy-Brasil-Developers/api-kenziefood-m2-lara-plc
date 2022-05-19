@@ -11,7 +11,30 @@
     --grey-3: #868E96;
     --grey-2: #E9ECEF;
     --grey-1: #F8F9FA;
+    
+    --bg-color: white;
+    --header-color: white;
+    --modal-bg: white;
+    
+    --shadow: rgb(236, 231, 231);
+    --text-color:rgb(68, 68, 68);
 }
+
+.dark:root{
+    --header-color: #424447; 
+    --bg-color:#1b1c1d;
+    --modal-bg: #a2a6a8;
+    --shadow: black;
+    --text-color:rgb(173, 166, 166);
+    
+}
+
+body {
+    background-color: var(--bg-color);
+
+}
+
+
 
 .title-1-white{
     font-size: 16px;

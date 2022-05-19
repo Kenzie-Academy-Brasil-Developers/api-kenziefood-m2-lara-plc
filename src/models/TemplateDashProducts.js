@@ -374,7 +374,6 @@ export class TemplateDashProducts {
 
     static async getMyProductsFilter(filter) {
         const myProducts = await Api.getPrivateProducts()
-        console.log(myProducts)
 
         if(filter==='Todos') {
             this.getMyProducts(myProducts)

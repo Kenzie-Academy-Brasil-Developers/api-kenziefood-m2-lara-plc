@@ -105,8 +105,6 @@ export class ProductHome {
     static getProducts() {
         const cards = [];
         
-        const produtosStringfy = localStorage.getItem('product');
-    
         this.arrayProducts.forEach(produto => {
             const img = document.createElement('img');
             img.src = `${produto.imagem}`;
@@ -116,7 +114,7 @@ export class ProductHome {
     
             const name = document.createElement('p');
             name.innerText = `${produto.nome}`;
-            name.style.fontWeight = '400';
+            name.style.fontWeight = '600';
             name.style.color = 'var(--grey-4)';
     
             const category = document.createElement('p');
@@ -124,7 +122,8 @@ export class ProductHome {
             category.style.color = 'var(--grey-3)';
     
             const price = document.createElement('p')
-            price.innerText = `${new Intl.NumberFormat('pt-BR', {style: 'currency', currency: 'BRL'}).format(produto.preco)}`;
+            let value = produto.preco;
+            price.innerText = `${new Intl.NumberFormat('pt-BR', {style: 'currency', currency: 'BRL'}).format(value)}`;
             price.style.color = 'var(--grey-4)';
     
             const qntdController = document.createElement('div');
@@ -158,9 +157,9 @@ export class ProductHome {
                     qntd.innerText = Number(qntd.innerText) - 1;
                 }
             });
-    
+            
+            console.log(qntd.innerText)
             qntdController.append(minus, qntd, add);
-    
             const trashBtn = document.createElement('img');
             trashBtn.src = '/src/imgs/trash.png';
             trashBtn.classList.add('trash-icon');
@@ -193,6 +192,22 @@ export class ProductHome {
         const cards = this.getProducts();
     
         cart.append(...cards);
+        this.setAmount();
+        this.setPrice();
+    }
+
+    static setAmount() {
+        const amount = document.getElementById('amount');
+        amount.innerText = this.arrayProducts.length;
+    }
+
+    static setPrice() {
+        const price = document.getElementById('total-price');
+        let total = 0;
+        this.arrayProducts.forEach((obj)=>{
+            total = total + obj.preco;
+        });
+        price.innerText = `${new Intl.NumberFormat('pt-BR', {style: 'currency', currency: 'BRL'}).format(total)}`;
     }
 
 }
