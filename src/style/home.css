@@ -379,7 +379,7 @@
         display: flex;
         flex-direction: row;
         margin-top:6%;
-        width: 100%;
+        width: 80%;
     }
 
     .price-cart>p{
@@ -391,7 +391,7 @@
         align-items: flex-start;
         padding: 3.5% ;
         padding-right: 4%;
-        padding-left: 4%;
+        padding-left: 2%;
         border: 0px;
         background-color: var(--secondary-color-50);
         border-radius: 50px;
