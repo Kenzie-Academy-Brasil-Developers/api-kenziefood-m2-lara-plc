@@ -1,3 +1,5 @@
+
+
 :root{
     --primary-color: #FF2253;
     --primay-color-50: #FFE9EE;
@@ -1064,10 +1066,6 @@ header {
 
 @media screen and (min-width: 769px) {
 
-    .x {
-        display: none;
-    }
-
      /*-----Configurações para Template Grid-----*/
 
     .product-name {
@@ -1179,12 +1177,8 @@ header {
         height: 70px;
     }
 
-    .product-wrapper > img {
-        border: #ff97ae 1px solid;
-    }
-
-    .product-wrapper > img:hover {
-        border: var(--primary-color) 1px solid;
+    .product-wrapper > hover {
+        border: var(--primary-color) 2px solid;
     }
 }
 
