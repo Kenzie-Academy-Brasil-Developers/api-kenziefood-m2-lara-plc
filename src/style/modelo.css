@@ -11,7 +11,37 @@
     --grey-3: #868E96;
     --grey-2: #E9ECEF;
     --grey-1: #F8F9FA;
+    --bg-dark:  #E9ECEF;
+    
+    --bg-color: white;
+    --header-color: white;
+    --modal-bg: white;
+    --input-color: #E9ECEF;
+    --default: black;
+    --shadow: rgb(236, 231, 231);
+    --text-color:rgb(15, 15, 15);
 }
+
+.dark:root{
+    --header-color: #1b1c1d; 
+    --bg-color:#1b1c1d;
+    --modal-bg: #a2a6a8;
+    --shadow: black;
+    --text-color:rgb(231, 211, 211);
+    --bg-dark:  #3f4144;
+    --input-color: #434547;
+    --grey-2: #35373a;
+    --default:#868E96;
+
+    
+}
+
+body {
+    background-color: var(--bg-color);
+
+}
+
+
 
 .title-1-white{
     font-size: 16px;

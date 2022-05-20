@@ -5,10 +5,8 @@
 body {
     width: 100vw;
     min-height: 100vh;
-<<<<<<< HEAD
-=======
-    max-height: fit-content;
->>>>>>> a0496724f3aa16c643247dd42997843227a85204
+    transition: background-color 500ms;
+
 }
 
 main {
@@ -59,6 +57,7 @@ section div, .title-editProducts p {
 
 section div h3 {
     font-weight: 600;
+    color: var(--text-color);
 }
 
 .product-name img {
@@ -75,11 +74,14 @@ section div h3 {
     border-radius: 7px;
 }
 
+
+
 .description p {
     width: 100%;
-    overflow: hidden;
+    overflow-x: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
+    height: 1.1rem;
 }
 
 
@@ -107,8 +109,13 @@ section .actions, section:nth-child(1) p:nth-child(4) {
     flex-direction: column;
     align-items: center;
     width: 400px;
-    background-color: white; 
+    background-color: var(--grey-2); 
+    overflow: hidden;
     
+}
+
+.modal-add input {
+    background-color: var(--input-color);
 }
 
 .modal-add form {
@@ -123,12 +130,13 @@ section .actions, section:nth-child(1) p:nth-child(4) {
 .header {
     position: relative;
     width: 100%; 
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
     display: flex;
     justify-content: flex-start;
     padding: 5px 20px;
-    background-color: var(--grey-1);   
+    margin-top: .06rem;
+    background-color: var(--bg-color); 
+    color: var(--default);
+     
 }
 
 .close {
@@ -227,20 +235,11 @@ input:focus {
     font-weight: 600;
 }
 
-<<<<<<< HEAD
-.addProduct {
-    position: absolute;
-    top: 10px;
-    right: 0;
-}
-=======
-
->>>>>>> a0496724f3aa16c643247dd42997843227a85204
 .fundo-modal {
-    width: 100%;
+    width: 100vw;
     height: 100vh;
     background-color: rgba(0, 0, 0,0.4);
-    position: absolute;
+    position: fixed;
     top: 0;
     display: flex;
     justify-content: center;
@@ -252,7 +251,7 @@ input:focus {
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0,0.4);
-    position: absolute;
+    position: fixed;
     top: 0;
     display: flex;
     justify-content: center;
@@ -264,10 +263,11 @@ input:focus {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: white;
+    background-color: var(--grey-2);
     width: 325px;
     gap: 30px;
     padding-bottom: 30px;
+    color: var(--default);
 }
 
 .modal-delete .header {
@@ -287,23 +287,16 @@ input:focus {
     padding: 10px 15px;
 }
 
-<<<<<<< HEAD
-
-
-
-
-
-
-
-
-
 header {
     display: flex;
-    padding: 1rem;
     width: 100%;
+    height: 10vh;
     position: fixed;
     align-items: center;
-    background-color:#FAFAFA;
+    justify-content: space-between;
+    background-color:var(--header-color);
+    padding: 0 5rem;
+    box-shadow: 0px 0px 0.5em 0.1em var(--grey-2);
 }
 
 .filter {
@@ -321,24 +314,25 @@ header {
 .kenzie-title{
     font-size: 21px;
     font-style: bold;
-    color: var(--grey-4);
+    color: var(--text-color);
 }
 
 .food-title{
     font-size: 16px;
     color: var(--primary-color);
+}
     
-=======
+
 .modal-success {
     width: 20rem;
     overflow: hidden;
     position:fixed;
-    top: 0;
+    bottom: 0;
     right: 0;
-    margin-right: 0.5rem;
-    margin-top: 0.5rem;
-    border-radius: 5px;
-    background-color: white;
+    margin-right: 1rem;
+    margin-bottom: 0.5rem;
+    background-color: var(--modal-bg);
+    border-radius: 15px;
 }
 #message {
     display: flex;
@@ -367,165 +361,11 @@ header {
     height: .4rem;
     width: 100%;
     background-color: red;
->>>>>>> a0496724f3aa16c643247dd42997843227a85204
+
 }
 
-@media screen and (max-width: 750px) {
 
-    main {
-        font-size: 1rem;
-    }
 
-    section div, #title-editProducts p {
-        width: 18%;
-    }
-
-    section div:nth-child(4), #title-editProducts p:nth-child(4) {
-        width: 16%;
-    }
-
-<<<<<<< HEAD
-=======
-    .modal-success {
-        width: 18rem;
-        font-size: 0.9rem;
-    }
-    #message {
-        padding: 18px;
-    }
-
->>>>>>> a0496724f3aa16c643247dd42997843227a85204
-}
-
-@media screen and (max-width: 510px) {
-
-    main {
-        font-size: 0.8rem;
-    }
-
-    .product-name, #title-editProducts p:nth-child(1) {
-        width: 33%;
-    }
-
-    .categories , #title-editProducts p:nth-child(2) {
-        display: none;
-    }
-
-    .actions {
-        gap: 2px;
-        width: 10%;
-    }
-
-    .actions div span {
-        font-size: 1.3rem;
-    }
-
-    .modal-add { 
-        width: 250px;
-    }
-    
-    .modal-add form {
-        font-size: 0.8rem; 
-        gap: .7rem;  
-    }
-
-    .modal-add form input {
-        padding: 8px;
-    }
-    
-    .categories-edit div {
-        width: 100%;
-    }
-    
-    .categories-edit div p {
-        padding: 5px;   
-    }
-    
-    .modal-add form .descricao-box input {
-        padding: 8px 8px 20px 8px;  
-    }
-    
-    #form #buttons-edit button {
-        width: 50%;
-        padding: 5px;
-    }
-    
-    .modal-delete {
-        width: 250px;
-        gap: 10px;
-        padding-bottom: 20px;
-    }
-
-    .modal-delete div:nth-child(2) {
-        font-size: 0.9rem;
-        text-align: center;
-    }
-    
-    .modal-delete .header {
-        padding: 20px;
-    }
-    
-    #buttons-delete button {
-        padding: 8px 12px;
-    }
-
-<<<<<<< HEAD
-=======
-    .modal-success {
-        width: 15rem;
-        font-size: smaller;
-    }
-    #message {
-        display: flex;
-        padding: 15px;
-    }
-    
-    #green {
-        height: .3rem;
-    }
-    
-    #red {
-        height: .3rem;
-    }
-
->>>>>>> a0496724f3aa16c643247dd42997843227a85204
-}
-
-@media screen and (max-width: 420px) {
-
-    section div, #title-editProducts p {
-        width: 16%;
-    }
-
-    section div:nth-child(4), #title-editProducts p:nth-child(4) {
-        width: 21%;
-    }
-
-    .actions div span {
-        font-size: 1rem;
-    }
-
-    .modal-delete {
-        width: 250px;
-        gap: 10px;
-        padding-bottom: 20px;
-        font-size: 0.95rem;
-    }
-<<<<<<< HEAD
-=======
-}
-
-header {
-    display: flex;
-    width: 100%;
-    height: 10vh;
-    position: fixed;
-    align-items: center;
-    justify-content: space-between;
-    background-color:#FAFAFA;
-    padding: 0 5rem;
-    box-shadow: 0px 0px 0.5em 0.1em var(--grey-2);
-}
 
 #aside-header {
     display: flex;
@@ -536,7 +376,7 @@ header {
 .down-header {
     height: fit-content;
     width: 100%;
-    padding: 15vh 2rem 0 2rem;
+    padding: 20vh 2rem 0 2rem;
     display: flex;
     justify-content: space-between;
 
@@ -562,11 +402,7 @@ header {
     font-weight: 700;
 }
 
-.kenzie-title{
-    font-size: 21px;
-    font-style: bold;
-    color: var(--grey-4);
-}
+
 
 .food-title{
     font-size: 16px;
@@ -585,7 +421,7 @@ header {
     position: absolute;
     top: 10vh;
     right: 1rem;
-    background-color: #f9f9f9;
+    background-color: var(--modal-bg);
     min-width: 100px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
@@ -599,6 +435,7 @@ header {
     padding: 12px 16px;
     text-decoration: none;
     display: block;
+    color: black;
   }
   
   .dropdown-content a:hover {
@@ -679,365 +516,727 @@ header {
 .down-header .filter .active-filter {
     background-color: var(--primary-color);
     color: var(--grey-1);
->>>>>>> a0496724f3aa16c643247dd42997843227a85204
 
 }
 
 
 
-/*
-<<<<<<< HEAD
-
-
-=======
->>>>>>> a0496724f3aa16c643247dd42997843227a85204
-@media screen and (max-width: 768px) {
-
-
-    body{
-        background-color: #FAFAFA;
-        display: flex;
-        flex-direction: column;
-        height: fit-content;
-    }
-
-    header{
-        width: 100%;
-        position: fixed;
-        display: flex;
-        flex-direction: row;
-        align-items: flex-end;
-        background-color:#FAFAFA;
-        padding-top: 7%;
-        padding-bottom: 2%;
-    }
-
-    .kenzie-title{
-        font-size: 21px;
-        font-family: 'Poppins', sans-serif;
-        font-weight: 700;
-        font-style: bold;
-        color: var(--grey-4);
-        text-align: end;
-    }
-
-    .food-title{
-        font-size: 16px;
-        font-family: 'Poppins', sans-serif;
-        font-weight: 700;
-        color: var(--primary-color);
-        margin-left: 1.2%;
-        margin-bottom: 0.5%;
-        text-align: end;
-        margin-right: 48%;
-    }
-    header>div{
-        align-self: flex-end;
-        margin-top: 2%;
-    }
-
-    .dropdown-content {
-    display: none;
+#div-checkbox {
     position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-    right: 12%;
-  }
-  
-  .dropdown-content a {
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-  }
-  
-  .dropdown-content a:active {
-      background-color: #f1f1f1
-    }
-  
-  .dropdown:active .dropdown-content {
-    display: block;
-  }
-  
-  .dropdown:active .dropbtn {
-    background-color: #3e8e41;
-  }
-
-
-    .search{
-        display: flex;
-        flex-direction: row;
-        margin-top: 34%;
-        width: 100%;
-        height: 35%;
-        background-color: var(--grey-2);
-        border-radius:8px;
-    }
-
-    .search-icon{
-        height: 50%;
-        margin-top:4%;
-        margin-left: 5%;
-        margin-right: 4%;
-    }
-
-    .search-input{
-        height: 50%;
-        width: 40%;
-        margin-top:3.5%;
-        border: 0px;
-        background-color: var(--grey-2);
-        font-size: larger;
-        padding: 0px;
-    }
-
-    .filter{
-        scrollbar-width: none;
-        overflow-x: scroll;
-        margin-top: 15%;
-        display: flex;
-        flex-direction: row;
-        width: 100%;
-    }
-
-    .filter-option{
-        display: flex;
-        flex-direction: row;
-        border-radius:90px;
-        width: fit-content;
-        background-color: var(--product-2);
-        align-items: center;
-        margin-right: 6%;
-        text-align: center;
-        padding: 4%;
-        padding-left: 7%;
-        padding-right: 7%;
-        justify-content: center;
-    }
-
-    .filter-option>img{
-        margin-right: 10%;
-    }
-
-    .active-filter{
-        background-color: var(--primary-color);
-    }
-
-    .active-filter>p{
-        font-size: 16px;
-        font-style: bold;
-        font-family: 'Poppins', sans-serif;
-        font-weight: 500;
-        color: #FFFFFF;
-    }
-
-    .filter-options{
-        margin-top: 8%;
-        display: flex;
-        flex-direction: row;
-    }
-
-    .filter-options>p{
-    margin-right: 5%;
-    }
-
-    .filter-options>p:active{
-        text-decoration: underline;
-        color: var(--grey-4);
-    }
-
+    top: 13vh;
+    left: 3rem;
 
 }
 
-<<<<<<< HEAD
-
-
-/*---------------------Home Desktop---------------------*/
-
-/*
-=======
->>>>>>> a0496724f3aa16c643247dd42997843227a85204
-@media screen and (min-width: 769px) {
-
-
-    body{
-        background-color: #FAFAFA;
-        display: flex;
-        flex-direction: column;
-        height: fit-content;
-    }
-
-    header{
-        z-index: 100;
-        width: 100%;
-        position: fixed;
-        display: flex;
-        flex-direction: row;
-        align-items: flex-end;
-        background-color:#FAFAFA;
-        padding-bottom: 1%;
-        margin-left: -7.5%;
-        padding-left: 8%;
-        box-shadow: 0px 0px 0.5em 0.1em var(--grey-2);
-    }
-
-    .kenzie-title{
-        font-size: 21px;
-        font-family: 'Poppins', sans-serif;
-        font-weight: 700;
-        font-style: bold;
-        color: var(--grey-4);
-        text-align: end;
-    }
-
-    .food-title{
-        font-size: 16px;
-        font-family: 'Poppins', sans-serif;
-        font-weight: 700;
-        color: var(--primary-color);
-        margin-left: 0.5%;
-        margin-bottom: 0.15%;
-        text-align: end;
-        margin-right: 73.5%;
-    }
-    header>div{
-        align-self: flex-end;
-        margin-top: 1%;
-    }
-
-<<<<<<< HEAD
-    .dropdown-content {
-    z-index: 100;
+#label-checkbox {
     position: relative;
-    display: none;
+    width: 50px;
+    height: 25px;
+    background-color: transparent;
+    box-shadow: 0 0 0 4px var(--text-color);
+    border-radius: 37px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.7rem;
+    color: var(--text-color);  
+}
+
+#label-checkbox input {
+    width: 100%;
+    height: 100%;
+    appearance: none;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+}
+
+#label-checkbox input:focus {
+    border: none;
+    outline: none;
+}
+
+#label-checkbox span {
     position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-    right: 14%;
-  }
-  
-  .dropdown-content a {
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-  }
-  
-  .dropdown-content a:hover {
-      background-color: #f1f1f1
-    }
-  
-  .dropdown:hover .dropdown-content {
-    display: block;
-  }
-  
-  .dropdown:hover .dropbtn {
-    background-color: #3e8e41;
-  }
-=======
-    
->>>>>>> a0496724f3aa16c643247dd42997843227a85204
+    left: -5px;
+    width: 30px;
+    height: 30px;
+    background-image: url(/src/imgs/pizza-icon.png);
+    background-size: 30px 30px;
+    background-repeat: no-repeat;
+    transition: 1.5s;
+    transform: rotate(0deg);
+    transform-origin: 15px;
+}
 
+#label-checkbox input:checked ~ span {
+    left: 25px;
+    background-image: url(/src/imgs/pizza-icon2.png);
+    transform: rotate(360deg);
+}
 
-    .search{
-        position: fixed;
-        display: flex;
-        flex-direction: row;
-        margin-top: 1.5%;
-        left: 65%;
-        width: 20%;
-        height: 5%;
-        background-color: var(--grey-2);
-        border-radius:10px;
-        align-items: center;
-        justify-content: left;
-    }
-
-    .search-icon{
-        height: 50%;
-        margin-left: 5%;
-        margin-right: 4%;
-    }
-
-    .search-input{
-        height: 50%;
-        width: 80%;
-        border: 0px;
-        background-color: var(--grey-2);
-    }
-
-    .search-input:focus{
-        outline: none;
-    }
-
-
-  
-
-    .filter{
-        margin-top:8%;
-        display: flex;
-        flex-direction: row;
-        width: 100%;
-    }
-
-    .filter-option{
-        display: flex;
-        flex-direction: row;
-        border-radius:90px;
-        width: fit-content;
-        background-color: var(--product-2);
-        align-items: center;
-        margin-right: 2%;
-        text-align: center;
-        padding: 0.7%;
-        padding-left: 1.5%;
-        padding-right: 1.5%;
-        justify-content: center;
-    }
-
-    .filter-option>img{
-        margin-right: 10%;
-    }
-
-    .active-filter{
-        background-color: var(--primary-color);
-    }
-
-    .active-filter>p{
-        font-size: 16px;
-        font-style: bold;
-        font-family: 'Poppins', sans-serif;
-        font-weight: 500;
-        color: #FFFFFF;
-    }
-
-
-    .filter-options{
-        margin-top: 5%;
-        display: flex;
-        flex-direction: row;
-    }
-
-    .filter-options>p{
-    margin-right: 5%;
-    }
-
-    .filter-options>p:hover{
-        text-decoration: underline;
-        color: var(--grey-4);
-        cursor: pointer;
-<<<<<<< HEAD
-    }
-
-
+#label-checkbox input:checked ~ p{
     
 }
 
-*/
-=======
-    }  
-}*/
 
->>>>>>> a0496724f3aa16c643247dd42997843227a85204
+#label-checkbox p:last-child {
+    left: 60px;
+    filter: none;
+}
+
+#label-checkbox p{
+    position: absolute;
+    left: -40px;
+    filter: drop-shadow(0 0 30px var(--shadow)) drop-shadow(0 0 30px var(--shadow));
+    transition: 1.5s;
+}
+
+
+#label-checkbox input:checked ~ p:last-child{
+    
+    filter: drop-shadow(0 0 30px var(--shadow)) drop-shadow(0 0 30px var(--shadow));
+}
+
+#label-checkbox p{
+    position: absolute;
+    left: -40px;
+    filter: drop-shadow(0 0 30px var(--shadow)) drop-shadow(0 0 30px var(--shadow));
+    transition: 1.5s;
+}
+
+#label-checkbox p:last-child {
+    left: 60px;
+    color: #8f8f8f;
+    filter: none;
+}
+
+#label-checkbox input:checked ~ p:last-child{
+    color: beige;
+    filter: drop-shadow(0 0 10px #fff) drop-shadow(0 0 20px #fff);
+}
+
+
+@media screen and (max-width: 750px) {
+
+    main {
+        font-size: 1rem;
+    }
+
+    section div, #title-editProducts p {
+        width: 18%;
+    }
+
+    section div:nth-child(4), #title-editProducts p:nth-child(4) {
+        width: 16%;
+    }
+
+    .modal-success {
+        width: 18rem;
+        font-size: 0.9rem;
+    }
+    #message {
+        padding: 18px;
+    }
+
+}
+
+@media screen and (max-width:700px) {
+    header {
+        height: 10vh;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 5rem;
+    }
+    
+    #aside-header {
+        gap: 1rem;
+    }
+    
+    .down-header {
+        height: fit-content;
+        width: 100%;
+        padding: 18vh 1rem 0 1rem;
+        justify-content: space-between;
+    }
+    
+    .filter {
+        width: 27rem;
+        justify-content: space-between;
+        align-items: center; 
+    }
+    
+    .filter div {
+
+        align-items: flex-end;
+    }
+    
+    #logo {
+        gap: 0.4rem;
+        font-weight: 700;
+    }
+    
+    .kenzie-title{
+        font-size: 21px;
+        font-style: bold;
+    }
+    
+    .food-title{
+        font-size: 16px;
+    }
+    
+    .dropdown {
+        cursor: pointer;
+    }
+    
+    .dropdown-content {
+        top: 10vh;
+        right: 1rem;
+        min-width: 100px;
+    }
+    #logout {
+        align-items: flex-end;
+    }
+      
+      .dropdown-content a {
+        padding: 12px 16px;
+        display: block;
+    }
+    
+    .search{
+        position: relative;
+    }
+    
+    .search-icon{
+        position: absolute;
+        height: 40%;
+        top: 25%;
+        left: 5px;
+    }
+    
+    .search-input{
+        padding-left: 30px;
+        border: 10px;
+    }
+    
+    .filter-option{
+        border-radius:90px;
+        gap: 0.3rem;
+        padding: 0.3rem;
+    }
+    
+}
+@media screen and (max-width:610px) {
+
+    header {
+        height: 10vh;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 2.8rem;
+    }
+    
+    #aside-header {
+        gap: 1rem;
+    }
+    
+    .down-header {
+        height: fit-content;
+        width: 100%;
+        padding: 18vh 2rem 0 2rem;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .down-header button {
+        margin-top: .5rem;
+        width: 10rem;
+    }
+    
+    .filter {
+        width: 100%;
+        justify-content: space-between;
+        align-items: center; 
+        
+    }
+    
+    .filter div {
+
+        align-items: flex-end;
+    }
+    
+    #logo {
+        gap: 0.4rem;
+        font-weight: 700;
+    }
+    
+    .kenzie-title{
+        font-size: 21px;
+        font-style: bold;
+    }
+    
+    .food-title{
+        font-size: 16px;
+    }
+    
+    .dropdown {
+        cursor: pointer;
+    }
+    
+    .dropdown-content {
+        top: 10vh;
+        right: 1rem;
+        min-width: 100px;
+    }
+    #logout {
+        align-items: flex-end;
+    }
+      
+      .dropdown-content a {
+        padding: 12px 16px;
+        display: block;
+    }
+    
+    .search{
+        position: relative;
+    }
+    
+    .search-icon{
+        position: absolute;
+        height: 40%;
+        top: 25%;
+        left: 5px;
+    }
+    
+    .search-input{
+        padding-left: 30px;
+        height: 1rem;
+        width: 13rem;
+        font-size: 1rem;
+    }
+    
+    .filter-option{
+        border-radius:90px;
+        gap: 0.3rem;
+        padding: 0.3rem;
+    }
+}
+@media screen and (max-width: 510px) {
+
+    main {
+        font-size: 0.9rem;
+    }
+
+    .product-name, #title-editProducts p:nth-child(1) {
+        width: 20%;
+    }
+
+    
+
+    .actions {
+        gap: 2px;
+        width: 10%;
+    }
+
+    .actions div span {
+        font-size: 1.3rem;
+    }
+
+    .modal-add { 
+        width: 250px;
+    }
+    
+    .modal-add form {
+        font-size: 0.8rem; 
+        gap: .7rem;  
+    }
+
+    .modal-add form input {
+        padding: 8px;
+    }
+    
+    .categories-edit div {
+        width: 100%;
+    }
+    
+    .categories-edit div p {
+        padding: 5px;   
+    }
+    
+    .modal-add form .descricao-box input {
+        padding: 8px 8px 20px 8px;  
+    }
+    
+    #form #buttons-edit button {
+        width: 50%;
+        padding: 5px;
+    }
+    
+    .modal-delete {
+        width: 250px;
+        gap: 10px;
+        padding-bottom: 20px;
+    }
+
+    .modal-delete div:nth-child(2) {
+        font-size: 0.9rem;
+        text-align: center;
+    }
+    
+    .modal-delete .header {
+        padding: 20px;
+    }
+    
+    #buttons-delete button {
+        padding: 8px 12px;
+    }
+
+    .modal-success {
+        width: 15rem;
+        font-size: smaller;
+    }
+    #message {
+        display: flex;
+        padding: 15px;
+    }
+    
+    #green {
+        height: .3rem;
+    }
+    
+    #red {
+        height: .3rem;
+    }
+
+    header {
+        height: 10vh;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 1.5rem;
+    }
+    
+    #aside-header {
+        gap: 1rem;
+    }
+    
+    .down-header {
+        height: fit-content;
+        width: 100%;
+        padding: 18vh 2rem 0 2rem;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .down-header button {
+        margin-top: .5rem;
+        width: 10rem;
+    }
+    
+    .filter {
+        width: 100%;
+        overflow-x: scroll;
+        padding-bottom: 5px;
+    }
+
+    ::-webkit-scrollbar {
+        height: 3px;
+      }
+      
+     
+      ::-webkit-scrollbar-track {
+        background: transparent;
+
+      }
+      
+     
+      ::-webkit-scrollbar-thumb {
+        background: var(--grey-2);
+      }
+      
+      
+      ::-webkit-scrollbar-thumb:hover {
+        background: var(--grey-3);
+      }
+    
+    .filter div {
+
+        align-items: flex-end;
+    }
+    
+    #logo {
+        gap: 0.4rem;
+        font-weight: 700;
+    }
+    
+    .kenzie-title{
+        font-size: 21px;
+        font-style: bold;
+    }
+    
+    .food-title{
+        font-size: 16px;
+    }
+    
+    .dropdown {
+        cursor: pointer;
+    }
+    
+    .dropdown-content {
+        top: 10vh;
+        right: 1rem;
+        min-width: 100px;
+    }
+    #logout {
+        align-items: flex-end;
+    }
+      
+      .dropdown-content a {
+        padding: 12px 16px;
+        display: block;
+    }
+    
+    .search{
+        position: relative;
+    }
+    
+    .search-icon{
+        position: absolute;
+        height: 40%;
+        top: 25%;
+        left: 5px;
+    }
+    
+    .search-input{
+        padding-left: 30px;
+        height: 1rem;
+        width: 11rem;
+        font-size: 0.8rem;
+    }
+    
+    .filter-option{
+        border-radius:90px;
+        gap: 0.3rem;
+        padding: 0.3rem;
+    }
+
+    .filter-option{
+        margin-left: 0.5rem; 
+    }
+
+}
+
+@media  screen and (max-width: 480px) {
+
+    main {
+        font-size: 0.8rem;
+    }
+
+    #div-checkbox {
+        position: absolute;
+        top: 12vh;
+        left: 3rem;
+    
+    }
+    
+    #label-checkbox {
+        position: relative;
+        width: 50px;
+        height: 25px;
+        border-radius: 37px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 0.7rem;
+    }
+    
+    #label-checkbox input {
+        width: 100%;
+        height: 100%;
+        appearance: none;
+        cursor: pointer;
+        background-color: transparent;
+        border: none;
+    }
+    
+    #label-checkbox span {
+        position: absolute;
+        left: -5px;
+        width: 30px;
+        height: 30px;
+        background-image: url(/src/imgs/pizza-icon.png);
+        background-size: 30px 30px;
+        background-repeat: no-repeat;
+        transition: 1.5s;
+        transform: rotate(0deg);
+        transform-origin: 15px;
+    }
+    
+    #label-checkbox input:checked ~ span {
+        left: 25px;
+        background-image: url(/src/imgs/pizza-icon2.png);
+        transform: rotate(360deg);
+    }
+    
+    #label-checkbox input:checked ~ p{
+        color: #8f8f8f;
+        filter: none;
+    }
+    
+    #label-checkbox p{
+        position: absolute;
+        left: -40px;
+        filter: drop-shadow(0 0 10px #fff) drop-shadow(0 0 20px #fff);
+        transition: 1.5s;
+    }
+    
+    #label-checkbox p:last-child {
+        left: 60px;
+        color: #8f8f8f;
+        filter: none;
+    }
+    
+    #label-checkbox input:checked ~ p:last-child{
+        color: beige;
+        filter: drop-shadow(0 0 10px #fff) drop-shadow(0 0 20px #fff);
+    }
+    
+}
+
+@media screen and (max-width: 420px) {
+
+    section div, #title-editProducts p {
+        width: 30%;  
+    }
+
+    .description , #title-editProducts p:nth-child(3) {
+        display: none;
+    }
+
+    section div:nth-child(4), #title-editProducts p:nth-child(4) {
+        width: 21%;
+    }
+
+    section div:nth-child(1), #title-editProducts p:nth-child(1) {
+        width: 35%;
+    }
+
+    .actions div span {
+        font-size: 1rem;
+    }
+
+    .modal-delete {
+        width: 250px;
+        gap: 10px;
+        padding-bottom: 20px;
+        font-size: 0.95rem;
+    }
+
+    header {
+        padding: 0 .8rem;
+    }
+    
+    #aside-header {
+        gap: 0.3rem;
+    }
+    
+    .down-header {
+        height: fit-content;
+        width: 100%;
+        padding: 20vh 2rem 0 2rem;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .down-header button {
+        margin-top: .5rem;
+        width: 10rem;
+    }
+    
+    .filter {
+        width: 100%;
+        overflow-x: scroll;
+    }
+    
+    .filter div {
+
+        align-items: flex-end;
+    }
+    
+    #logo {
+        gap: 0.2rem;
+        display: flex;
+        align-items: center;
+        font-weight: 700;
+    }
+    
+    .kenzie-title{
+        font-size: 18px;
+        font-style: bold;
+    }
+    
+    .food-title{
+        font-size: 13px;
+    }
+    
+    .dropdown {
+        cursor: pointer;
+    }
+
+    .dropdown img {
+        width: 1.6rem;
+    }
+    
+    .dropdown-content {
+        top: 10vh;
+        right: 1rem;
+        min-width: 90px;
+    }
+    #logout {
+        align-items: flex-end;
+        font-size: .8rem;
+        justify-content: center;
+    }
+      
+      .dropdown-content a {
+        padding: 5px;
+    }
+    
+    .search{
+        position: relative;
+    }
+    
+    .search-icon{
+        position: absolute;
+        height: 40%;
+        top: 25%;
+        left: 5px;
+    }
+    
+    .search-input{
+        padding-left: 20px;
+        height: 1rem;
+        width: 9rem;
+        font-size: 0.7rem;
+    }
+
+    .filter-option img {
+        width: 1rem;
+    }
+
+    .filter-option img:nth-child(5) {
+        width: .8rem;
+    }
+    
+    .filter-option{
+        margin-left: 0.4rem;
+        border-radius:90px;
+        gap: 0.3rem;
+        padding: 0.2rem 0.3rem;
+        font-size: .9rem;
+    }
+}
+
+
+

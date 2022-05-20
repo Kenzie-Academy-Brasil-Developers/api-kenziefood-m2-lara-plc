@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+     <link rel="stylesheet" href="./../src/style/reset.css">
+    <link rel="stylesheet" href="./../src/style/checkout.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
+    <title>Kenzie Food</title>
+</head>
+<body>
+
+    <button class="acesso-sem-cadastro"><a href="./../index.html" class="">Acessar sem cadastro</a></button>
+
+    <div id="div-checkbox">
+        <label id="label-checkbox" for="">
+            <input type="checkbox" id="input-checkbox">
+            <span id="span-checkbox"></span>
+            <p class="p-checkbox">LIGHT</p>
+            <p class="p-checkbox">DARK</p>
+        </label>
+    </div>
+
+    <div class="modal-pix-card">
+
+        <div class="modal-buttons">
+            <button class="button-pix button active" id="form-pix">Pix</button>
+            <button class="button-card button" id="form-card">Cartão</button>
+        </div>
+
+        <div id="logo">
+            <p class="kenzie-title">Kenzie</p>
+            <p class="food-title">Food</p>
+        </div>
+
+        <div class="modal-forms">
+            <div class="form-card form">
+                <div class="input-box">
+                    <input type="text" id="user" name="name" placeholder="xxxx-xxxx-xxxx-xxxx ">
+                    <label for="name">Número do Cartão</label>
+                </div>
+                <div class="input-box">
+                    <input type="text"  name="email" placeholder="MM/AA">
+                    <label for="email">Validade</label>
+                </div>
+                <div class="input-box">
+                    <input type="text" name="cvv" placeholder="Digite seu código">
+                    <label for="password">CVV</label>
+                </div>
+                <div class="input-box">
+                    <input type="text" name="cardName" placeholder="Digite o nome">
+                    <label for="confirmPass">Nome no cartão</label>
+                </div>
+
+                <button class="button-pix-card singuUp">Finalizar</button>
+
+                <div id="div-error" class=""><p></p><div class="linha"></div></div>
+            </div>
+
+            <div class="form-pix form">
+                <h3>Escaneie o QR code abaixo</h3>           
+                <h3>com app do seu banco</h3>
+                <img src="./../src/imgs/QR_code.png" alt="">     
+                <button class="button-pix-card">Ok</button>
+            </div>
+        </div>
+
+    </div>
+
+
+    <script src="./../src/scripts/scriptCheckout.js" type="module"></script>
+    
+</body>
+</html>
