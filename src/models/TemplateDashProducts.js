@@ -4,8 +4,7 @@ export class TemplateDashProducts {
 
     static changes = {}
 
-    static async getMyProducts() {
-        const myProducts = await Api.getPrivateProducts()
+    static async getMyProducts(myProducts) {
 
         const container = document.querySelector('#container-productsEdit')
         container.innerHTML = ''
@@ -393,6 +392,8 @@ export class TemplateDashProducts {
 
         const productsFiltered = myProducts.filter((product) => normalizeStr(product.nome).includes(normalizeStr(search)))
         this.getMyProducts(productsFiltered)
+
+        console.log('test')
 
 
 
