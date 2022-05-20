@@ -1,7 +1,6 @@
 import { Api } from "./Api.js";
 
 
-
 if(localStorage.getItem('product')==null) {
     localStorage.setItem('product', JSON.stringify([]))
 }
@@ -204,17 +203,6 @@ export class ProductHome {
         const cards = [];
 
         let productsCart = await this.localOrApi()
-
-        /*if(productsCart.length==0) {
-            const div = document.createElement('div')
-            div.classList.add('cart-product-wrapper')
-            div.innerHTML = `
-            <img src="./src/imgs/shopping_bag.png" alt="">
-            <p class="body-text-grey-3">Por enquanto não temos produtos no carrinho</p>`
-
-            return div
-            
-        }*/
         
         productsCart.forEach((produto, index) => {
             const img = document.createElement('img');
