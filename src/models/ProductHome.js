@@ -5,8 +5,6 @@ if(localStorage.getItem('product')==null) {
     localStorage.setItem('product', JSON.stringify([]))
 }
 
-
-
 export class ProductHome {
     
     static arrayProducts = JSON.parse(localStorage.getItem('product'));
@@ -287,11 +285,28 @@ export class ProductHome {
     static async buildCart() {
         const cart = document.querySelector('div.cart-product-wrapper');
         
-        cart.innerHTML = '';
-    
+        
         const cards = await this.getProducts();
-    
-        cart.append(...cards);
+
+        if(cards.length>0) {
+            cart.innerHTML = '';
+            cart.append(...cards)
+            
+        }
+        if(cards.length==0) {
+            /*const message = document.createElement('div')
+            message.classList.add('cart-product-wrapper')
+            message.innerHTML = `
+                <img src="./src/imgs/shopping_bag.png" alt="">
+                <p class="body-text-grey-3">Por enquanto não temos produtos no carrinho</p>`
+            cart.append(message)*/
+            cart.innerHTML = `<div class="cart-product-wrapper">
+            <img src="./src/imgs/shopping_bag.png" alt="">
+            <p class="body-text-grey-3">Por enquanto não temos produtos no carrinho</p>
+        </div>`
+
+        }
+        
         this.setAmount();
         this.setPrice();
     }

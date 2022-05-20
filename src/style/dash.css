@@ -228,7 +228,7 @@ input:focus {
 
 #buttons-edit #cancelEdits {
     color: var(--grey-3);
-    background-color: var(--grey-2);
+    background-color: var(--grey-1);
 }
 
 .tittle {
