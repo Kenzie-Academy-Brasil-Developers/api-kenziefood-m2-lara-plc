@@ -20,6 +20,8 @@
     --default: black;
     --shadow: rgb(236, 231, 231);
     --text-color:rgb(15, 15, 15);
+    --drop-color: #212529;
+    --drop: #E9ECEF;
 }
 
 .dark:root{
@@ -32,6 +34,8 @@
     --input-color: #434547;
     --grey-2: #35373a;
     --default:#868E96;
+    --drop-color: #868E96;
+    --drop: #E9ECEF;
 
     
 }
@@ -39,6 +43,10 @@
 body {
     background-color: var(--bg-color);
 
+}
+
+.trash-icon {
+    cursor: pointer;
 }
 
 
