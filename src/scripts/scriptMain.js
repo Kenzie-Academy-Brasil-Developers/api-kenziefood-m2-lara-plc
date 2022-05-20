@@ -2,7 +2,7 @@ import { Api } from "../models/Api.js";
 import { ProductHome } from "../models/ProductHome.js";
 
 const listProducts = await Api.getPublicProducts()
-
+ProductHome.buildCart()
 
 //teste para ver a estrutura do card prassando uma lista com um produto apenas:
 ProductHome.createCards(listProducts)
@@ -84,9 +84,6 @@ function openModal() {
 
     closeBtn.classList.add('close-modal-btn')
     closeBtn.innerText = 'x';
-    closeBtn.style.position = 'absolute';
-    closeBtn.style.left = '330px';
-    closeBtn.style.fontSize = '35px';
     closeBtn.style.fontWeight = '400';
     closeBtn.addEventListener('click', closeModal);
     cartHeader.appendChild(closeBtn);
@@ -99,7 +96,7 @@ function closeModal () {
     cartTotal.style.visibility = 'hidden';
 }
 
-console.log(await Api.getProductsCart());
+
 
 const dropdown = document.querySelector('.dropdown-content')
 console.log(dropdown)
