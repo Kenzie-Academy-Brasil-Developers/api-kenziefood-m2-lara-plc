@@ -64,7 +64,6 @@ doceFilter.listProducts = listProducts
 doceFilter.addEventListener("click", filterCards)
 
 
-
 /*---------------------Carrinho Mobile/Desktop---------------------*/
 
 const cartButton = document.getElementsByClassName('cart-btn');

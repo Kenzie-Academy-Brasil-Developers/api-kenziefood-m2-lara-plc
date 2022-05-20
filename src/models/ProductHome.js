@@ -1,5 +1,12 @@
 import { Api } from "./Api.js";
 
+
+if(localStorage.getItem('product')==null) {
+    localStorage.setItem('product', JSON.stringify([]))
+}
+
+
+
 export class ProductHome {
     
     static arrayProducts = JSON.parse(localStorage.getItem('product'));
@@ -68,7 +75,7 @@ export class ProductHome {
 
         const price = document.createElement('p')
         price.classList.add('title-2-grey-4')
-        price.innerText = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(parseInt(preco))
+        price.innerText = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(Number(preco))
 
 
         const buttonBuy = document.createElement('button')
@@ -116,6 +123,7 @@ export class ProductHome {
             let productsCart = this.getCartApi()
             return productsCart
         } else {
+            
             let productsCart = this.arrayProducts
             return productsCart
 
