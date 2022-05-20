@@ -33,6 +33,41 @@
     
 }
 
+.price-cart {
+    position: relative;
+}
+
+.product-title {
+    height: 30px;
+}
+
+.price-cart>button {
+    position: absolute;
+    right: 0;
+    bottom: 0.1rem;
+}
+
+::-webkit-scrollbar {
+    height: 3px;
+    width: 5px;
+  }
+  
+ 
+  ::-webkit-scrollbar-track {
+    background: transparent;
+
+  }
+  
+ 
+  ::-webkit-scrollbar-thumb {
+    background: var(--grey-3);
+  }
+  
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--grey-3);
+  }
+
 body {
     background-color: var(--bg-color);
     transition: all 500ms;
@@ -546,6 +581,10 @@ header {
 
 /*---------------------Home Desktop---------------------*/
 @media screen and (min-width: 769px) {
+
+    .x {
+        display: none;
+    }
     
     .grid {
         margin-left: 100px;
@@ -901,6 +940,15 @@ header {
 
 @media screen and (max-width: 768px) {
 
+    .x {
+        position: absolute;
+        right: 1rem;
+        top: 0.5rem;
+        font-size: 1.8rem;
+    }
+
+    
+
 
     ::-webkit-scrollbar {
         height: 3px;
@@ -950,6 +998,11 @@ header {
 
     }
 
+    .cart-content-wrapper img {
+        position: absolute;
+        left: 2rem;
+    }
+
     .cart-content-wrapper {
         background-color: var(--primary-color);
         color: var(--grey-1);
@@ -957,7 +1010,7 @@ header {
         border-top-left-radius: 10px;
         border-top-right-radius: 10px;
         display: inline-flex;
-        justify-content: space-evenly;
+        justify-content: center;
         align-items: center;
     }
 
