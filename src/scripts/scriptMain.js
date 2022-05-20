@@ -2,7 +2,7 @@ import { Api } from "../models/Api.js";
 import { ProductHome } from "../models/ProductHome.js";
 
 const listProducts = await Api.getPublicProducts()
-ProductHome.buildCart()
+
 
 //teste para ver a estrutura do card prassando uma lista com um produto apenas:
 ProductHome.createCards(listProducts)
@@ -71,14 +71,12 @@ function openModal() {
     cartDiv.style.display = 'grid';
     cartDiv.style.visibility = 'visible';
 
-    const closeBtn = document.createElement('p');
+    const closeBtn = document.querySelector('p.x');
     const cartHeader = document.querySelector('div.cart-content-wrapper');
 
-    closeBtn.classList.add('close-modal-btn')
-    closeBtn.innerText = 'x';
+    closeBtn.style.display = 'flex';
     closeBtn.style.fontWeight = '400';
     closeBtn.addEventListener('click', closeModal);
-    cartHeader.appendChild(closeBtn);
 }
 
 function closeModal () {

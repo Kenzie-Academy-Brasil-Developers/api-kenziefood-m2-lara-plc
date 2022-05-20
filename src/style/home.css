@@ -1,5 +1,3 @@
-
-
 :root{
     --primary-color: #FF2253;
     --primay-color-50: #FFE9EE;
@@ -1065,6 +1063,10 @@ header {
 }
 
 @media screen and (min-width: 769px) {
+
+    .x {
+        display: none;
+    }
 
      /*-----Configurações para Template Grid-----*/
 
