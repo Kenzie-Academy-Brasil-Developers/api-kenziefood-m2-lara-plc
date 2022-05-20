@@ -76,9 +76,6 @@ function openModal() {
 
     closeBtn.classList.add('close-modal-btn')
     closeBtn.innerText = 'x';
-    closeBtn.style.position = 'absolute';
-    closeBtn.style.left = '330px';
-    closeBtn.style.fontSize = '35px';
     closeBtn.style.fontWeight = '400';
     closeBtn.addEventListener('click', closeModal);
     cartHeader.appendChild(closeBtn);
