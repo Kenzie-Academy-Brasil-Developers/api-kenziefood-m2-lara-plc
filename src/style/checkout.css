@@ -17,7 +17,7 @@
     --modal-bg: white;
     
     --shadow: rgb(236, 231, 231);
-    --text-color:rgb(10, 10, 10);
+    --text-color:rgb(68, 68, 68);
 }
 
 .dark:root{
@@ -25,7 +25,7 @@
     --bg-color:#1b1c1d;
     --modal-bg: #a2a6a8;
     --shadow: black;
-    --text-color:rgb(231, 211, 211)
+    --text-color:rgb(173, 166, 166);
     
 }
 body {
@@ -178,7 +178,7 @@ body {
     color: var(--grey-4);
 }
 
-/*---------------Modal Form Login & SingUp---------------*/
+/*---------------Modal Form pix & card---------------*/
 
 @media screen and (max-width: 768px) {
     #eye {
@@ -191,7 +191,7 @@ body {
         z-index: 100;
     }
 
-    .modal-login-singup {
+    .modal-pix-card {
         margin: 35% auto;
         background-color: var(--grey-1);
         max-width: 300px;
@@ -204,10 +204,10 @@ body {
     .modal-buttons {
         display: grid;
         grid-template-areas: 
-        '.button-login' '.button-singup';
+        '.button-pix' '.button-card';
     }
 
-    .button-login, .button-singup {
+    .button-pix, .button-card {
         color: var(--primay-color-50);
         font-size: 17px;
         font-weight: 600;
@@ -216,11 +216,11 @@ body {
         padding: 10px;
     }
 
-    .button-login {
+    .button-pix {
         border-radius: 10px 0 0 0;
     }
 
-    .button-singup {
+    .button-card {
         border-radius: 0 10px 0 0;
     }
 
@@ -236,12 +236,12 @@ body {
         color: var(--grey-4);
     }
 
-    .form-singup {
+    .form-card {
         display: none;
         gap: 5px;
     }
 
-    .form-singup > input {
+    .form-card > input {
         border-radius: 10px;
         height: 2rem;
         box-shadow: 0 0 0 0;
@@ -249,28 +249,27 @@ body {
         border: var(--grey-3) solid 0.5px;
     }
 
-    .form-singup > input:focus {
+    .form-card > input:focus {
         outline: none;
     }
 
-    .form-login {
+    .form-pix {
         display: grid;
         gap: 5px;
     }
 
-    .form-login > input {
-        border-radius: 10px;
-        height: 2rem;
-        box-shadow: 0 0 0 0;
-        border: none;
-        border: var(--grey-3) solid 0.5px;
+    .form-pix > h3 {
+        font-size: 14px;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 400;
+        color: var(--grey-4);
     }
 
-    .form-login > input:focus {
+    .form-pix > input:focus {
         outline: none;
     }
 
-    .button-login-singup {
+    .button-pix-card {
         margin: 25px;
         height: 2rem;
         background-color: var(--primary-color);
@@ -332,8 +331,8 @@ body {
 }
 
 @media screen and (min-width: 769px) {
-    .modal-login-singup {
-        margin: 10% auto;
+    .modal-pix-card {
+        margin: 3% auto;
         background-color: var(--grey-1);
         max-width: 400px;
         max-height: 500px;
@@ -345,10 +344,10 @@ body {
     .modal-buttons {
         display: grid;
         grid-template-areas: 
-        '.button-login' '.button-singup';
+        '.button-pix' '.button-card';
     }
 
-    .button-login, .button-singup {
+    .button-pix, .button-card {
         color: var(--primay-color-50);
         font-size: 17px;
         font-weight: 600;
@@ -359,11 +358,11 @@ body {
         padding: 10px;
     }
 
-    .button-login {
+    .button-pix {
         border-radius: 10px 0 0 0;
     }
 
-    .button-singup {
+    .button-card {
         border-radius: 0 10px 0 0;
     }
 
@@ -379,29 +378,12 @@ body {
         text-align: center;
     }
 
-    .form-singup {
-        display: none;
-        gap: 5px;
-    }
-
-    .form-singup > input {
-        border-radius: 10px;
-        height: 2.5rem;
-        box-shadow: 0 0 0 0;
-        border: none;
-        border: var(--grey-3) solid 0.5px;
-    }
-
-    .form-singup > input:focus {
-        outline: none;
-    }
-
-    .form-login {
+    .form-card {
         display: grid;
         gap: 5px;
     }
 
-    .form-login > input {
+    .form-card > input {
         border-radius: 10px;
         height: 2.5rem;
         box-shadow: 0 0 0 0;
@@ -409,11 +391,31 @@ body {
         border: var(--grey-3) solid 0.5px;
     }
 
-    .form-login > input:focus {
+    .form-card > input:focus {
         outline: none;
     }
 
-    .button-login-singup {
+    .form-pix {
+        display: none;
+        gap: 5px;
+    }
+
+    .form-pix > h3 {
+        margin-top: 3%;
+        font-size: 14px;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 400;
+        color: var(--grey-4);
+    }
+    .form-pix > img{
+        margin-left: 10%;
+    }
+
+    .form-pix > input:focus {
+        outline: none;
+    }
+
+    .button-pix-card {
         margin: 25px;
         height: 2rem;
         background-color: var(--primary-color);
@@ -608,7 +610,7 @@ input:focus::placeholder {
 .kenzie-title{
     font-size: 21px;
     font-style: bold;
-    color: var(--text-color);
+    color: var(--grey-4);
 }
 
 .food-title{

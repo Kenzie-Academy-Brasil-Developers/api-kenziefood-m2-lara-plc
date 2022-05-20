@@ -33,6 +33,10 @@ function filterCards(event){
             return true
             }
     })
+    const activeFilter = document.getElementsByClassName('active-filter')[0]
+    activeFilter.classList.remove('active-filter')
+    const newFilter = event.target
+    newFilter.classList.add('active-filter')
     const displayContent = document.getElementById('products-display')
     displayContent.innerHTML = ''
     ProductHome.createCards(filteredProducts)
@@ -54,6 +58,10 @@ frutasFilter.addEventListener("click", filterCards)
 const bebidasFilter = document.getElementById('bebidas-filter')
 bebidasFilter.listProducts = listProducts
 bebidasFilter.addEventListener("click", filterCards)
+
+const doceFilter = document.getElementById('doce-filter')
+doceFilter.listProducts = listProducts
+doceFilter.addEventListener("click", filterCards)
 
 
 

@@ -419,6 +419,10 @@ header {
     .filter-option>img{
         margin-right: 10%;
     }
+    .filter-option img {
+        width: 1rem;
+    }
+
 
     .active-filter{
         background-color: var(--primary-color);
@@ -804,6 +808,10 @@ header {
         background-color: var(--secondary-color-50);
         border-radius: 50px;
     }
+    .price-cart>button:hover{
+        cursor: pointer;
+    }
+
     .cart-btn{
         display: none;
     }
@@ -871,6 +879,26 @@ header {
         margin: 0 15% 15% 15%;
         text-align: justify;
         text-align: center;
+    }
+
+    .buy-button{
+        display: none;
+        background-color: var(--primary-color);
+        border-radius: 10px 10px 10px 10px;
+        flex-direction: row;
+        justify-content: center;
+        padding: 7%;
+        width: 55%;
+        border: none;
+        margin-left: 4.2rem;
+        margin-bottom: 0.2rem;
+        font-size: 16px;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 700;
+        color: #FFFFFF;
+    }
+    .buy-button:hover{
+        cursor: pointer;
     }
 }
 
@@ -1119,6 +1147,507 @@ header {
         grid-template-areas: 'p p' 'p p';
         background-color: var(--grey-2);
         justify-content: center;
+
+        font-size: 16px;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 700;
+        color: var(--grey-3);
+    }
+
+    .cart-content-wrapper {
+        display: flex;
+        justify-content: space-evenly;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+/*---------------------Chekout Modal-----------------------*/
+#eye {
+    position: absolute;
+    color: var(--grey-3);
+    right: 6.3rem;
+    top: 0.1rem;
+    font-size: 1.2rem;
+    cursor: pointer;
+    z-index: 100;
+}
+
+
+@media screen and (max-width: 768px) {
+    #eye {
+        position: absolute;
+        color: var(--grey-3);
+        right: 3.2rem;
+        top: 0.1rem;
+        font-size: 1.2rem;
+        cursor: pointer;
+        z-index: 100;
+    }
+
+    .modal-checkout {
+        margin: 35% auto;
+        background-color: var(--grey-1);
+        max-width: 300px;
+        max-height: 400px;
+        height: 100%;
+        border-radius: 10px;
+        border: var(--grey-3) solid 0.5px;
+    }
+
+    .modal-buttons {
+        display: grid;
+        grid-template-areas: 
+        '.button-login' '.button-singup';
+    }
+
+    .button-login, .button-singup {
+        color: var(--primay-color-50);
+        font-size: 17px;
+        font-weight: 600;
+        border: none;
+        background-color: var(--primary-color);
+        padding: 10px;
+    }
+
+    .button-login {
+        border-radius: 10px 0 0 0;
+    }
+
+    .button-singup {
+        border-radius: 0 10px 0 0;
+    }
+
+    .modal-forms {
+        padding: 10px;
+        text-align: center;
+    }
+
+    label {
+        font-size: 14px;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 400;
+        color: var(--grey-4);
+    }
+
+    .form-credit {
+        display: none;
+        gap: 5px;
+    }
+
+    .form-credit > input {
+        border-radius: 10px;
+        height: 2rem;
+        box-shadow: 0 0 0 0;
+        border: none;
+        border: var(--grey-3) solid 0.5px;
+    }
+
+    .form-credit > input:focus {
+        outline: none;
+    }
+
+    .form-debit {
+        display: none;
+        gap: 5px;
+    }
+
+    .form-debit > input {
+        border-radius: 10px;
+        height: 2rem;
+        box-shadow: 0 0 0 0;
+        border: none;
+        border: var(--grey-3) solid 0.5px;
+    }
+
+    .form-debit > input:focus {
+        outline: none;
+    }
+
+    .button-login-singup {
+        margin: 25px;
+        height: 2rem;
+        background-color: var(--primary-color);
+        font-size: 17px;
+        font-weight: 600;
+        color: var(--primay-color-50);
+        border: var(--primay-color-50) solid 1px;
+        border-radius: 20px;
+        margin: 15px auto;
+        max-width: 150px;
+        width: 100%;
+    }
+
+    a {
+        color: var(--primary-color);
+        text-decoration: none;
+    }
+
+    .password-error {
+        background-color: var(--grey-2);
+        width: 100%;
+        height: 1.5rem;
+        border-radius: 10px 10px 0 0;
+    }
+
+    .password-error > .linha {
+        background-color: var(--primary-color);
+        width: 100%;
+        height: 30%;
+        border-radius:  0 0 10px 10px;
+    }
+
+    /* animation input */
+
+    .input-box {
+        position: relative;
+    }
+
+    .input-box label {
+        font-size: 12px;
+        position: absolute;
+        left: 4.5rem;
+        top: 0.2rem;
+        transition: all 200ms;
+        background-color: var(--grey-1);
+    }
+    
+    label {
+        font-size: 14px;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 400;
+        color: var(--grey-4);
+    }
+
+    .input-box input:focus ~ label, label.fill {
+        top: -0.5rem;
+    }
+
+}
+
+@media screen and (min-width: 769px) {
+    .modal-checkout {
+        display: none;
+        margin: 10% auto;
+        background-color: var(--grey-1);
+        max-height: 500px;
+        height: 70%;
+        width: 25%;
+        border-radius: 10px;
+        border: var(--grey-2) solid 0.5px;
+        position: absolute;
+        left: 38%;
+    }
+
+    .modal-buttons {
+        display: block;
+        width: 100%;
+    }
+
+    .button-login, .button-singup, .button-pix {
+        color: var(--primay-color-50);
+        font-size: 17px;
+        font-weight: 600;
+        border: none;
+        background-color: var(--primary-color);
+        max-height: 150px;
+        height: 100%;
+        padding: 10px;
+        width: 32%;
+    }
+
+    .button-login {
+        border-radius: 10px 0 0 0;
+    }
+
+    .button-singup {
+        border-radius: 0 10px 0 0;
+    }
+    .button-pix {
+        border-radius: 0 10px 0 0;
+    }
+
+    label {
+        font-size: 14px;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 400;
+        color: var(--grey-4);
+    }
+
+    .modal-forms {
+        padding: 10px;
+        text-align: center;
+    }
+
+    .form-credit {
+        display: none;
+        margin-top: 2rem;
+    }
+
+    .form-credit > input {
+        border-radius: 10px;
+        height: 2.5rem;
+        box-shadow: 0 0 0 0;
+        border: none;
+        border: var(--grey-3) solid 0.5px;
+    }
+
+    .form-credit > input:focus {
+        outline: none;
+    }
+
+    .form-debit {
+        display: grid;
+        margin-top: 2rem;
+    }
+
+    .form-debit > input {
+        border-radius: 10px;
+        height: 2.5rem;
+        box-shadow: 0 0 0 0;
+        border: none;
+    }
+
+    .form-debit > input:focus {
+        outline: none;
+    }
+
+
+    .form-pix {
+        display: none;
+        margin-top: 2rem;
+    }
+
+    .form-pix > input {
+        border-radius: 10px;
+        height: 2.5rem;
+        box-shadow: 0 0 0 0;
+        border: none;
+        border: var(--grey-3) solid 0.5px;
+    }
+
+    .form-pix > input:focus {
+        outline: none;
+    }
+
+    .button-login-singup {
+        margin: 25px;
+        height: 2rem;
+        background-color: var(--primary-color);
+        font-size: 17px;
+        font-weight: 600;
+        color: var(--primay-color-50);
+        border: var(--primay-color-50) solid 1px;
+        border-radius: 20px;
+        margin: 15px auto;
+        max-width: 150px;
+        width: 100%;
+    }
+
+    a {
+        color: var(--primary-color);
+        text-decoration: none;
+    }
+
+    .password-error {
+        background-color: var(--grey-2);
+        width: 100%;
+        height: 1.5rem;
+        border-radius: 10px 10px 0 0;
+    }
+
+    .password-error > .linha {
+        background-color: var(--primary-color);
+        width: 100%;
+        height: 30%;
+        border-radius:  0 0 10px 10px;
+    }
+
+    /* animation input */
+
+    .input-box {
+        position: relative;
+        height: 1.5rem;
+        margin-top: 0.5rem;
+    }
+
+    .input-box label {
+        font-size: 13px;
+        position: absolute;
+        left: 6rem;
+        top: 0.2rem;
+        transition: all 200ms;
+        background-color: var(--grey-1);
+    }
+
+    .input-box input:focus ~ label, label.fill {
+        top: -0.5rem;
+    }
+
+}
+
+button {
+    cursor: pointer;
+}
+label {
+    cursor: auto;
+}
+
+.active {
+    background-color: var(--grey-1);
+    color: var(--grey-4);
+}
+
+
+.acesso-sem-cadastro {
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 5px; 
+}
+
+.acesso-sem-cadastro a {
+    color: var(--grey-2);
+    height: 100%;
+    width: 100%;
+    font-size: 1rem;
+}
+
+input::placeholder {
+    opacity: 0;
+}
+
+input:focus::placeholder {
+    opacity: 1;
+}
+
+
+#div-checkbox {
+    position: absolute;
+    top: 13vh;
+    left: 3rem;
+
+}
+
+#label-checkbox {
+    position: relative;
+    width: 50px;
+    height: 25px;
+    background-color: transparent;
+    box-shadow: 0 0 0 4px var(--text-color);
+    border-radius: 37px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.7rem;
+    color: var(--text-color);  
+}
+
+#label-checkbox input {
+    width: 100%;
+    height: 100%;
+    appearance: none;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+}
+
+#label-checkbox span {
+    position: absolute;
+    left: -5px;
+    width: 30px;
+    height: 30px;
+    background-image: url(/src/imgs/pizza-icon.png);
+    background-size: 30px 30px;
+    background-repeat: no-repeat;
+    transition: 1.5s;
+    transform: rotate(0deg);
+    transform-origin: 15px;
+}
+
+#label-checkbox input:checked ~ span {
+    left: 25px;
+    background-image: url(/src/imgs/pizza-icon2.png);
+    transform: rotate(360deg);
+}
+
+
+#label-checkbox p:last-child {
+    left: 60px;
+    filter: none;
+}
+
+#label-checkbox p{
+    position: absolute;
+    left: -40px;
+    filter: drop-shadow(0 0 30px var(--shadow)) drop-shadow(0 0 30px var(--shadow));
+    transition: 1.5s;
+}
+
+
+#label-checkbox input:checked ~ p:last-child{
+    
+    filter: drop-shadow(0 0 30px var(--shadow)) drop-shadow(0 0 30px var(--shadow));
+}
+
+#label-checkbox p{
+    position: absolute;
+    left: -40px;
+    filter: drop-shadow(0 0 30px var(--shadow)) drop-shadow(0 0 30px var(--shadow));
+    transition: 1.5s;
+}
+
+#label-checkbox p:last-child {
+    left: 60px;
+    color: #8f8f8f;
+    filter: none;
+}
+
+#label-checkbox input:checked ~ p:last-child{
+    color: beige;
+    filter: drop-shadow(0 0 10px #fff) drop-shadow(0 0 20px #fff);
+}
+
+
+#logo {
+    display: flex;
+    align-items: flex-end;
+    gap: 0.4rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    position: fixed;
+    top: 0.5rem;
+    right: 0.5rem;
+
+}
+
+.kenzie-title{
+    font-size: 21px;
+    font-style: bold;
+    color: var(--grey-4);
+}
+
+.food-title{
+    font-size: 16px;
+    color: var(--primary-color);
+}
+
+@media (max-width: 500px) {
+    .acesso-sem-cadastro {
+        position: fixed;
+        bottom: 1rem;
+        left: 1rem;
+    }
+}
+
         border-radius: 20px;
     }
 
@@ -1154,6 +1683,7 @@ header {
         width: 25px;
         height: 25px;
     }
+
 
     .product-div-cart{
         width: 100%;
