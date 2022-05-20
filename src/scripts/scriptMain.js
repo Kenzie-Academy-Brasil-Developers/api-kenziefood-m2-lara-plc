@@ -91,7 +91,7 @@ function closeModal () {
     cartTotal.style.visibility = 'hidden';
 }
 
-console.log(await Api.getProductsCart());
+
 
 const dropdown = document.querySelector('.dropdown-content')
 console.log(dropdown)
