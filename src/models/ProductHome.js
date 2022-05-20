@@ -205,6 +205,9 @@ export class ProductHome {
             img.classList.add('product-image');
             img.src = `${produto.imagem}`;
             img.style.borderRadius = '10px';
+
+            const middle = document.createElement('div')
+            middle.classList.add('middle')
     
             const name = document.createElement('p');
             name.classList.add('product-name');
@@ -222,6 +225,8 @@ export class ProductHome {
             let value = produto.preco;
             price.innerText = `${new Intl.NumberFormat('pt-BR', {style: 'currency', currency: 'BRL'}).format(value)}`;
             price.style.color = 'var(--grey-4)';
+
+            middle.append(name,category,price)
     
             const qntdController = document.createElement('div');
             qntdController.classList.add('qntd-controller');
@@ -272,10 +277,14 @@ export class ProductHome {
                 this.deleteCart(produto)
             
             });
+
+            const left = document.createElement('div')
+            left.classList.add('left')
+            left.append(trashBtn,qntdController)
     
             const cartCard = document.createElement('div');
             cartCard.classList.add('product-div-cart');
-            cartCard.append(img, name, category, price, qntdController, trashBtn);
+            cartCard.append(img, middle, left);
             cards.push(cartCard);
     
         });
@@ -291,6 +300,8 @@ export class ProductHome {
         if(cards.length>0) {
             cart.innerHTML = '';
             cart.append(...cards)
+            cart.classList.remove('empty')
+
             
         }
         if(cards.length==0) {
@@ -300,10 +311,10 @@ export class ProductHome {
                 <img src="./src/imgs/shopping_bag.png" alt="">
                 <p class="body-text-grey-3">Por enquanto não temos produtos no carrinho</p>`
             cart.append(message)*/
-            cart.innerHTML = `<div class="cart-product-wrapper">
+            cart.innerHTML = `
             <img src="./src/imgs/shopping_bag.png" alt="">
-            <p class="body-text-grey-3">Por enquanto não temos produtos no carrinho</p>
-        </div>`
+            <p class="body-text-grey-3">Por enquanto não temos produtos no carrinho</p>`
+            cart.classList.add('empty')
 
         }
         
