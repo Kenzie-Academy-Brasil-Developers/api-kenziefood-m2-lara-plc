@@ -534,7 +534,7 @@ header {
         display: flex;
         flex-direction: row;
         margin-top:6%;
-        width: 100%;
+        width: 80%;
     }
 
     .price-cart>p{
@@ -546,7 +546,7 @@ header {
         align-items: flex-start;
         padding: 3.5% ;
         padding-right: 4%;
-        padding-left: 4%;
+        padding-left: 2%;
         border: 0px;
         background-color: var(--secondary-color-50);
         border-radius: 50px;
@@ -578,6 +578,28 @@ header {
 
     .cart-btn>img{
         margin-right: 6%;
+    }
+    .buy-button{
+        display: flex;
+        background-color: var(--primary-color);
+        border-radius: 10px 10px 10px 10px;
+        flex-direction: row;
+        justify-content: center;
+        padding: 7%;
+        width: 55%;
+        border: none;
+        margin-left: 4.2rem;
+        margin-bottom: 0.2rem;
+        font-size: 16px;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 700;
+        color: #FFFFFF;
+    }
+    .buy-button a{
+        color: #FFFFFF;
+    }
+    .buy-button:hover{
+        cursor: pointer;
     }
 }
 
@@ -922,7 +944,7 @@ header {
     }
 
     .buy-button{
-        display: none;
+        display: flex;
         background-color: var(--primary-color);
         border-radius: 10px 10px 10px 10px;
         flex-direction: row;
@@ -935,6 +957,9 @@ header {
         font-size: 16px;
         font-family: 'Poppins', sans-serif;
         font-weight: 700;
+        color: #FFFFFF;
+    }
+    .buy-button a{
         color: #FFFFFF;
     }
     .buy-button:hover{
@@ -1068,6 +1093,10 @@ header {
     .cart-product-wrapper{
         height: 400px;
         overflow-y: scroll;
+    }
+
+    .cart-product-wrapper{
+        
     }
 
     .trash-icon {
