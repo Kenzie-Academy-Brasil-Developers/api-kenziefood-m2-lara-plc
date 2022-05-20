@@ -393,8 +393,6 @@ export class TemplateDashProducts {
         const productsFiltered = myProducts.filter((product) => normalizeStr(product.nome).includes(normalizeStr(search)))
         this.getMyProducts(productsFiltered)
 
-        console.log('test')
-
 
 
     }

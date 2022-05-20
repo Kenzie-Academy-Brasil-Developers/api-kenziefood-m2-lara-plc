@@ -5,8 +5,6 @@ if(localStorage.getItem('product')==null) {
     localStorage.setItem('product', JSON.stringify([]))
 }
 
-
-
 export class ProductHome {
     
     static arrayProducts = JSON.parse(localStorage.getItem('product'));
@@ -48,9 +46,7 @@ export class ProductHome {
 
         const categories = document.createElement('div')
         categories.classList.add('filter-options')
-        
-        
-        //array de categorias???? não achei nenhum produto com mais de uma... 
+         
 
         if(typeof descricao !== 'string') {
             categoria.forEach((el) => { 
@@ -83,11 +79,12 @@ export class ProductHome {
             cartImg.src = "./src/imgs/cart_green.png"
             buttonBuy.appendChild(cartImg)
             buttonBuy.addEventListener('click', () => {
+                
                 if (localStorage.getItem('product') === null) {
                     this.setLocalStorage();
                 } else {
                     this.sendProductToLocalStorage(product)}
-            }) //ao clicar, chama a funcao addCart e passa o objeto produto
+            }) 
 
         divPriceAndBuy.append(price,buttonBuy)
         
@@ -171,7 +168,6 @@ export class ProductHome {
                 product_id: product.id,
                 quantity: Number(product.quantity) + number
             }
-            console.log(product)
             const result = await Api.addProductToCart(data)
 
             if(result) {
@@ -289,11 +285,28 @@ export class ProductHome {
     static async buildCart() {
         const cart = document.querySelector('div.cart-product-wrapper');
         
-        cart.innerHTML = '';
-    
+        
         const cards = await this.getProducts();
-    
-        cart.append(...cards);
+
+        if(cards.length>0) {
+            cart.innerHTML = '';
+            cart.append(...cards)
+            
+        }
+        if(cards.length==0) {
+            /*const message = document.createElement('div')
+            message.classList.add('cart-product-wrapper')
+            message.innerHTML = `
+                <img src="./src/imgs/shopping_bag.png" alt="">
+                <p class="body-text-grey-3">Por enquanto não temos produtos no carrinho</p>`
+            cart.append(message)*/
+            cart.innerHTML = `<div class="cart-product-wrapper">
+            <img src="./src/imgs/shopping_bag.png" alt="">
+            <p class="body-text-grey-3">Por enquanto não temos produtos no carrinho</p>
+        </div>`
+
+        }
+        
         this.setAmount();
         this.setPrice();
     }
