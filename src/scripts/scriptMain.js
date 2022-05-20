@@ -79,12 +79,12 @@ function openModal() {
     cartDiv.style.display = 'grid';
     cartDiv.style.visibility = 'visible';
 
-    const closeBtn = document.createElement('p');
+    const closeBtn = document.querySelector('.x')
     const cartHeader = document.querySelector('div.cart-content-wrapper');
 
-    closeBtn.classList.add('close-modal-btn')
-    closeBtn.innerText = 'x';
+    
     closeBtn.style.fontWeight = '400';
+    closeBtn.style.display = 'block'
     closeBtn.addEventListener('click', closeModal);
     cartHeader.appendChild(closeBtn);
 }
