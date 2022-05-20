@@ -48,9 +48,7 @@ export class ProductHome {
 
         const categories = document.createElement('div')
         categories.classList.add('filter-options')
-        
-        
-        //array de categorias???? não achei nenhum produto com mais de uma... 
+         
 
         if(typeof descricao !== 'string') {
             categoria.forEach((el) => { 
@@ -83,11 +81,12 @@ export class ProductHome {
             cartImg.src = "./src/imgs/cart_green.png"
             buttonBuy.appendChild(cartImg)
             buttonBuy.addEventListener('click', () => {
+                
                 if (localStorage.getItem('product') === null) {
                     this.setLocalStorage();
                 } else {
                     this.sendProductToLocalStorage(product)}
-            }) //ao clicar, chama a funcao addCart e passa o objeto produto
+            }) 
 
         divPriceAndBuy.append(price,buttonBuy)
         
@@ -171,7 +170,6 @@ export class ProductHome {
                 product_id: product.id,
                 quantity: Number(product.quantity) + number
             }
-            console.log(product)
             const result = await Api.addProductToCart(data)
 
             if(result) {
@@ -217,7 +215,7 @@ export class ProductHome {
             name.style.color = 'var(--grey-4)';
     
             const category = document.createElement('p');
-            category.classList.add('product-category body-text-grey-3');
+            category.classList.add('product-category');
             category.innerText = `${produto.categoria}`;
             category.style.color = 'var(--grey-3)';
     
