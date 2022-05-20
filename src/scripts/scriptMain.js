@@ -98,7 +98,7 @@ function closeModal () {
 
 
 const dropdown = document.querySelector('.dropdown-content')
-console.log(dropdown)
+
 
 if(localStorage.getItem('token')) {
 

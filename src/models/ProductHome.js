@@ -217,7 +217,7 @@ export class ProductHome {
             name.style.color = 'var(--grey-4)';
     
             const category = document.createElement('p');
-            category.classList.add('product-category');
+            category.classList.add('product-category body-text-grey-3');
             category.innerText = `${produto.categoria}`;
             category.style.color = 'var(--grey-3)';
     
