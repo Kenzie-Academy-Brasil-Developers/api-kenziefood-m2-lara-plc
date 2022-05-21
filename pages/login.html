@@ -39,45 +39,45 @@
         <div class="modal-forms">
             <form action="#" class="form-singup">
                 <div class="input-box">
-                    <input type="text" id="user" name="name" placeholder="Digite seu nome de usuário">
+                    <input type="text" id="user" name="name" placeholder="Digite seu nome de usuário" autocomplete="off">
                     <label for="name">Nome</label>
                 </div>
                 <div class="input-box">
-                    <input type="text"  name="email" placeholder="Digite seu e-mail">
+                    <input type="text"  name="email" placeholder="Digite seu e-mail" autocomplete="off">
                     <label for="email">E-mail</label>
                 </div>
                 <div class="input-box">
                     <span id="eye" class="material-icons">
                         visibility_off
                     </span>
-                    <input type="password" name="password" placeholder="Digite sua senha">
+                    <input type="password" name="password" placeholder="Digite sua senha" autocomplete="off">
                     <label for="password">Senha</label>
                 </div>
                 <div class="input-box">
                     <span id="eye" class="material-icons">
                         visibility_off
                     </span>
-                    <input type="password" name="confirmPass" placeholder="Digite a senha novamente">
+                    <input type="password" name="confirmPass" placeholder="Digite a senha novamente" autocomplete="off">
                     <label for="confirmPass">Confirme sua Senha</label>
                 </div>
 
                 <button class="button-login-singup singuUp">Cadastre-se</button>
 
-                <div id="div-error" class=""><p></p><div class="linha"></div></div>
+                
             </form>
 
             <form action="#" class="form-login">
                 <div class="input-box">
                     
-                    <input type="email" name="email" placeholder="Digite seu email">
+                    <input type="email" name="email" placeholder="Digite seu email" autocomplete="off">
                     <label for="email">E-mail</label>
                 </div>
                 <div class="input-box">
                     <span id="eye" class="material-icons">
                         visibility_off
                     </span>
-                    <input type="password" id="password" name="password" placeholder="Digite sua senha">
-                    <label for="password">Senha</label>
+                    <input type="password" id="password" name="password" placeholder="Digite sua senha" autocomplete="off">
+                    <label for="password" autocomplete="off">Senha</label>
                 </div>
                 <button class="button-login-singup">Login</button>
                 <div class="form-login-adicional">
@@ -88,6 +88,8 @@
         </div>
 
     </div>
+
+    <div id="div-error" class=""><p></p><div class="linha"></div></div>
 
 
     <script src="./../src/scripts/scriptSignLog.js" type="module"></script>

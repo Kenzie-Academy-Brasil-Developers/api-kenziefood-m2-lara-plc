@@ -488,6 +488,11 @@ header {
     padding-left: 30px;
     border: 10px;
     background-color: var(--grey-2);
+    
+}
+
+input:focus {
+    color: var(--text-color);
 }
 
 .search-input:focus{

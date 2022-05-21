@@ -33,9 +33,11 @@ export class Api {
           })
           .then((res) => res.json())
           .then((res) => res)
-          .catch((error) => error)
+          .catch((error) => {throw error})
         
         localStorage.setItem('token',token)
+        //localStorage.setItem('email-kenzieFood', data.email)
+        //localStorage.setItem('password-kenzieFood',data.password)
       
         return token
     }

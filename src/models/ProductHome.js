@@ -332,6 +332,10 @@ export class ProductHome {
 
         const amount = document.getElementById('amount');
         amount.innerText = qtotal
+        const qtd = document.querySelector('.cart-btn > p > span')
+        const qtdHeader = document.querySelector('#cart-header span')
+        qtd.innerText = qtotal
+        qtdHeader.innerText = qtotal
     }
 
     static async setPrice() {
@@ -342,6 +346,7 @@ export class ProductHome {
             total = total + obj.preco*Number(obj.quantity);
         });
         price.innerText = `${new Intl.NumberFormat('pt-BR', {style: 'currency', currency: 'BRL'}).format(total)}`;
+        
     }
 
 }

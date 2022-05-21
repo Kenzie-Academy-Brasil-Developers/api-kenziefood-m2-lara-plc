@@ -1,5 +1,7 @@
 import { Api } from "../models/Api.js"
 
+
+
 const inputs = document.querySelectorAll('input')
 inputs.forEach((input) => {
     input.addEventListener('input', function() {
@@ -8,6 +10,10 @@ inputs.forEach((input) => {
         input.nextElementSibling.classList.add('fill') :
 
         input.nextElementSibling.classList.remove('fill')
+
+        const error = document.getElementById('div-error');
+        error.classList.remove('password-error');
+        error.firstChild.textContent = '';
 
     })
 })
@@ -18,12 +24,22 @@ const formLogin = document.getElementsByClassName('form-login');
 formLogin[0].addEventListener('submit', loginUserData);
 const inputsLogin = document.querySelectorAll('.form-login input')
 
+/*inputsLogin.forEach((input) => {
+    if(localStorage.getItem(`${input.name}-kenzieFood`)) {
+        input.value = localStorage.getItem(`${input.name}-kenzieFood`)
+        input.nextElementSibling.classList.add('fill')
+    }
+})*/
+
+
+
 
 function getUserData() {
     const loginData = {};
 
-    loginData[inputsLogin[0].name] = inputsLogin[0].value;
-    loginData[inputsLogin[1].name] = inputsLogin[1].value;
+    inputsLogin.forEach((input) => {
+        loginData[input.name] = input.value;
+    })
 
     return loginData;
 }
@@ -34,10 +50,10 @@ async function loginUserData(e) {
 
     const result = await Api.loginUser(userData)
 
-    if (result != '') {
-        location.replace('/index.html');
-    } else {
+    if (result.error) {
         modalError('Dados Incorretos')
+    } else {
+        location.replace('/index.html');
     }
      
      
@@ -48,13 +64,15 @@ async function loginUserData(e) {
 /*---------------Registro de Usuário---------------*/ 
 
 const formSingUp = document.getElementsByClassName('form-singup');
-const inputsSing = document.querySelectorAll('.form-singup input')
+const inputsSing = document.querySelectorAll('.form-singup input');
+
+
 
 function getData() {
     const registrationData  = {};
-    registrationData[inputsSing[0].name] = inputsSing[0].value;
-    registrationData[inputsSing[1].name] = inputsSing[1].value;
-    registrationData[inputsSing[2].name] = inputsSing[2].value;
+    inputsSing.forEach((input) => {
+        registrationData[input.name] = input.value;
+    })
 
     return registrationData
 }
@@ -109,7 +127,18 @@ async function sendData(e) {
     
     const result = await Api.registerUser(registrationData);
     if(result) {
-        modalSuccess('Registro Efetuado com sucesso!');
+        const {email,password} = registrationData
+        
+        const login = await Api.loginUser({email,password})
+
+        if(!login.error) {
+            
+            modalSuccess('Registro Efetuado com sucesso!');
+            setTimeout(() => {
+                location.replace('/index.html')
+                
+            }, 1000);
+        }
 
     }
 }

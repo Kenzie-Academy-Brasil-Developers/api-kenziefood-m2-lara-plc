@@ -4,8 +4,10 @@ import { ProductHome } from "../models/ProductHome.js";
 const listProducts = await Api.getPublicProducts()
 ProductHome.buildCart()
 
-//teste para ver a estrutura do card prassando uma lista com um produto apenas:
+
 ProductHome.createCards(listProducts)
+
+
 
 let search_term = ''
 function search(e){
@@ -66,17 +68,26 @@ doceFilter.addEventListener("click", filterCards)
 
 /*---------------------Carrinho Mobile/Desktop---------------------*/
 
-const cartButton = document.getElementsByClassName('cart-btn');
+const cartButton = document.querySelectorAll('.cart-btn');
 
-cartButton[0].addEventListener('click', openModal);
+
+cartButton.forEach(element => {
+    element.addEventListener('click', openModal);
+});
 
 function openModal() {
     const cartDiv = document.querySelector('div.cart');
     const cartTotal = document.querySelector('div.cart-total');
 
-    cartTotal.style.visibility = 'visible'
-    cartDiv.style.display = 'grid';
-    cartDiv.style.visibility = 'visible';
+    if(cartTotal.style.visibility === 'hidden') {
+        cartTotal.style.visibility = 'visible'
+        cartDiv.style.display = 'grid';
+        cartDiv.style.visibility = 'visible';
+    } else {
+        closeModal()
+    }
+
+    
 
     const closeBtn = document.querySelector('.x')
     const cartHeader = document.querySelector('div.cart-content-wrapper');
